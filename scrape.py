@@ -4,7 +4,13 @@ import os
 import sys
 
 API_URL = "https://mocheck.nbtc.go.th/api/equipments/search"
-HEADERS = {"Content-Type": "application/json"}
+HEADERS = {
+    "Content-Type": "application/json",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Origin": "https://mocheck.nbtc.go.th",
+    "Referer": "https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต"
+}
 SEEN_FILE = "seen_devices.json"
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
