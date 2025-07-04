@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # This allows GitHub Actions to push changes
+  contents: write
 
 jobs:
   run-scraper:
@@ -27,15 +27,25 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scrape.py
-      - name: Commit results (if any)
+      - name: Commit results
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           
-          # Add files if they exist
           if [ -f "seen_devices.json" ]; then
             git add seen_devices.json
             echo "Added seen_devices.json"
           fi
           
-          if [ -f "new_devices.json" ]; 
+          if [ -f "new_devices.json" ]; then
+            git add new_devices.json
+            echo "Added new_devices.json"
+          fi
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update scraped data - $(date)"
+            git push
+            echo "Changes committed and pushed"
+          fi
