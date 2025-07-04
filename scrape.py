@@ -1,5 +1,6 @@
 import sys
 import os
+import time
 
 # Force UTF-8 for all output and file operations
 os.environ["PYTHONIOENCODING"] = "utf-8"
@@ -22,7 +23,9 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def fetch_devices(page=1, per_page=20):
-    # Use URL-encoded version of "อนุญาต"
+    # Add delay to avoid being blocked
+    time.sleep(3)
+    
     status_encoded = "%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95"
     payload = {
         "status": urllib.parse.unquote(status_encoded),
@@ -84,7 +87,7 @@ def main():
     new_ids = set()
     new_devices = []
 
-    for page in range(1, 6):  # Check first 5 pages
+    for page in range(1, 3):  # Reduced to 3 pages to avoid too many requests
         devices = fetch_devices(page=page, per_page=20)
         if not devices:
             break
@@ -100,9 +103,8 @@ def main():
         print(f"Found {len(new_devices)} new devices in Cellular Mobile:")
         with open("new_devices.json", "w", encoding="utf-8") as f:
             json.dump(new_devices, f, ensure_ascii=False, indent=2)
-        # Build Telegram message
         msg = f"📱 {len(new_devices)} new Cellular Mobile devices found!\n"
-        for d in new_devices[:5]:  # Show up to 5 devices in the message
+        for d in new_devices[:5]:
             brand = d.get('brand', '')
             model = d.get('model', '')
             cert = d.get('certificate_no', '')
