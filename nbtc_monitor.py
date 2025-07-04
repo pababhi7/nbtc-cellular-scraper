@@ -54,19 +54,26 @@ def parse_devices_from_text(text):
     return devices
 
 async def extract_all_devices_with_pagination():
-    """Extract all devices by paginating through the NBTC site."""
-    print("=== EXTRACTING ALL DEVICES WITH PAGINATION ===")
+    """Extract all devices by paginating through the NBTC site, with debug output."""
+    print("=== EXTRACTING ALL DEVICES WITH PAGINATION (DEBUG MODE) ===")
     all_devices = []
     seen_ids = set()
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True, args=['--no-sandbox'])
         page = await browser.new_page()
         await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต", wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(5000)
+        await page.wait_for_timeout(15000)  # Wait longer for JS to load
+        await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        await page.wait_for_timeout(2000)
         page_num = 1
         while True:
             print(f"Scraping page {page_num}...")
             page_text = await page.evaluate("document.body.innerText")
+            page_html = await page.content()
+            print("=== PAGE TEXT SAMPLE ===")
+            print(page_text[:2000])
+            print("=== PAGE HTML SAMPLE ===")
+            print(page_html[:2000])
             devices = parse_devices_from_text(page_text)
             new_this_page = 0
             for d in devices:
@@ -168,7 +175,7 @@ def send_new_device_notification(new_devices, is_first_run=False):
         print(f"❌ Failed to send notification: {e}")
 
 async def main():
-    print("=== NBTC NEW DEVICE MONITOR (PAGINATION) ===")
+    print("=== NBTC NEW DEVICE MONITOR (PAGINATION, DEBUG MODE) ===")
     seen_device_ids = load_seen_devices()
     is_first_run = len(seen_device_ids) == 0
     current_devices = await extract_all_devices_with_pagination()
