@@ -1,0 +1,57 @@
+[
+  {
+    "id": "CPH1809",
+    "brand": "OPPO",
+    "model": "CPH1809",
+    "description": "A5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1809",
+    "link": "https://mocheck.nbtc.go.th/search-equipments?search=CPH1809",
+    "source": "text_extraction",
+    "verification_status": "needs_manual_verification"
+  },
+  {
+    "id": "CPH1831",
+    "brand": "OPPO",
+    "model": "CPH1831",
+    "description": "R15 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1831",
+    "link": "https://mocheck.nbtc.go.th/search-equipments?search=CPH1831",
+    "source": "text_extraction",
+    "verification_status": "needs_manual_verification"
+  },
+  {
+    "id": "SM-LT",
+    "brand": "Samsung",
+    "model": "SM-LT",
+    "description": "",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-LT",
+    "link": "https://mocheck.nbtc.go.th/search-equipments?search=SM-LT",
+    "source": "text_extraction",
+    "verification_status": "needs_manual_verification"
+  },
+  {
+    "id": "SM-NB",
+    "brand": "Samsung",
+    "model": "SM-NB",
+    "description": "",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-NB",
+    "link": "https://mocheck.nbtc.go.th/search-equipments?search=SM-NB",
+    "source": "text_extraction",
+    "verification_status": "needs_manual_verification"
+  },
+  {
+    "id": "A2120",
+    "brand": "Apple",
+    "model": "A2120",
+    "description": "",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2120",
+    "link": "https://mocheck.nbtc.go.th/search-equipments?search=A2120",
+    "source": "text_extraction",
+    "verification_status": "needs_manual_verification"
+  }
+]
