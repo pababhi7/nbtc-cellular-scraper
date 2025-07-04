@@ -5,6 +5,11 @@ on:
     # 7:00 AM IST is 1:30 AM UTC
     - cron: '30 1 * * *'
   workflow_dispatch:
+    inputs:
+      run_test:
+        description: 'Run test scraper instead of normal scraper'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -22,7 +27,14 @@ jobs:
         run: |
           pip install -r requirements.txt
           playwright install chromium
-      - name: Run scraper
+      - name: Run test scraper
+        if: github.event.inputs.run_test == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python test_scraper.py
+      - name: Run normal scraper
+        if: github.event.inputs.run_test != 'true'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
