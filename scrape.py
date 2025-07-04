@@ -3,7 +3,6 @@ import os
 import json
 import asyncio
 from playwright.async_api import async_playwright
-import re
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
@@ -13,76 +12,115 @@ SEEN_FILE = "seen_devices.json"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
+async def try_direct_api_call():
+    """Try direct API call first - sometimes it works"""
+    print("Attempting direct API call...")
+    try:
+        headers = {
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json, text/plain, */*",
+            "Origin": "https://mocheck.nbtc.go.th",
+            "Referer": "https://mocheck.nbtc.go.th/search-equipments"
+        }
+        
+        payload = {
+            "status": "อนุญาต",
+            "page": 1,
+            "perPage": 20,
+            "search": "",
+            "subType": "Cellular Mobile"
+        }
+        
+        response = requests.post(
+            "https://mocheck.nbtc.go.th/api/equipments/search",
+            json=payload,
+            headers=headers,
+            timeout=30
+        )
+        
+        if response.status_code == 200:
+            data = response.json()
+            devices = data.get("data", [])
+            print(f"Direct API call successful! Found {len(devices)} devices")
+            return [d for d in devices if d.get("subType") == "Cellular Mobile"]
+        else:
+            print(f"Direct API call failed: {response.status_code}")
+            return []
+    except Exception as e:
+        print(f"Direct API call error: {e}")
+        return []
+
 async def fetch_devices_with_browser():
+    """Browser automation approach"""
     devices = []
     try:
         async with async_playwright() as p:
             browser = await p.chromium.launch()
             page = await browser.new_page()
             
-            print("Setting up browser...")
+            print("Setting up browser with realistic settings...")
+            await page.set_viewport_size({"width": 1920, "height": 1080})
             await page.set_extra_http_headers({
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                "Accept-Language": "en-US,en;q=0.9,th;q=0.8",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
             })
             
             print("Navigating to NBTC website...")
-            await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95")
-            print("Page loaded, waiting for content...")
+            response = await page.goto("https://mocheck.nbtc.go.th/search-equipments", 
+                                      wait_until="networkidle")
+            print(f"Page loaded with status: {response.status}")
             
-            # Wait longer for the page to fully load
-            await page.wait_for_timeout(10000)
+            # Wait for page to fully load
+            await page.wait_for_timeout(5000)
             
-            # Try to extract device data from the HTML
-            print("Attempting to extract devices from page content...")
+            # Try to interact with the page to trigger data loading
+            print("Looking for search elements...")
             
-            # Wait for any device listings to appear
+            # Try to find and click search/filter elements
             try:
-                await page.wait_for_selector(".equipment-card, .device-item, .equipment-row", timeout=5000)
-                print("Found device elements on page")
-            except:
-                print("No specific device elements found, trying generic extraction...")
+                # Look for any search button or filter
+                search_elements = await page.query_selector_all("button, input[type='submit'], .search-btn, .btn-search")
+                if search_elements:
+                    print(f"Found {len(search_elements)} search elements")
+                    await search_elements[0].click()
+                    await page.wait_for_timeout(3000)
+            except Exception as e:
+                print(f"Couldn't interact with search elements: {e}")
             
-            # Get page content
-            content = await page.content()
-            print(f"Page content length: {len(content)} characters")
+            # Capture any network requests
+            collected_devices = []
             
-            # Try to find JSON data in the page
-            json_matches = re.findall(r'("data":\s*\[.*?\])', content)
-            print(f"Found {len(json_matches)} potential JSON data blocks")
+            async def handle_response(response):
+                if "equipment" in response.url and response.status == 200:
+                    try:
+                        if response.headers.get("content-type", "").startswith("application/json"):
+                            data = await response.json()
+                            if "data" in data and isinstance(data["data"], list):
+                                cellular_devices = [d for d in data["data"] if d.get("subType") == "Cellular Mobile"]
+                                collected_devices.extend(cellular_devices)
+                                print(f"Found {len(cellular_devices)} Cellular Mobile devices from network request")
+                    except Exception as e:
+                        print(f"Error parsing network response: {e}")
             
-            for match in json_matches:
-                try:
-                    # Try to extract device data from JSON blocks
-                    json_data = json.loads("{" + match + "}")
-                    if "data" in json_data:
-                        print(f"Found JSON data with {len(json_data['data'])} items")
-                        for item in json_data["data"]:
-                            if isinstance(item, dict) and item.get("subType") == "Cellular Mobile":
-                                devices.append(item)
-                except:
-                    continue
+            page.on("response", handle_response)
             
-            # Alternative: Look for device information in script tags
-            script_content = await page.evaluate("""
-                () => {
-                    const scripts = document.querySelectorAll('script');
-                    let allContent = '';
-                    for (let script of scripts) {
-                        if (script.textContent && script.textContent.includes('equipment')) {
-                            allContent += script.textContent;
-                        }
-                    }
-                    return allContent;
-                }
-            """)
+            # Wait for any additional requests
+            await page.wait_for_timeout(8000)
             
-            print(f"Script content length: {len(script_content)} characters")
-            if "equipment" in script_content.lower():
-                print("Found equipment-related content in scripts")
+            # Try to extract data from page HTML as backup
+            if not collected_devices:
+                print("No devices from network requests, trying HTML extraction...")
+                page_content = await page.content()
+                
+                # Look for any device data in the HTML
+                if "cellular" in page_content.lower() or "mobile" in page_content.lower():
+                    print("Found mobile/cellular related content in HTML")
+                    # You could add HTML parsing logic here
             
             await browser.close()
-            print(f"Browser closed. Total collected devices: {len(devices)}")
-            return devices
+            return collected_devices
             
     except Exception as e:
         print(f"Browser automation error: {e}")
@@ -112,7 +150,7 @@ def save_seen_ids(ids):
 
 def send_telegram_message(message):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print("ERROR: Telegram credentials not set. Skipping notification.")
+        print("ERROR: Telegram credentials not set.")
         return
     
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -126,60 +164,41 @@ def send_telegram_message(message):
         if resp.status_code == 200:
             print("SUCCESS: Telegram notification sent!")
         else:
-            print(f"ERROR: Telegram API failed. Response: {resp.text}")
+            print(f"Telegram API error: {resp.status_code}")
     except Exception as e:
-        print(f"ERROR: Failed to send Telegram message: {e}")
+        print(f"Failed to send Telegram message: {e}")
 
 async def main():
     print("=== STARTING NBTC DEVICE SCRAPER ===")
     
     seen_ids = load_seen_ids()
-    is_first_run = len(seen_ids) == 0
     new_ids = set()
     new_devices = []
 
-    # Add some test devices if this is a debugging run
-    if is_first_run:
-        print("First run detected - adding test data to verify system works...")
-        test_devices = [
-            {
-                "id": "test_001",
-                "brand": "TEST_BRAND",
-                "model": "TEST_MODEL",
-                "subType": "Cellular Mobile",
-                "certificate_no": "TEST_CERT_001"
-            }
-        ]
-        
-        # Add test devices to simulate finding new devices
-        for device in test_devices:
-            device_id = device.get("id")
-            if device_id and device_id not in seen_ids:
-                new_devices.append(device)
-                new_ids.add(device_id)
-
-    try:
+    # Try multiple approaches to get data
+    print("Trying multiple data collection methods...")
+    
+    # Method 1: Direct API call
+    devices = await try_direct_api_call()
+    
+    # Method 2: Browser automation (if direct API failed)
+    if not devices:
+        print("Direct API failed, trying browser automation...")
         devices = await fetch_devices_with_browser()
-        print(f"=== SCRAPING RESULTS ===")
-        print(f"Total devices retrieved: {len(devices)}")
-        
-        for device in devices:
-            device_id = device.get("id") or device.get("certificate_no")
-            if device_id and device_id not in seen_ids:
-                new_devices.append(device)
-                new_ids.add(device_id)
-                print(f"NEW DEVICE FOUND: {device.get('brand')} {device.get('model')}")
-                
-    except Exception as e:
-        print(f"ERROR during scraping: {e}")
+    
+    print(f"Total devices retrieved: {len(devices)}")
+    
+    # Process devices
+    for device in devices:
+        device_id = device.get("id") or device.get("certificate_no")
+        if device_id and device_id not in seen_ids:
+            new_devices.append(device)
+            new_ids.add(device_id)
+            print(f"NEW DEVICE: {device.get('brand')} {device.get('model')}")
 
-    print(f"=== FINAL RESULTS ===")
-    print(f"Is first run: {is_first_run}")
     print(f"New devices found: {len(new_devices)}")
     
-    # Send notification logic
     if new_devices:
-        print(f"Saving {len(new_devices)} new devices to file...")
         with open("new_devices.json", "w", encoding="utf-8") as f:
             json.dump(new_devices, f, ensure_ascii=False, indent=2)
         
@@ -189,18 +208,15 @@ async def main():
             model = d.get('model', 'Unknown')
             cert = d.get('certificate_no', 'Unknown')
             device_id = d.get('id', '')
-            if brand == "TEST_BRAND":
-                msg += f"{i+1}. 🧪 TEST: System working! (This is test data)\n\n"
-            else:
-                link = f"https://mocheck.nbtc.go.th/equipment-detail/{device_id}" if device_id else "No link"
-                msg += f"{i+1}. Brand: {brand}\nModel: {model}\nCert: {cert}\nLink: {link}\n\n"
+            link = f"https://mocheck.nbtc.go.th/equipment-detail/{device_id}" if device_id else "No link"
+            msg += f"{i+1}. Brand: {brand}\nModel: {model}\nCert: {cert}\nLink: {link}\n\n"
         
         if len(new_devices) > 5:
             msg += f"...and {len(new_devices)-5} more devices."
         
         send_telegram_message(msg)
     else:
-        print("No new devices found.")
+        print("No new devices found this run.")
 
     # Update seen IDs
     all_ids = seen_ids.union(new_ids)
