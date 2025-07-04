@@ -14,38 +14,42 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def parse_devices_from_text(text):
-    """Parse device info from page text using regex patterns."""
+    """
+    Parse all likely cellular device lines from NBTC page text.
+    This will match any line that looks like a device model, regardless of brand.
+    """
     devices = []
     found_ids = set()
-    patterns = [
-        (r'(CPH\d{4})\s*\(([^)]+OPPO[^)]*)\)', "OPPO"),
-        (r'(CPH\d{4})\s*\(([^)]*)\)', "OPPO"),
-        (r'(\d{10,}[A-Z]+)\s*\((Xiaomi[^)]*)\)', "Xiaomi"),
-        (r'(SM-[A-Z]\d{3}[A-Z]*)\s*\(([^)]*Samsung[^)]*)\)', "Samsung"),
-        (r'(SM-[A-Z]\d{3}[A-Z]*)\s*\(([^)]*)\)', "Samsung"),
-        (r'(A\d{4})\s*\(([^)]*Apple[^)]*)\)', "Apple"),
-        (r'(A\d{4})\s*\(([^)]*iPhone[^)]*)\)', "Apple"),
-        (r'(A\d{4})\s*\(([^)]*iPad[^)]*)\)', "Apple"),
-        (r'(V\d{4})\s*\((vivo[^)]*)\)', "vivo"),
-        (r'(vivo \d+[A-Z]*)\s*\(([^)]*)\)', "vivo")
-    ]
-    for pattern, brand in patterns:
-        matches = re.findall(pattern, text, re.IGNORECASE)
-        for match in matches:
-            if isinstance(match, tuple) and len(match) >= 2:
-                model_code, description = match[0].strip(), match[1].strip()
-            else:
-                model_code, description = match.strip(), ""
+    lines = text.split('\n')
+    for line in lines:
+        line = line.strip()
+        if not line or len(line) < 5:
+            continue
+        # Match lines with a model code and "Mobile" or "Cellular" or Thai keywords
+        m = re.match(
+            r"^(.*?)([A-Z]{1,5}\d{3,}[A-Z0-9\-]*)\s*(.*?)(Mobile|Cellular|โทรศัพท์|สมาร์ทโฟน|Smartphone)?(.*)$",
+            line, re.IGNORECASE)
+        if m:
+            before, model_code, between, device_type, after = m.groups()
             if model_code and len(model_code) >= 4 and model_code not in found_ids:
-                device = {
+                # Try to guess brand from before/between/after
+                brand_guess = ""
+                for part in [before, between, after]:
+                    if part:
+                        word = part.strip().split()[0]
+                        if word and word.isalpha() and len(word) > 2:
+                            brand_guess = word
+                            break
+                if not brand_guess:
+                    brand_guess = "Unknown"
+                devices.append({
                     "id": model_code,
-                    "brand": brand,
+                    "brand": brand_guess,
                     "model": model_code,
-                    "description": description,
+                    "description": line,
                     "subType": "Cellular Mobile",
                     "certificate_no": model_code
-                }
-                devices.append(device)
+                })
                 found_ids.add(model_code)
     return devices
 
