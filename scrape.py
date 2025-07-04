@@ -95,8 +95,8 @@ def main():
 
     if new_devices:
         print(f"Found {len(new_devices)} new devices in Cellular Mobile:")
-        # Use ensure_ascii=True to avoid Unicode printing issues in GitHub Actions
-        print(json.dumps(new_devices, ensure_ascii=True, indent=2))
+        # DO NOT print device data - it causes encoding errors in GitHub Actions
+        # Save to file instead
         with open("new_devices.json", "w", encoding="utf-8") as f:
             json.dump(new_devices, f, ensure_ascii=False, indent=2)
         # Build Telegram message
