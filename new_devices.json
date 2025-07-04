@@ -1,9 +1,2578 @@
 [
   {
-    "id": "test_001",
-    "brand": "TEST_BRAND",
-    "model": "TEST_MODEL",
+    "id": "CPH2343",
+    "brand": "OPPO",
+    "model": "CPH2343",
+    "description": "OPPO Reno7 Z 5G",
     "subType": "Cellular Mobile",
-    "certificate_no": "TEST_CERT_001"
+    "certificate_no": "CPH2343"
+  },
+  {
+    "id": "CPH1809",
+    "brand": "OPPO",
+    "model": "CPH1809",
+    "description": "A5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1809"
+  },
+  {
+    "id": "CPH1831",
+    "brand": "OPPO",
+    "model": "CPH1831",
+    "description": "R15 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1831"
+  },
+  {
+    "id": "CPH1859",
+    "brand": "OPPO",
+    "model": "CPH1859",
+    "description": "F7 Youth",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1859"
+  },
+  {
+    "id": "CPH1877",
+    "brand": "OPPO",
+    "model": "CPH1877",
+    "description": "R17 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1877"
+  },
+  {
+    "id": "CPH1879",
+    "brand": "OPPO",
+    "model": "CPH1879",
+    "description": "R17",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1879"
+  },
+  {
+    "id": "CPH1901",
+    "brand": "OPPO",
+    "model": "CPH1901",
+    "description": "A7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1901"
+  },
+  {
+    "id": "CPH1907",
+    "brand": "OPPO",
+    "model": "CPH1907",
+    "description": "OPPO Reno2",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1907"
+  },
+  {
+    "id": "CPH1909",
+    "brand": "OPPO",
+    "model": "CPH1909",
+    "description": "A5s",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1909"
+  },
+  {
+    "id": "CPH1911",
+    "brand": "OPPO",
+    "model": "CPH1911",
+    "description": "F11",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1911"
+  },
+  {
+    "id": "CPH1917",
+    "brand": "OPPO",
+    "model": "CPH1917",
+    "description": "Reno",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1917"
+  },
+  {
+    "id": "CPH1919",
+    "brand": "OPPO",
+    "model": "CPH1919",
+    "description": "Reno 10x Zoom",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1919"
+  },
+  {
+    "id": "CPH1923",
+    "brand": "OPPO",
+    "model": "CPH1923",
+    "description": "A1K",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1923"
+  },
+  {
+    "id": "CPH1925",
+    "brand": "OPPO",
+    "model": "CPH1925",
+    "description": "A1s",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1925"
+  },
+  {
+    "id": "CPH1931",
+    "brand": "OPPO",
+    "model": "CPH1931",
+    "description": "A5 2020",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1931"
+  },
+  {
+    "id": "CPH1933",
+    "brand": "OPPO",
+    "model": "CPH1933",
+    "description": "A5 2020",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1933"
+  },
+  {
+    "id": "CPH1937",
+    "brand": "OPPO",
+    "model": "CPH1937",
+    "description": "A8 2020 8G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1937"
+  },
+  {
+    "id": "CPH1955",
+    "brand": "OPPO",
+    "model": "CPH1955",
+    "description": "K3",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1955"
+  },
+  {
+    "id": "CPH1969",
+    "brand": "OPPO",
+    "model": "CPH1969",
+    "description": "F11 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1969"
+  },
+  {
+    "id": "CPH1976",
+    "brand": "OPPO",
+    "model": "CPH1976",
+    "description": "K5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1976"
+  },
+  {
+    "id": "CPH1985",
+    "brand": "OPPO",
+    "model": "CPH1985",
+    "description": "F11 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1985"
+  },
+  {
+    "id": "CPH1989",
+    "brand": "OPPO",
+    "model": "CPH1989",
+    "description": "OPPO Reno2 F",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH1989"
+  },
+  {
+    "id": "CPH2001",
+    "brand": "OPPO",
+    "model": "CPH2001",
+    "description": "OPPO A91",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2001"
+  },
+  {
+    "id": "CPH2015",
+    "brand": "OPPO",
+    "model": "CPH2015",
+    "description": "OPPO A31",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2015"
+  },
+  {
+    "id": "CPH2023",
+    "brand": "OPPO",
+    "model": "CPH2023",
+    "description": "OPPO Find X2 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2023"
+  },
+  {
+    "id": "CPH2025",
+    "brand": "OPPO",
+    "model": "CPH2025",
+    "description": "OPPO Find X2 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2025"
+  },
+  {
+    "id": "CPH2037",
+    "brand": "OPPO",
+    "model": "CPH2037",
+    "description": "OPPO Reno3 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2037"
+  },
+  {
+    "id": "CPH2059",
+    "brand": "OPPO",
+    "model": "CPH2059",
+    "description": "OPPO A92",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2059"
+  },
+  {
+    "id": "CPH2065",
+    "brand": "OPPO",
+    "model": "CPH2065",
+    "description": "OPPO Reno4 Z 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2065"
+  },
+  {
+    "id": "CPH2083",
+    "brand": "OPPO",
+    "model": "CPH2083",
+    "description": "OPPO A12",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2083"
+  },
+  {
+    "id": "CPH2089",
+    "brand": "OPPO",
+    "model": "CPH2089",
+    "description": "OPPO Reno4 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2089"
+  },
+  {
+    "id": "CPH2095",
+    "brand": "OPPO",
+    "model": "CPH2095",
+    "description": "OPPO A73",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2095"
+  },
+  {
+    "id": "CPH2113",
+    "brand": "OPPO",
+    "model": "CPH2113",
+    "description": "OPPO Reno4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2113"
+  },
+  {
+    "id": "CPH2121",
+    "brand": "OPPO",
+    "model": "CPH2121",
+    "description": "OPPO A93",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2121"
+  },
+  {
+    "id": "CPH2127",
+    "brand": "OPPO",
+    "model": "CPH2127",
+    "description": "OPPO A53",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2127"
+  },
+  {
+    "id": "CPH2137",
+    "brand": "OPPO",
+    "model": "CPH2137",
+    "description": "OPPO A33",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2137"
+  },
+  {
+    "id": "CPH2145",
+    "brand": "OPPO",
+    "model": "CPH2145",
+    "description": "OPPO Reno5 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2145"
+  },
+  {
+    "id": "CPH2159",
+    "brand": "OPPO",
+    "model": "CPH2159",
+    "description": "OPPO Reno5 Marvel Edition",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2159"
+  },
+  {
+    "id": "CPH2173",
+    "brand": "OPPO",
+    "model": "CPH2173",
+    "description": "OPPO Find X3 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2173"
+  },
+  {
+    "id": "CPH2179",
+    "brand": "OPPO",
+    "model": "CPH2179",
+    "description": "OPPO A15s",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2179"
+  },
+  {
+    "id": "CPH2185",
+    "brand": "OPPO",
+    "model": "CPH2185",
+    "description": "OPPO A15",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2185"
+  },
+  {
+    "id": "CPH2197",
+    "brand": "OPPO",
+    "model": "CPH2197",
+    "description": "OPPO A74 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2197"
+  },
+  {
+    "id": "CPH2201",
+    "brand": "OPPO",
+    "model": "CPH2201",
+    "description": "OPPO Reno5 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2201"
+  },
+  {
+    "id": "CPH2203",
+    "brand": "OPPO",
+    "model": "CPH2203",
+    "description": "OPPO A94",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2203"
+  },
+  {
+    "id": "CPH2219",
+    "brand": "OPPO",
+    "model": "CPH2219",
+    "description": "OPPO A74",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2219"
+  },
+  {
+    "id": "CPH2237",
+    "brand": "OPPO",
+    "model": "CPH2237",
+    "description": "OPPO Reno6 Z 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2237"
+  },
+  {
+    "id": "CPH2239",
+    "brand": "OPPO",
+    "model": "CPH2239",
+    "description": "OPPO A54",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2239"
+  },
+  {
+    "id": "CPH2247",
+    "brand": "OPPO",
+    "model": "CPH2247",
+    "description": "OPPO Reno6 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2247"
+  },
+  {
+    "id": "CPH2251",
+    "brand": "OPPO",
+    "model": "CPH2251",
+    "description": "OPPO Reno6 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2251"
+  },
+  {
+    "id": "CPH2269",
+    "brand": "OPPO",
+    "model": "CPH2269",
+    "description": "OPPO A16",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2269"
+  },
+  {
+    "id": "CPH2293",
+    "brand": "OPPO",
+    "model": "CPH2293",
+    "description": "OPPO Reno7 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2293"
+  },
+  {
+    "id": "CPH2305",
+    "brand": "OPPO",
+    "model": "CPH2305",
+    "description": "OPPO Find X5 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2305"
+  },
+  {
+    "id": "CPH2325",
+    "brand": "OPPO",
+    "model": "CPH2325",
+    "description": "OPPO A55",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2325"
+  },
+  {
+    "id": "CPH2333",
+    "brand": "OPPO",
+    "model": "CPH2333",
+    "description": "OPPO A96",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2333"
+  },
+  {
+    "id": "CPH2339",
+    "brand": "OPPO",
+    "model": "CPH2339",
+    "description": "OPPO A77 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2339"
+  },
+  {
+    "id": "CPH2349",
+    "brand": "OPPO",
+    "model": "CPH2349",
+    "description": "OPPO A16k",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2349"
+  },
+  {
+    "id": "CPH2357",
+    "brand": "OPPO",
+    "model": "CPH2357",
+    "description": "OPPO Reno8 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2357"
+  },
+  {
+    "id": "CPH2359",
+    "brand": "OPPO",
+    "model": "CPH2359",
+    "description": "OPPO Reno8 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2359"
+  },
+  {
+    "id": "CPH2365",
+    "brand": "OPPO",
+    "model": "CPH2365",
+    "description": "OPPO A95",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2365"
+  },
+  {
+    "id": "CPH2371",
+    "brand": "OPPO",
+    "model": "CPH2371",
+    "description": "OPPO Reno7 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2371"
+  },
+  {
+    "id": "CPH2375",
+    "brand": "OPPO",
+    "model": "CPH2375",
+    "description": "OPPO A76",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2375"
+  },
+  {
+    "id": "CPH2385",
+    "brand": "OPPO",
+    "model": "CPH2385",
+    "description": "OPPO A77",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2385"
+  },
+  {
+    "id": "CPH2387",
+    "brand": "OPPO",
+    "model": "CPH2387",
+    "description": "OPPO A57",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2387"
+  },
+  {
+    "id": "CPH2399",
+    "brand": "OPPO",
+    "model": "CPH2399",
+    "description": "OnePlus Nord 2T 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2399"
+  },
+  {
+    "id": "CPH2409",
+    "brand": "OPPO",
+    "model": "CPH2409",
+    "description": "OnePlus Nord CE 2 Lite 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2409"
+  },
+  {
+    "id": "CPH2415",
+    "brand": "OPPO",
+    "model": "CPH2415",
+    "description": "OnePlus 10T 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2415"
+  },
+  {
+    "id": "CPH2437",
+    "brand": "OPPO",
+    "model": "CPH2437",
+    "description": "OPPO Find N2 Flip",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2437"
+  },
+  {
+    "id": "CPH2449",
+    "brand": "OPPO",
+    "model": "CPH2449",
+    "description": "OnePlus 11 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2449"
+  },
+  {
+    "id": "CPH2457",
+    "brand": "OPPO",
+    "model": "CPH2457",
+    "description": "OPPO Reno8 Z 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2457"
+  },
+  {
+    "id": "CPH2465",
+    "brand": "OPPO",
+    "model": "CPH2465",
+    "description": "OnePlus Nord CE 3 Lite 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2465"
+  },
+  {
+    "id": "CPH2469",
+    "brand": "OPPO",
+    "model": "CPH2469",
+    "description": "OnePlus Nord N20 SE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2469"
+  },
+  {
+    "id": "CPH2471",
+    "brand": "OPPO",
+    "model": "CPH2471",
+    "description": "OPPO A17k",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2471"
+  },
+  {
+    "id": "CPH2473",
+    "brand": "OPPO",
+    "model": "CPH2473",
+    "description": "OPPO A77s",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2473"
+  },
+  {
+    "id": "CPH2477",
+    "brand": "OPPO",
+    "model": "CPH2477",
+    "description": "OPPO A17",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2477"
+  },
+  {
+    "id": "CPH2483",
+    "brand": "OPPO",
+    "model": "CPH2483",
+    "description": "OPPO A78 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2483"
+  },
+  {
+    "id": "CPH2493",
+    "brand": "OPPO",
+    "model": "CPH2493",
+    "description": "OnePlus Nord 3 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2493"
+  },
+  {
+    "id": "CPH2499",
+    "brand": "OPPO",
+    "model": "CPH2499",
+    "description": "OPPO Find N3",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2499"
+  },
+  {
+    "id": "CPH2505",
+    "brand": "OPPO",
+    "model": "CPH2505",
+    "description": "OPPO Reno8 T 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2505"
+  },
+  {
+    "id": "CPH2519",
+    "brand": "OPPO",
+    "model": "CPH2519",
+    "description": "OPPO Find N3 Flip",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2519"
+  },
+  {
+    "id": "CPH2521",
+    "brand": "OPPO",
+    "model": "CPH2521",
+    "description": "OPPO Reno10 Pro+ 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2521"
+  },
+  {
+    "id": "CPH2525",
+    "brand": "OPPO",
+    "model": "CPH2525",
+    "description": "OPPO Reno10 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2525"
+  },
+  {
+    "id": "CPH2529",
+    "brand": "OPPO",
+    "model": "CPH2529",
+    "description": "OPPO A98 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2529"
+  },
+  {
+    "id": "CPH2531",
+    "brand": "OPPO",
+    "model": "CPH2531",
+    "description": "OPPO Reno10 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2531"
+  },
+  {
+    "id": "CPH2557",
+    "brand": "OPPO",
+    "model": "CPH2557",
+    "description": "OPPO A79 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2557"
+  },
+  {
+    "id": "CPH2565",
+    "brand": "OPPO",
+    "model": "CPH2565",
+    "description": "OPPO A78",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2565"
+  },
+  {
+    "id": "CPH2577",
+    "brand": "OPPO",
+    "model": "CPH2577",
+    "description": "OPPO A58",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2577"
+  },
+  {
+    "id": "CPH2579",
+    "brand": "OPPO",
+    "model": "CPH2579",
+    "description": "OPPO A38",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2579"
+  },
+  {
+    "id": "CPH2581",
+    "brand": "OPPO",
+    "model": "CPH2581",
+    "description": "OnePlus 12",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2581"
+  },
+  {
+    "id": "CPH2591",
+    "brand": "OPPO",
+    "model": "CPH2591",
+    "description": "OPPO A18",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2591"
+  },
+  {
+    "id": "CPH2599",
+    "brand": "OPPO",
+    "model": "CPH2599",
+    "description": "OPPO Reno11 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2599"
+  },
+  {
+    "id": "CPH2603",
+    "brand": "OPPO",
+    "model": "CPH2603",
+    "description": "OPPO Reno11 F 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2603"
+  },
+  {
+    "id": "CPH2607",
+    "brand": "OPPO",
+    "model": "CPH2607",
+    "description": "OPPO Reno11 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2607"
+  },
+  {
+    "id": "CPH2609",
+    "brand": "OPPO",
+    "model": "CPH2609",
+    "description": "OnePlus 12R",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2609"
+  },
+  {
+    "id": "CPH2621",
+    "brand": "OPPO",
+    "model": "CPH2621",
+    "description": "OneOlus Nord CE 4 Lite 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2621"
+  },
+  {
+    "id": "CPH2625",
+    "brand": "OPPO",
+    "model": "CPH2625",
+    "description": "OPPO Reno12 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2625"
+  },
+  {
+    "id": "CPH2629",
+    "brand": "OPPO",
+    "model": "CPH2629",
+    "description": "OPPO Reno12 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2629"
+  },
+  {
+    "id": "CPH2631",
+    "brand": "OPPO",
+    "model": "CPH2631",
+    "description": "OPPO A60",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2631"
+  },
+  {
+    "id": "CPH2637",
+    "brand": "OPPO",
+    "model": "CPH2637",
+    "description": "OPPO Reno12 F 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2637"
+  },
+  {
+    "id": "CPH2639",
+    "brand": "OPPO",
+    "model": "CPH2639",
+    "description": "OPPO A3 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2639"
+  },
+  {
+    "id": "CPH2641",
+    "brand": "OPPO",
+    "model": "CPH2641",
+    "description": "OPPO A3x",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2641"
+  },
+  {
+    "id": "CPH2645",
+    "brand": "OPPO",
+    "model": "CPH2645",
+    "description": "OnePlus 13R",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2645"
+  },
+  {
+    "id": "CPH2651",
+    "brand": "OPPO",
+    "model": "CPH2651",
+    "description": "OPPO Find X8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2651"
+  },
+  {
+    "id": "CPH2653",
+    "brand": "OPPO",
+    "model": "CPH2653",
+    "description": "OnePlus 13",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2653"
+  },
+  {
+    "id": "CPH2659",
+    "brand": "OPPO",
+    "model": "CPH2659",
+    "description": "OPPO Find X8 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2659"
+  },
+  {
+    "id": "CPH2663",
+    "brand": "OPPO",
+    "model": "CPH2663",
+    "description": "OnePlus Nord 4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2663"
+  },
+  {
+    "id": "CPH2669",
+    "brand": "OPPO",
+    "model": "CPH2669",
+    "description": "OPPO A3",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2669"
+  },
+  {
+    "id": "CPH2671",
+    "brand": "OPPO",
+    "model": "CPH2671",
+    "description": "OPPO Find N5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2671"
+  },
+  {
+    "id": "CPH2689",
+    "brand": "OPPO",
+    "model": "CPH2689",
+    "description": "OPPO Reno13 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2689"
+  },
+  {
+    "id": "CPH2695",
+    "brand": "OPPO",
+    "model": "CPH2695",
+    "description": "OPPO A5 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2695"
+  },
+  {
+    "id": "CPH2697",
+    "brand": "OPPO",
+    "model": "CPH2697",
+    "description": "OPPO Reno13 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2697"
+  },
+  {
+    "id": "CPH2699",
+    "brand": "OPPO",
+    "model": "CPH2699",
+    "description": "OPPO Reno13 F 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2699"
+  },
+  {
+    "id": "CPH2711",
+    "brand": "OPPO",
+    "model": "CPH2711",
+    "description": "OPPO A5 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2711"
+  },
+  {
+    "id": "CPH2725",
+    "brand": "OPPO",
+    "model": "CPH2725",
+    "description": "OPPO A5x",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2725"
+  },
+  {
+    "id": "CPH2727",
+    "brand": "OPPO",
+    "model": "CPH2727",
+    "description": "OPPO A5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2727"
+  },
+  {
+    "id": "CPH2735",
+    "brand": "OPPO",
+    "model": "CPH2735",
+    "description": "OPPO A5 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2735"
+  },
+  {
+    "id": "CPH2737",
+    "brand": "OPPO",
+    "model": "CPH2737",
+    "description": "OPPO Reno14 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2737"
+  },
+  {
+    "id": "CPH2739",
+    "brand": "OPPO",
+    "model": "CPH2739",
+    "description": "OPPO Reno14 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2739"
+  },
+  {
+    "id": "CPH2743",
+    "brand": "OPPO",
+    "model": "CPH2743",
+    "description": "OPPO Reno14 F 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2743"
+  },
+  {
+    "id": "CPH2755",
+    "brand": "OPPO",
+    "model": "CPH2755",
+    "description": "OPPO A5i Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2755"
+  },
+  {
+    "id": "CPH2773",
+    "brand": "OPPO",
+    "model": "CPH2773",
+    "description": "OPPO A5i",
+    "subType": "Cellular Mobile",
+    "certificate_no": "CPH2773"
+  },
+  {
+    "id": "SM-F711B",
+    "brand": "Samsung",
+    "model": "SM-F711B",
+    "description": "Galaxy Z Flip3 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F711B"
+  },
+  {
+    "id": "SM-F721B",
+    "brand": "Samsung",
+    "model": "SM-F721B",
+    "description": "Galaxy Z Flip4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F721B"
+  },
+  {
+    "id": "SM-F731B",
+    "brand": "Samsung",
+    "model": "SM-F731B",
+    "description": "Galaxy Z Flip5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F731B"
+  },
+  {
+    "id": "SM-F741B",
+    "brand": "Samsung",
+    "model": "SM-F741B",
+    "description": "Galaxy Z Flip6",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F741B"
+  },
+  {
+    "id": "SM-F761B",
+    "brand": "Samsung",
+    "model": "SM-F761B",
+    "description": "Galaxy Z Flip7 FE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F761B"
+  },
+  {
+    "id": "SM-F766B",
+    "brand": "Samsung",
+    "model": "SM-F766B",
+    "description": "Galaxy Z Flip7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F766B"
+  },
+  {
+    "id": "SM-F900F",
+    "brand": "Samsung",
+    "model": "SM-F900F",
+    "description": "Galaxy Fold",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F900F"
+  },
+  {
+    "id": "SM-F916B",
+    "brand": "Samsung",
+    "model": "SM-F916B",
+    "description": "Galaxy Z Fold2 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-F916B"
+  },
+  {
+    "id": "SM-G390Y",
+    "brand": "Samsung",
+    "model": "SM-G390Y",
+    "description": "XCover 4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-G390Y"
+  },
+  {
+    "id": "SM-G556B",
+    "brand": "Samsung",
+    "model": "SM-G556B",
+    "description": "Galaxy Xcover7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-G556B"
+  },
+  {
+    "id": "SM-G766B",
+    "brand": "Samsung",
+    "model": "SM-G766B",
+    "description": "Galaxy XCover 7 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-G766B"
+  },
+  {
+    "id": "SM-G950FD",
+    "brand": "Samsung",
+    "model": "SM-G950FD",
+    "description": "S8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-G950FD"
+  },
+  {
+    "id": "SM-G955FD",
+    "brand": "Samsung",
+    "model": "SM-G955FD",
+    "description": "S8+",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-G955FD"
+  },
+  {
+    "id": "SM-L305F",
+    "brand": "Samsung",
+    "model": "SM-L305F",
+    "description": "Galaxy Watch7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-L305F"
+  },
+  {
+    "id": "SM-L315F",
+    "brand": "Samsung",
+    "model": "SM-L315F",
+    "description": "Galaxy Watch7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-L315F"
+  },
+  {
+    "id": "SM-L325F",
+    "brand": "Samsung",
+    "model": "SM-L325F",
+    "description": "Galaxy Watch8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-L325F"
+  },
+  {
+    "id": "SM-L335F",
+    "brand": "Samsung",
+    "model": "SM-L335F",
+    "description": "Galaxy Watch8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-L335F"
+  },
+  {
+    "id": "SM-L505F",
+    "brand": "Samsung",
+    "model": "SM-L505F",
+    "description": "Galaxy Watch8 Classic",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-L505F"
+  },
+  {
+    "id": "SM-L705F",
+    "brand": "Samsung",
+    "model": "SM-L705F",
+    "description": "Galaxy Watch Ultra",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-L705F"
+  },
+  {
+    "id": "SM-N960F",
+    "brand": "Samsung",
+    "model": "SM-N960F",
+    "description": "Galaxy Note 9",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-N960F"
+  },
+  {
+    "id": "SM-P205",
+    "brand": "Samsung",
+    "model": "SM-P205",
+    "description": "Galaxy Tab A with S Pen",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-P205"
+  },
+  {
+    "id": "SM-P615",
+    "brand": "Samsung",
+    "model": "SM-P615",
+    "description": "Galaxy Tab S6 lite",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-P615"
+  },
+  {
+    "id": "SM-P619",
+    "brand": "Samsung",
+    "model": "SM-P619",
+    "description": "Galaxy Tab S6 Lite",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-P619"
+  },
+  {
+    "id": "SM-P625",
+    "brand": "Samsung",
+    "model": "SM-P625",
+    "description": "Galaxy Tab S6 Lite",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-P625"
+  },
+  {
+    "id": "SM-R750",
+    "brand": "Samsung",
+    "model": "SM-R750",
+    "description": "2019",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R750"
+  },
+  {
+    "id": "SM-R750B",
+    "brand": "Samsung",
+    "model": "SM-R750B",
+    "description": "2019",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R750B"
+  },
+  {
+    "id": "SM-R805F",
+    "brand": "Samsung",
+    "model": "SM-R805F",
+    "description": "Galaxy watch (4G LTE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R805F"
+  },
+  {
+    "id": "SM-R815F",
+    "brand": "Samsung",
+    "model": "SM-R815F",
+    "description": "Galaxy watch (4G LTE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R815F"
+  },
+  {
+    "id": "SM-R825F",
+    "brand": "Samsung",
+    "model": "SM-R825F",
+    "description": "Galaxy Watch Active2",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R825F"
+  },
+  {
+    "id": "SM-R835F",
+    "brand": "Samsung",
+    "model": "SM-R835F",
+    "description": "Galaxy Watch Active2",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R835F"
+  },
+  {
+    "id": "SM-R845F",
+    "brand": "Samsung",
+    "model": "SM-R845F",
+    "description": "Galaxy Watch3 45mm",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R845F"
+  },
+  {
+    "id": "SM-R855F",
+    "brand": "Samsung",
+    "model": "SM-R855F",
+    "description": "Galaxy Watch3 41mm",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R855F"
+  },
+  {
+    "id": "SM-R865F",
+    "brand": "Samsung",
+    "model": "SM-R865F",
+    "description": "Galaxy Watch4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R865F"
+  },
+  {
+    "id": "SM-R875F",
+    "brand": "Samsung",
+    "model": "SM-R875F",
+    "description": "Galaxy Watch4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R875F"
+  },
+  {
+    "id": "SM-R885F",
+    "brand": "Samsung",
+    "model": "SM-R885F",
+    "description": "Galaxy Watch4 Classic",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R885F"
+  },
+  {
+    "id": "SM-R895F",
+    "brand": "Samsung",
+    "model": "SM-R895F",
+    "description": "Galaxy Watch4 Classic",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R895F"
+  },
+  {
+    "id": "SM-R905F",
+    "brand": "Samsung",
+    "model": "SM-R905F",
+    "description": "Galaxy Watch5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R905F"
+  },
+  {
+    "id": "SM-R915F",
+    "brand": "Samsung",
+    "model": "SM-R915F",
+    "description": "Galaxy Watch5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R915F"
+  },
+  {
+    "id": "SM-R925F",
+    "brand": "Samsung",
+    "model": "SM-R925F",
+    "description": "Galaxy Watch5 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R925F"
+  },
+  {
+    "id": "SM-R935F",
+    "brand": "Samsung",
+    "model": "SM-R935F",
+    "description": "Galaxy Watch 6",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R935F"
+  },
+  {
+    "id": "SM-R945F",
+    "brand": "Samsung",
+    "model": "SM-R945F",
+    "description": "Galaxy Watch 6",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R945F"
+  },
+  {
+    "id": "SM-R955F",
+    "brand": "Samsung",
+    "model": "SM-R955F",
+    "description": "Galaxy Watch6 Classic",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R955F"
+  },
+  {
+    "id": "SM-R965F",
+    "brand": "Samsung",
+    "model": "SM-R965F",
+    "description": "Galaxy Watch6 Classic",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-R965F"
+  },
+  {
+    "id": "SM-T225",
+    "brand": "Samsung",
+    "model": "SM-T225",
+    "description": "Galaxy Tab A7 Lite",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T225"
+  },
+  {
+    "id": "SM-T295",
+    "brand": "Samsung",
+    "model": "SM-T295",
+    "description": "Galaxy Tab A",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T295"
+  },
+  {
+    "id": "SM-T385",
+    "brand": "Samsung",
+    "model": "SM-T385",
+    "description": "J3 Pro (2017",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T385"
+  },
+  {
+    "id": "SM-T395",
+    "brand": "Samsung",
+    "model": "SM-T395",
+    "description": "Tab Active 2",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T395"
+  },
+  {
+    "id": "SM-T505",
+    "brand": "Samsung",
+    "model": "SM-T505",
+    "description": "Galaxy Tab A7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T505"
+  },
+  {
+    "id": "SM-T515",
+    "brand": "Samsung",
+    "model": "SM-T515",
+    "description": "Galaxy Tab A",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T515"
+  },
+  {
+    "id": "SM-T545",
+    "brand": "Samsung",
+    "model": "SM-T545",
+    "description": "Galaxy Tab Active Pro 10.1",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T545"
+  },
+  {
+    "id": "SM-T575",
+    "brand": "Samsung",
+    "model": "SM-T575",
+    "description": "Galaxy Tab Active3",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T575"
+  },
+  {
+    "id": "SM-T595",
+    "brand": "Samsung",
+    "model": "SM-T595",
+    "description": "Galaxy Tab A 1.05",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T595"
+  },
+  {
+    "id": "SM-T636B",
+    "brand": "Samsung",
+    "model": "SM-T636B",
+    "description": "Galaxy Tab Active 4 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T636B"
+  },
+  {
+    "id": "SM-T725",
+    "brand": "Samsung",
+    "model": "SM-T725",
+    "description": "Galaxy Tab S5e",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T725"
+  },
+  {
+    "id": "SM-T735",
+    "brand": "Samsung",
+    "model": "SM-T735",
+    "description": "Galaxy Tab S7 FE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T735"
+  },
+  {
+    "id": "SM-T736B",
+    "brand": "Samsung",
+    "model": "SM-T736B",
+    "description": "Galaxy Tab S7 FE 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T736B"
+  },
+  {
+    "id": "SM-T825Y",
+    "brand": "Samsung",
+    "model": "SM-T825Y",
+    "description": "Tab S3",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T825Y"
+  },
+  {
+    "id": "SM-T835",
+    "brand": "Samsung",
+    "model": "SM-T835",
+    "description": "Tab S4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T835"
+  },
+  {
+    "id": "SM-T865",
+    "brand": "Samsung",
+    "model": "SM-T865",
+    "description": "Galaxy Tab S6 Tablet",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T865"
+  },
+  {
+    "id": "SM-T875",
+    "brand": "Samsung",
+    "model": "SM-T875",
+    "description": "Galaxy Tab S7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T875"
+  },
+  {
+    "id": "SM-T975",
+    "brand": "Samsung",
+    "model": "SM-T975",
+    "description": "Galaxy Tab S7+",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T975"
+  },
+  {
+    "id": "SM-T976B",
+    "brand": "Samsung",
+    "model": "SM-T976B",
+    "description": "Galaxy Tab S7+5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-T976B"
+  },
+  {
+    "id": "SM-X115",
+    "brand": "Samsung",
+    "model": "SM-X115",
+    "description": "Galaxy Tab A9",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X115"
+  },
+  {
+    "id": "SM-X205",
+    "brand": "Samsung",
+    "model": "SM-X205",
+    "description": "Galaxy Tab A8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X205"
+  },
+  {
+    "id": "SM-X216B",
+    "brand": "Samsung",
+    "model": "SM-X216B",
+    "description": "Galaxy Tab A9+ 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X216B"
+  },
+  {
+    "id": "SM-X306B",
+    "brand": "Samsung",
+    "model": "SM-X306B",
+    "description": "Galaxy Tab Active5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X306B"
+  },
+  {
+    "id": "SM-X356B",
+    "brand": "Samsung",
+    "model": "SM-X356B",
+    "description": "Galaxy Tab Active5 Pro 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X356B"
+  },
+  {
+    "id": "SM-X516B",
+    "brand": "Samsung",
+    "model": "SM-X516B",
+    "description": "Galaxy Tab S9 FE 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X516B"
+  },
+  {
+    "id": "SM-X526B",
+    "brand": "Samsung",
+    "model": "SM-X526B",
+    "description": "Galaxy Tab S10 FE 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X526B"
+  },
+  {
+    "id": "SM-X616B",
+    "brand": "Samsung",
+    "model": "SM-X616B",
+    "description": "Galaxy Tab S9 FE+ 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X616B"
+  },
+  {
+    "id": "SM-X626B",
+    "brand": "Samsung",
+    "model": "SM-X626B",
+    "description": "Galaxy Tab S10 FE+ 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X626B"
+  },
+  {
+    "id": "SM-X706B",
+    "brand": "Samsung",
+    "model": "SM-X706B",
+    "description": "Galaxy Tab S8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X706B"
+  },
+  {
+    "id": "SM-X716B",
+    "brand": "Samsung",
+    "model": "SM-X716B",
+    "description": "Galaxy Tab S9",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X716B"
+  },
+  {
+    "id": "SM-X806B",
+    "brand": "Samsung",
+    "model": "SM-X806B",
+    "description": "Galaxy Tab S8+",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X806B"
+  },
+  {
+    "id": "SM-X816B",
+    "brand": "Samsung",
+    "model": "SM-X816B",
+    "description": "Galaxy Tab S9+",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X816B"
+  },
+  {
+    "id": "SM-X826B",
+    "brand": "Samsung",
+    "model": "SM-X826B",
+    "description": "Galaxy Tab S10+ 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X826B"
+  },
+  {
+    "id": "SM-X906B",
+    "brand": "Samsung",
+    "model": "SM-X906B",
+    "description": "Galaxy Tab S8 ultra",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X906B"
+  },
+  {
+    "id": "SM-X916B",
+    "brand": "Samsung",
+    "model": "SM-X916B",
+    "description": "Galaxy Tab S9 Ultra",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X916B"
+  },
+  {
+    "id": "SM-X926B",
+    "brand": "Samsung",
+    "model": "SM-X926B",
+    "description": "Galaxy Tab S10 Ultra 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "SM-X926B"
+  },
+  {
+    "id": "A1241",
+    "brand": "Apple",
+    "model": "A1241",
+    "description": "iPhone",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1241"
+  },
+  {
+    "id": "A1303",
+    "brand": "Apple",
+    "model": "A1303",
+    "description": "iPhone",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1303"
+  },
+  {
+    "id": "A1332",
+    "brand": "Apple",
+    "model": "A1332",
+    "description": "iPhone 4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1332"
+  },
+  {
+    "id": "A1387",
+    "brand": "Apple",
+    "model": "A1387",
+    "description": "iPhone 4S",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1387"
+  },
+  {
+    "id": "A1429",
+    "brand": "Apple",
+    "model": "A1429",
+    "description": "iPhone 5",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1429"
+  },
+  {
+    "id": "A1687",
+    "brand": "Apple",
+    "model": "A1687",
+    "description": "iPhone 6s Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1687"
+  },
+  {
+    "id": "A1688",
+    "brand": "Apple",
+    "model": "A1688",
+    "description": "iPhone 6s",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1688"
+  },
+  {
+    "id": "A1723",
+    "brand": "Apple",
+    "model": "A1723",
+    "description": "iPhone SE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1723"
+  },
+  {
+    "id": "A1778",
+    "brand": "Apple",
+    "model": "A1778",
+    "description": "iPhone 7",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1778"
+  },
+  {
+    "id": "A1784",
+    "brand": "Apple",
+    "model": "A1784",
+    "description": "iPhone 7 Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1784"
+  },
+  {
+    "id": "A1863",
+    "brand": "Apple",
+    "model": "A1863",
+    "description": "iPhone 8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1863"
+  },
+  {
+    "id": "A1864",
+    "brand": "Apple",
+    "model": "A1864",
+    "description": "iPhone 8 Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1864"
+  },
+  {
+    "id": "A1865",
+    "brand": "Apple",
+    "model": "A1865",
+    "description": "iPhone X",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1865"
+  },
+  {
+    "id": "A1897",
+    "brand": "Apple",
+    "model": "A1897",
+    "description": "iPhone 8 Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1897"
+  },
+  {
+    "id": "A1901",
+    "brand": "Apple",
+    "model": "A1901",
+    "description": "iPhone X",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1901"
+  },
+  {
+    "id": "A1905",
+    "brand": "Apple",
+    "model": "A1905",
+    "description": "iPhone 8",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1905"
+  },
+  {
+    "id": "A1920",
+    "brand": "Apple",
+    "model": "A1920",
+    "description": "iPhone XS",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1920"
+  },
+  {
+    "id": "A1921",
+    "brand": "Apple",
+    "model": "A1921",
+    "description": "iPhone XS Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1921"
+  },
+  {
+    "id": "A1984",
+    "brand": "Apple",
+    "model": "A1984",
+    "description": "iPhone XR",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1984"
+  },
+  {
+    "id": "A2097",
+    "brand": "Apple",
+    "model": "A2097",
+    "description": "iPhone XS",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2097"
+  },
+  {
+    "id": "A2101",
+    "brand": "Apple",
+    "model": "A2101",
+    "description": "iPhone XS Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2101"
+  },
+  {
+    "id": "A2105",
+    "brand": "Apple",
+    "model": "A2105",
+    "description": "iPhone XR",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2105"
+  },
+  {
+    "id": "A2111",
+    "brand": "Apple",
+    "model": "A2111",
+    "description": "iPhone 11",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2111"
+  },
+  {
+    "id": "A2160",
+    "brand": "Apple",
+    "model": "A2160",
+    "description": "iPhone 11 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2160"
+  },
+  {
+    "id": "A2161",
+    "brand": "Apple",
+    "model": "A2161",
+    "description": "iPhone 11 Pro Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2161"
+  },
+  {
+    "id": "A2215",
+    "brand": "Apple",
+    "model": "A2215",
+    "description": "iPhone 11 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2215"
+  },
+  {
+    "id": "A2218",
+    "brand": "Apple",
+    "model": "A2218",
+    "description": "iPhone 11 Pro Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2218"
+  },
+  {
+    "id": "A2221",
+    "brand": "Apple",
+    "model": "A2221",
+    "description": "iPhone 11",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2221"
+  },
+  {
+    "id": "A2296",
+    "brand": "Apple",
+    "model": "A2296",
+    "description": "iPhone SE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2296"
+  },
+  {
+    "id": "A2399",
+    "brand": "Apple",
+    "model": "A2399",
+    "description": "iPhone 12 mini",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2399"
+  },
+  {
+    "id": "A2403",
+    "brand": "Apple",
+    "model": "A2403",
+    "description": "iPhone 12",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2403"
+  },
+  {
+    "id": "A2407",
+    "brand": "Apple",
+    "model": "A2407",
+    "description": "iPhone 12 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2407"
+  },
+  {
+    "id": "A2411",
+    "brand": "Apple",
+    "model": "A2411",
+    "description": "iPhone 12 Pro Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2411"
+  },
+  {
+    "id": "A2628",
+    "brand": "Apple",
+    "model": "A2628",
+    "description": "iPhone 13 mini",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2628"
+  },
+  {
+    "id": "A2633",
+    "brand": "Apple",
+    "model": "A2633",
+    "description": "iPhone 13",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2633"
+  },
+  {
+    "id": "A2638",
+    "brand": "Apple",
+    "model": "A2638",
+    "description": "iPhone 13 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2638"
+  },
+  {
+    "id": "A2643",
+    "brand": "Apple",
+    "model": "A2643",
+    "description": "iPhone 13 Pro max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2643"
+  },
+  {
+    "id": "A2783",
+    "brand": "Apple",
+    "model": "A2783",
+    "description": "iPhone SE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2783"
+  },
+  {
+    "id": "A2882",
+    "brand": "Apple",
+    "model": "A2882",
+    "description": "iPhone 14",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2882"
+  },
+  {
+    "id": "A2886",
+    "brand": "Apple",
+    "model": "A2886",
+    "description": "iPhone 14 Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2886"
+  },
+  {
+    "id": "A2890",
+    "brand": "Apple",
+    "model": "A2890",
+    "description": "iPhone 14 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2890"
+  },
+  {
+    "id": "A2894",
+    "brand": "Apple",
+    "model": "A2894",
+    "description": "iPhone 14 Pro Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2894"
+  },
+  {
+    "id": "A3090",
+    "brand": "Apple",
+    "model": "A3090",
+    "description": "iPhone 15",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3090"
+  },
+  {
+    "id": "A3094",
+    "brand": "Apple",
+    "model": "A3094",
+    "description": "iPhone 15 Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3094"
+  },
+  {
+    "id": "A3102",
+    "brand": "Apple",
+    "model": "A3102",
+    "description": "iPhone 15 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3102"
+  },
+  {
+    "id": "A3106",
+    "brand": "Apple",
+    "model": "A3106",
+    "description": "iPhone 15 Pro Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3106"
+  },
+  {
+    "id": "A3287",
+    "brand": "Apple",
+    "model": "A3287",
+    "description": "iPhone 16",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3287"
+  },
+  {
+    "id": "A3290",
+    "brand": "Apple",
+    "model": "A3290",
+    "description": "iPhone 16 Plus",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3290"
+  },
+  {
+    "id": "A3293",
+    "brand": "Apple",
+    "model": "A3293",
+    "description": "iPhone 16 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3293"
+  },
+  {
+    "id": "A3296",
+    "brand": "Apple",
+    "model": "A3296",
+    "description": "iPhone 16 Pro Max",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3296"
+  },
+  {
+    "id": "A3409",
+    "brand": "Apple",
+    "model": "A3409",
+    "description": "iPhone 16e",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3409"
+  },
+  {
+    "id": "A1337",
+    "brand": "Apple",
+    "model": "A1337",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1337"
+  },
+  {
+    "id": "A1430",
+    "brand": "Apple",
+    "model": "A1430",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1430"
+  },
+  {
+    "id": "A1455",
+    "brand": "Apple",
+    "model": "A1455",
+    "description": "iPad Mini-Cellular",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1455"
+  },
+  {
+    "id": "A1460",
+    "brand": "Apple",
+    "model": "A1460",
+    "description": "iPad-Cellular",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1460"
+  },
+  {
+    "id": "A1550",
+    "brand": "Apple",
+    "model": "A1550",
+    "description": "iPad mini 4",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1550"
+  },
+  {
+    "id": "A1652",
+    "brand": "Apple",
+    "model": "A1652",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1652"
+  },
+  {
+    "id": "A1671",
+    "brand": "Apple",
+    "model": "A1671",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1671"
+  },
+  {
+    "id": "A1674",
+    "brand": "Apple",
+    "model": "A1674",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1674"
+  },
+  {
+    "id": "A1709",
+    "brand": "Apple",
+    "model": "A1709",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1709"
+  },
+  {
+    "id": "A1823",
+    "brand": "Apple",
+    "model": "A1823",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1823"
+  },
+  {
+    "id": "A1895",
+    "brand": "Apple",
+    "model": "A1895",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1895"
+  },
+  {
+    "id": "A1934",
+    "brand": "Apple",
+    "model": "A1934",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1934"
+  },
+  {
+    "id": "A1954",
+    "brand": "Apple",
+    "model": "A1954",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A1954"
+  },
+  {
+    "id": "A2072",
+    "brand": "Apple",
+    "model": "A2072",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2072"
+  },
+  {
+    "id": "A2123",
+    "brand": "Apple",
+    "model": "A2123",
+    "description": "iPad Air",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2123"
+  },
+  {
+    "id": "A2124",
+    "brand": "Apple",
+    "model": "A2124",
+    "description": "iPad Mini",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2124"
+  },
+  {
+    "id": "A2198",
+    "brand": "Apple",
+    "model": "A2198",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2198"
+  },
+  {
+    "id": "A2230",
+    "brand": "Apple",
+    "model": "A2230",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2230"
+  },
+  {
+    "id": "A2232",
+    "brand": "Apple",
+    "model": "A2232",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2232"
+  },
+  {
+    "id": "A2429",
+    "brand": "Apple",
+    "model": "A2429",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2429"
+  },
+  {
+    "id": "A2437",
+    "brand": "Apple",
+    "model": "A2437",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2437"
+  },
+  {
+    "id": "A2459",
+    "brand": "Apple",
+    "model": "A2459",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2459"
+  },
+  {
+    "id": "A2461",
+    "brand": "Apple",
+    "model": "A2461",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2461"
+  },
+  {
+    "id": "A2568",
+    "brand": "Apple",
+    "model": "A2568",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2568"
+  },
+  {
+    "id": "A2589",
+    "brand": "Apple",
+    "model": "A2589",
+    "description": "iPad Air",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2589"
+  },
+  {
+    "id": "A2604",
+    "brand": "Apple",
+    "model": "A2604",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2604"
+  },
+  {
+    "id": "A2757",
+    "brand": "Apple",
+    "model": "A2757",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2757"
+  },
+  {
+    "id": "A2761",
+    "brand": "Apple",
+    "model": "A2761",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2761"
+  },
+  {
+    "id": "A2837",
+    "brand": "Apple",
+    "model": "A2837",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2837"
+  },
+  {
+    "id": "A2899",
+    "brand": "Apple",
+    "model": "A2899",
+    "description": "iPad Air",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2899"
+  },
+  {
+    "id": "A2903",
+    "brand": "Apple",
+    "model": "A2903",
+    "description": "iPad Air",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2903"
+  },
+  {
+    "id": "A2926",
+    "brand": "Apple",
+    "model": "A2926",
+    "description": "iPad Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2926"
+  },
+  {
+    "id": "A2995",
+    "brand": "Apple",
+    "model": "A2995",
+    "description": "iPad mini",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A2995"
+  },
+  {
+    "id": "A3267",
+    "brand": "Apple",
+    "model": "A3267",
+    "description": "iPad Air",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3267"
+  },
+  {
+    "id": "A3269",
+    "brand": "Apple",
+    "model": "A3269",
+    "description": "iPad Air",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3269"
+  },
+  {
+    "id": "A3355",
+    "brand": "Apple",
+    "model": "A3355",
+    "description": "iPad",
+    "subType": "Cellular Mobile",
+    "certificate_no": "A3355"
+  },
+  {
+    "id": "V2130",
+    "brand": "vivo",
+    "model": "V2130",
+    "description": "vivo V23 5G",
+    "subType": "Cellular Mobile",
+    "certificate_no": "V2130"
+  },
+  {
+    "id": "V2143",
+    "brand": "vivo",
+    "model": "V2143",
+    "description": "vivo T1x",
+    "subType": "Cellular Mobile",
+    "certificate_no": "V2143"
+  },
+  {
+    "id": "vivo 1726",
+    "brand": "vivo",
+    "model": "vivo 1726",
+    "description": "Y85",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1726"
+  },
+  {
+    "id": "vivo 1801",
+    "brand": "vivo",
+    "model": "vivo 1801",
+    "description": "Y71 (2GB",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1801"
+  },
+  {
+    "id": "vivo 1802",
+    "brand": "vivo",
+    "model": "vivo 1802",
+    "description": "Y83",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1802"
+  },
+  {
+    "id": "vivo 1803",
+    "brand": "vivo",
+    "model": "vivo 1803",
+    "description": "Y81 Prime",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1803"
+  },
+  {
+    "id": "vivo 1804",
+    "brand": "vivo",
+    "model": "vivo 1804",
+    "description": "V11",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1804"
+  },
+  {
+    "id": "vivo 1806",
+    "brand": "vivo",
+    "model": "vivo 1806",
+    "description": "V11i",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1806"
+  },
+  {
+    "id": "vivo 1807",
+    "brand": "vivo",
+    "model": "vivo 1807",
+    "description": "Y95",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1807"
+  },
+  {
+    "id": "vivo 1808",
+    "brand": "vivo",
+    "model": "vivo 1808",
+    "description": "Y81",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1808"
+  },
+  {
+    "id": "vivo 1808i",
+    "brand": "vivo",
+    "model": "vivo 1808i",
+    "description": "Y81",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1808i"
+  },
+  {
+    "id": "vivo 1811",
+    "brand": "vivo",
+    "model": "vivo 1811",
+    "description": "Y93",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1811"
+  },
+  {
+    "id": "vivo 1812",
+    "brand": "vivo",
+    "model": "vivo 1812",
+    "description": "Y81i",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1812"
+  },
+  {
+    "id": "vivo 1814",
+    "brand": "vivo",
+    "model": "vivo 1814",
+    "description": "Y91",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1814"
+  },
+  {
+    "id": "vivo 1816",
+    "brand": "vivo",
+    "model": "vivo 1816",
+    "description": "Y91i",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1816"
+  },
+  {
+    "id": "vivo 1818",
+    "brand": "vivo",
+    "model": "vivo 1818",
+    "description": "V15Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1818"
+  },
+  {
+    "id": "vivo 1819",
+    "brand": "vivo",
+    "model": "vivo 1819",
+    "description": "V15",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1819"
+  },
+  {
+    "id": "vivo 1820",
+    "brand": "vivo",
+    "model": "vivo 1820",
+    "description": "Y91C",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1820"
+  },
+  {
+    "id": "vivo 1901",
+    "brand": "vivo",
+    "model": "vivo 1901",
+    "description": "Y15",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1901"
+  },
+  {
+    "id": "vivo 1902",
+    "brand": "vivo",
+    "model": "vivo 1902",
+    "description": "Y17",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1902"
+  },
+  {
+    "id": "vivo 1904",
+    "brand": "vivo",
+    "model": "vivo 1904",
+    "description": "Y12",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1904"
+  },
+  {
+    "id": "vivo 1906",
+    "brand": "vivo",
+    "model": "vivo 1906",
+    "description": "Y11",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1906"
+  },
+  {
+    "id": "vivo 1907",
+    "brand": "vivo",
+    "model": "vivo 1907",
+    "description": "S1",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1907"
+  },
+  {
+    "id": "vivo 1910",
+    "brand": "vivo",
+    "model": "vivo 1910",
+    "description": "V17 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1910"
+  },
+  {
+    "id": "vivo 1912",
+    "brand": "vivo",
+    "model": "vivo 1912",
+    "description": "NEX 3",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1912"
+  },
+  {
+    "id": "vivo 1913",
+    "brand": "vivo",
+    "model": "vivo 1913",
+    "description": "NEX3 2020",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1913"
+  },
+  {
+    "id": "vivo 1915",
+    "brand": "vivo",
+    "model": "vivo 1915",
+    "description": "Y19",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1915"
+  },
+  {
+    "id": "vivo 1919",
+    "brand": "vivo",
+    "model": "vivo 1919",
+    "description": "V17",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1919"
+  },
+  {
+    "id": "vivo 1920",
+    "brand": "vivo",
+    "model": "vivo 1920",
+    "description": "S1 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1920"
+  },
+  {
+    "id": "vivo 1933",
+    "brand": "vivo",
+    "model": "vivo 1933",
+    "description": "V19",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1933"
+  },
+  {
+    "id": "vivo 1935",
+    "brand": "vivo",
+    "model": "vivo 1935",
+    "description": "Y50",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1935"
+  },
+  {
+    "id": "vivo 1938",
+    "brand": "vivo",
+    "model": "vivo 1938",
+    "description": "Y30",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 1938"
+  },
+  {
+    "id": "vivo 2006",
+    "brand": "vivo",
+    "model": "vivo 2006",
+    "description": "X50 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 2006"
+  },
+  {
+    "id": "vivo 2015",
+    "brand": "vivo",
+    "model": "vivo 2015",
+    "description": "Y1s",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 2015"
+  },
+  {
+    "id": "vivo 2018",
+    "brand": "vivo",
+    "model": "vivo 2018",
+    "description": "V20 Pro",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 2018"
+  },
+  {
+    "id": "vivo 2022",
+    "brand": "vivo",
+    "model": "vivo 2022",
+    "description": "V20 SE",
+    "subType": "Cellular Mobile",
+    "certificate_no": "vivo 2022"
   }
 ]
