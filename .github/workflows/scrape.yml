@@ -6,6 +6,9 @@ on:
     - cron: '30 1 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write  # This allows GitHub Actions to push changes
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
@@ -35,16 +38,4 @@ jobs:
             echo "Added seen_devices.json"
           fi
           
-          if [ -f "new_devices.json" ]; then
-            git add new_devices.json
-            echo "Added new_devices.json"
-          fi
-          
-          # Only commit if there are changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update scraped data - $(date)"
-            git push
-            echo "Changes committed and pushed"
-          fi
+          if [ -f "new_devices.json" ]; 
