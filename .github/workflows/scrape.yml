@@ -1,4 +1,4 @@
-name: Scrape NBTC Cellular Mobile Devices
+name: NBTC Device Monitor
 
 on:
   schedule:
@@ -6,79 +6,59 @@ on:
     - cron: '30 1 * * *'
   workflow_dispatch:
     inputs:
-      test_type:
-        description: 'Type of test to run'
+      force_run:
+        description: 'Force run monitor'
         required: false
-        default: 'normal'
-        type: choice
-        options:
-        - normal
-        - test
-        - verify
+        default: 'false'
+        type: boolean
 
 permissions:
   contents: write
 
 jobs:
-  run-scraper:
+  monitor-devices:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install requests playwright
           playwright install chromium
-      - name: Run verification test
-        if: github.event.inputs.test_type == 'verify'
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python verify_recent_devices.py
-      - name: Run test scraper
-        if: github.event.inputs.test_type == 'test'
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python test_scraper.py
-      - name: Run normal scraper
-        if: github.event.inputs.test_type == 'normal' || github.event.inputs.test_type == ''
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scrape.py
-      - name: Commit results
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
           
+      - name: Run NBTC monitor
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python nbtc_monitor.py
+        
+      - name: Commit and push results
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Add any generated files
           if [ -f "seen_devices.json" ]; then
             git add seen_devices.json
-            echo "Added seen_devices.json"
+            echo "✅ Added seen_devices.json"
           fi
           
           if [ -f "new_devices.json" ]; then
             git add new_devices.json
-            echo "Added new_devices.json"
+            echo "✅ Added new_devices.json"
           fi
           
-          if [ -f "verification_devices.json" ]; then
-            git add verification_devices.json
-            echo "Added verification_devices.json"
-          fi
-          
-          if [ -f "extracted_devices_with_links.json" ]; then
-            git add extracted_devices_with_links.json
-            echo "Added extracted_devices_with_links.json"
-          fi
-          
+          # Check if there are changes to commit
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "ℹ️ No changes to commit"
           else
-            git commit -m "Update scraped data - $(date)"
+            git commit -m "🤖 Update device data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             git push
-            echo "Changes committed and pushed"
+            echo "✅ Changes committed and pushed"
           fi
