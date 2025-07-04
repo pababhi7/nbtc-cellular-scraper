@@ -1,19 +1,15 @@
-import sys
 import os
 import json
 import asyncio
 from playwright.async_api import async_playwright
-
-os.environ["PYTHONIOENCODING"] = "utf-8"
-
 import requests
 
 SEEN_FILE = "seen_devices.json"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-async def extract_all_devices_with_pagination():
-    print("=== EXTRACTING ALL DEVICES FROM TABLE (PAGINATION) ===")
+async def extract_all_devices():
+    print("=== EXTRACTING ALL DEVICES FROM NBTC TABLE (WITH PAGINATION) ===")
     all_devices = []
     seen_ids = set()
     async with async_playwright() as p:
@@ -33,7 +29,6 @@ async def extract_all_devices_with_pagination():
                     cert = (await cells[3].inner_text()).strip()
                     date = (await cells[4].inner_text()).strip()
                     sub_type = (await cells[6].inner_text()).strip()
-                    # Get link if available
                     link = ""
                     try:
                         a = await cells[7].query_selector("a")
@@ -55,7 +50,6 @@ async def extract_all_devices_with_pagination():
                         })
                         seen_ids.add(model)
             print(f"Found {len(all_devices)} unique devices so far")
-            # Try to click "Next" or "ถัดไป"
             next_button = await page.query_selector("button:has-text('ถัดไป'), button:has-text('Next'), .pagination-next")
             if next_button:
                 try:
@@ -157,7 +151,7 @@ async def main():
     print("=== NBTC NEW DEVICE MONITOR (TABLE/PAGINATION) ===")
     seen_device_ids = load_seen_devices()
     is_first_run = len(seen_device_ids) == 0
-    current_devices = await extract_all_devices_with_pagination()
+    current_devices = await extract_all_devices()
     if not current_devices:
         print("❌ No devices extracted - website might be blocking or structure changed")
         return
