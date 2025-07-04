@@ -6,6 +6,7 @@ os.environ["PYTHONIOENCODING"] = "utf-8"
 
 import requests
 import json
+import urllib.parse
 
 API_URL = "https://mocheck.nbtc.go.th/api/equipments/search"
 HEADERS = {
@@ -13,7 +14,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "application/json, text/plain, */*",
     "Origin": "https://mocheck.nbtc.go.th",
-    "Referer": "https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต"
+    "Referer": "https://mocheck.nbtc.go.th/search-equipments?status=%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95"
 }
 SEEN_FILE = "seen_devices.json"
 
@@ -21,8 +22,10 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def fetch_devices(page=1, per_page=20):
+    # Use URL-encoded version of "อนุญาต"
+    status_encoded = "%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95"
     payload = {
-        "status": "อนุญาต",
+        "status": urllib.parse.unquote(status_encoded),
         "page": page,
         "perPage": per_page,
         "search": "",
@@ -35,7 +38,7 @@ def fetch_devices(page=1, per_page=20):
         if "data" in data:
             return data["data"]
         else:
-            print("API response does not contain 'data' key. Full response:", data)
+            print("API response does not contain 'data' key.")
             return []
     except Exception as e:
         print(f"Error fetching devices: {e}")
@@ -72,7 +75,7 @@ def send_telegram_message(message):
     try:
         resp = requests.post(url, data=payload, timeout=15)
         if resp.status_code != 200:
-            print(f"Failed to send Telegram message. Status: {resp.status_code}, Response: {resp.text}")
+            print(f"Failed to send Telegram message. Status: {resp.status_code}")
     except Exception as e:
         print(f"Failed to send Telegram message: {e}")
 
@@ -95,19 +98,17 @@ def main():
 
     if new_devices:
         print(f"Found {len(new_devices)} new devices in Cellular Mobile:")
-        # DO NOT print device data - it causes encoding errors in GitHub Actions
-        # Save to file instead
         with open("new_devices.json", "w", encoding="utf-8") as f:
             json.dump(new_devices, f, ensure_ascii=False, indent=2)
         # Build Telegram message
-        msg = f"📱 <b>{len(new_devices)} new Cellular Mobile devices found!</b>\n"
+        msg = f"📱 {len(new_devices)} new Cellular Mobile devices found!\n"
         for d in new_devices[:5]:  # Show up to 5 devices in the message
             brand = d.get('brand', '')
             model = d.get('model', '')
             cert = d.get('certificate_no', '')
             device_id = d.get('id', '')
             link = f"https://mocheck.nbtc.go.th/equipment-detail/{device_id}"
-            msg += f"\n<b>Brand:</b> {brand}\n<b>Model:</b> {model}\n<b>Cert No:</b> {cert}\n🔗 {link}\n"
+            msg += f"\nBrand: {brand}\nModel: {model}\nCert No: {cert}\nLink: {link}\n"
         if len(new_devices) > 5:
             msg += f"\n...and {len(new_devices)-5} more."
         send_telegram_message(msg)
