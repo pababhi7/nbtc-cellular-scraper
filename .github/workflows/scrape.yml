@@ -6,10 +6,15 @@ on:
     - cron: '30 1 * * *'
   workflow_dispatch:
     inputs:
-      run_test:
-        description: 'Run test scraper instead of normal scraper'
+      test_type:
+        description: 'Type of test to run'
         required: false
-        default: 'false'
+        default: 'normal'
+        type: choice
+        options:
+        - normal
+        - test
+        - verify
 
 permissions:
   contents: write
@@ -27,14 +32,20 @@ jobs:
         run: |
           pip install -r requirements.txt
           playwright install chromium
+      - name: Run verification test
+        if: github.event.inputs.test_type == 'verify'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python verify_recent_devices.py
       - name: Run test scraper
-        if: github.event.inputs.run_test == 'true'
+        if: github.event.inputs.test_type == 'test'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python test_scraper.py
       - name: Run normal scraper
-        if: github.event.inputs.run_test != 'true'
+        if: github.event.inputs.test_type == 'normal' || github.event.inputs.test_type == ''
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -52,6 +63,16 @@ jobs:
           if [ -f "new_devices.json" ]; then
             git add new_devices.json
             echo "Added new_devices.json"
+          fi
+          
+          if [ -f "verification_devices.json" ]; then
+            git add verification_devices.json
+            echo "Added verification_devices.json"
+          fi
+          
+          if [ -f "extracted_devices_with_links.json" ]; then
+            git add extracted_devices_with_links.json
+            echo "Added extracted_devices_with_links.json"
           fi
           
           if git diff --staged --quiet; then
