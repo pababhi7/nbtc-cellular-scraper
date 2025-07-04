@@ -1,7 +1,11 @@
+import sys
+import os
+
+# Force UTF-8 for all output and file operations
+os.environ["PYTHONIOENCODING"] = "utf-8"
+
 import requests
 import json
-import os
-import sys
 
 API_URL = "https://mocheck.nbtc.go.th/api/equipments/search"
 HEADERS = {
