@@ -3,6 +3,7 @@ import os
 import json
 import asyncio
 from playwright.async_api import async_playwright
+import re
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
@@ -11,20 +12,18 @@ import requests
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-async def test_enhanced_browser():
-    """Enhanced browser scraping with Cloudflare bypass"""
-    print("=== ENHANCED BROWSER SCRAPING ===")
+async def extract_devices_from_html():
+    """Extract device data directly from page HTML"""
+    print("=== HTML EXTRACTION METHOD ===")
     
     try:
         async with async_playwright() as p:
-            # Use chromium with stealth mode
             browser = await p.chromium.launch(
                 headless=True,
                 args=[
                     '--no-sandbox',
                     '--disable-blink-features=AutomationControlled',
-                    '--disable-web-security',
-                    '--disable-features=VizDisplayCompositor'
+                    '--disable-web-security'
                 ]
             )
             
@@ -38,157 +37,143 @@ async def test_enhanced_browser():
             # Hide automation indicators
             await page.add_init_script("""
                 Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
-                Object.defineProperty(navigator, 'plugins', {get: () => [1, 2, 3, 4, 5]});
-                Object.defineProperty(navigator, 'languages', {get: () => ['en-US', 'en']});
             """)
             
-            collected_devices = []
-            api_calls_made = []
+            print("Loading page with status filter...")
+            # Go directly to the page with status filter
+            await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต", 
+                           wait_until="domcontentloaded", timeout=60000)
             
-            # Monitor ALL network requests
-            async def handle_response(response):
-                url = response.url
-                status = response.status
-                print(f"Network: {url} - {status}")
+            # Wait for Cloudflare and page to fully load
+            await page.wait_for_timeout(15000)
+            
+            # Check if we have device data in the page
+            print("Analyzing page content...")
+            
+            # Method 1: Look for table rows or card elements
+            device_elements = await page.query_selector_all(
+                "tr, .card, .equipment-item, .device-card, .equipment-row, .item-row"
+            )
+            print(f"Found {len(device_elements)} potential device elements")
+            
+            devices = []
+            
+            # Method 2: Extract all text and look for patterns
+            page_text = await page.evaluate("document.body.innerText")
+            print(f"Page text length: {len(page_text)} characters")
+            
+            # Look for device patterns in text
+            lines = page_text.split('\n')
+            device_info = []
+            
+            for i, line in enumerate(lines):
+                line = line.strip()
+                if line and any(keyword in line.upper() for keyword in ['SAMSUNG', 'APPLE', 'XIAOMI', 'OPPO', 'VIVO', 'HUAWEI', 'NOKIA']):
+                    # Found a potential device line, get context
+                    context_lines = lines[max(0, i-2):i+3]
+                    device_info.append('\n'.join(context_lines))
+                    print(f"Found potential device: {line}")
+            
+            # Method 3: Look for JSON data in script tags
+            script_content = await page.evaluate("""
+                () => {
+                    let allScripts = '';
+                    document.querySelectorAll('script').forEach(script => {
+                        if (script.textContent && (
+                            script.textContent.includes('equipment') || 
+                            script.textContent.includes('device') ||
+                            script.textContent.includes('data')
+                        )) {
+                            allScripts += script.textContent + '\\n\\n';
+                        }
+                    });
+                    return allScripts;
+                }
+            """)
+            
+            print(f"Script content length: {len(script_content)} characters")
+            
+            # Try to extract JSON from scripts
+            json_matches = re.findall(r'\{[^{}]*"data"\s*:\s*\[[^\]]*\][^{}]*\}', script_content)
+            print(f"Found {len(json_matches)} potential JSON data blocks")
+            
+            for match in json_matches:
+                try:
+                    data = json.loads(match)
+                    if "data" in data and isinstance(data["data"], list):
+                        devices.extend(data["data"])
+                        print(f"Extracted {len(data['data'])} devices from JSON")
+                except:
+                    continue
+            
+            # Method 4: Try to trigger data loading with different approaches
+            if not devices and not device_info:
+                print("No devices found yet, trying to trigger data loading...")
                 
-                # Capture any API calls
-                if "api" in url or "search" in url or "equipment" in url:
-                    api_calls_made.append(f"{url} - {status}")
-                    
-                    if status == 200 and "equipment" in url:
-                        try:
-                            content_type = response.headers.get("content-type", "")
-                            if "application/json" in content_type:
-                                data = await response.json()
-                                print(f"API Response: {data}")
-                                if "data" in data and isinstance(data["data"], list):
-                                    collected_devices.extend(data["data"])
-                                    print(f"Collected {len(data['data'])} devices from {url}")
-                        except Exception as e:
-                            print(f"Error parsing {url}: {e}")
-            
-            page.on("response", handle_response)
-            
-            print("Navigating to NBTC website...")
-            response = await page.goto("https://mocheck.nbtc.go.th/search-equipments", 
-                                      wait_until="domcontentloaded", timeout=60000)
-            print(f"Initial page load: {response.status}")
-            
-            # Wait for Cloudflare challenge to complete
-            print("Waiting for Cloudflare challenge...")
-            await page.wait_for_timeout(10000)
-            
-            # Check if we're still on a challenge page
-            title = await page.title()
-            print(f"Page title: {title}")
-            
-            if "Just a moment" in title or "Please wait" in title:
-                print("Still on Cloudflare challenge, waiting longer...")
-                await page.wait_for_timeout(15000)
-            
-            # Try to find and interact with search elements
-            print("Looking for search interface...")
-            
-            try:
-                # Wait for page to be fully loaded
-                await page.wait_for_load_state("networkidle", timeout=30000)
-                
-                # Look for search/filter forms
-                search_forms = await page.query_selector_all("form, .search-form, .filter-form")
-                print(f"Found {len(search_forms)} forms")
-                
-                # Look for specific search buttons
-                search_buttons = await page.query_selector_all(
-                    "button:has-text('ค้นหา'), button:has-text('Search'), input[type='submit'], .btn-search, .search-btn"
+                # Try clicking different elements
+                clickable_elements = await page.query_selector_all(
+                    "button, a, .btn, .link, input[type='submit']"
                 )
-                print(f"Found {len(search_buttons)} search buttons")
                 
-                # Try to click a search button
-                if search_buttons:
-                    print("Clicking search button...")
-                    await search_buttons[0].click()
-                    await page.wait_for_timeout(5000)
-                
-                # Look for any dropdowns or selects
-                selects = await page.query_selector_all("select, .dropdown, .filter-select")
-                print(f"Found {len(selects)} select elements")
-                
-                # Try to trigger data loading by scrolling
-                print("Scrolling to trigger data loading...")
-                await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                await page.wait_for_timeout(3000)
-                await page.evaluate("window.scrollTo(0, 0)")
-                await page.wait_for_timeout(3000)
-                
-            except Exception as e:
-                print(f"Error interacting with page: {e}")
+                for element in clickable_elements[:5]:  # Try first 5 clickable elements
+                    try:
+                        element_text = await element.inner_text()
+                        print(f"Trying to click: {element_text}")
+                        await element.click()
+                        await page.wait_for_timeout(3000)
+                        
+                        # Check if new content appeared
+                        new_elements = await page.query_selector_all(".equipment-item, .device-card")
+                        if new_elements:
+                            print(f"Found {len(new_elements)} new elements after clicking")
+                            break
+                    except:
+                        continue
             
-            # Final wait for any delayed API calls
-            print("Final wait for API calls...")
-            await page.wait_for_timeout(10000)
+            # Method 5: Check for any tables with data
+            tables = await page.query_selector_all("table")
+            print(f"Found {len(tables)} tables")
             
-            print(f"API calls detected: {api_calls_made}")
+            for table in tables:
+                try:
+                    table_text = await table.inner_text()
+                    if any(keyword in table_text.upper() for keyword in ['BRAND', 'MODEL', 'CERTIFICATE', 'TYPE']):
+                        print("Found table with device-like headers")
+                        rows = await table.query_selector_all("tr")
+                        print(f"Table has {len(rows)} rows")
+                        
+                        for row in rows[1:6]:  # Skip header, get first 5 data rows
+                            try:
+                                cells = await row.query_selector_all("td")
+                                if len(cells) >= 3:
+                                    cell_texts = []
+                                    for cell in cells:
+                                        cell_text = await cell.inner_text()
+                                        cell_texts.append(cell_text.strip())
+                                    
+                                    if cell_texts[0]:  # If first cell has content
+                                        device = {
+                                            "brand": cell_texts[0] if len(cell_texts) > 0 else "Unknown",
+                                            "model": cell_texts[1] if len(cell_texts) > 1 else "Unknown",
+                                            "subType": "Cellular Mobile",
+                                            "certificate_no": cell_texts[2] if len(cell_texts) > 2 else "Unknown",
+                                            "id": f"html_extracted_{len(devices)}"
+                                        }
+                                        devices.append(device)
+                                        print(f"Extracted from table: {device['brand']} {device['model']}")
+                            except:
+                                continue
+                except:
+                    continue
             
             await browser.close()
-            return collected_devices
-    
-    except Exception as e:
-        print(f"Enhanced browser error: {e}")
-        return []
-
-async def test_direct_requests_with_session():
-    """Try direct requests with session and cookies"""
-    print("\n=== TESTING WITH SESSION ===")
-    
-    try:
-        session = requests.Session()
-        
-        # First, get the main page to establish session
-        print("Getting main page for session...")
-        main_page = session.get(
-            "https://mocheck.nbtc.go.th/search-equipments",
-            headers={
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-            },
-            timeout=30
-        )
-        print(f"Main page status: {main_page.status_code}")
-        
-        # Extract any tokens or cookies
-        cookies = session.cookies
-        print(f"Received {len(cookies)} cookies")
-        
-        # Now try the API call with the session
-        api_response = session.post(
-            "https://mocheck.nbtc.go.th/api/equipments/search",
-            json={
-                "status": "อนุญาต",
-                "page": 1,
-                "perPage": 5,
-                "search": ""
-            },
-            headers={
-                "Content-Type": "application/json",
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                "Referer": "https://mocheck.nbtc.go.th/search-equipments"
-            },
-            timeout=30
-        )
-        
-        print(f"API call status: {api_response.status_code}")
-        if api_response.status_code == 200:
-            data = api_response.json()
-            devices = data.get("data", [])
-            print(f"Found {len(devices)} devices via session!")
-            return devices[:5]
-        else:
-            print(f"Session API failed: {api_response.text[:200]}")
             
-    except Exception as e:
-        print(f"Session approach error: {e}")
+            print(f"Total devices extracted: {len(devices)}")
+            return devices[:5]  # Return first 5 for testing
     
-    return []
+    except Exception as e:
+        print(f"HTML extraction error: {e}")
+        return []
 
 def send_test_results(devices, method=""):
     """Send test results via Telegram"""
@@ -197,7 +182,7 @@ def send_test_results(devices, method=""):
         return
     
     if devices:
-        msg = f"🎉 SUCCESS! Found {len(devices)} devices!\n"
+        msg = f"🎉 BREAKTHROUGH! Found {len(devices)} devices!\n"
         msg += f"Method: {method}\n\n"
         for i, device in enumerate(devices):
             brand = device.get('brand', 'Unknown')
@@ -205,13 +190,16 @@ def send_test_results(devices, method=""):
             subtype = device.get('subType', 'Unknown')
             cert = device.get('certificate_no', 'Unknown')
             msg += f"{i+1}. {brand} {model}\n   Type: {subtype}\n   Cert: {cert}\n\n"
-        msg += "✅ Real data collection is working!\n🚀 Your daily scraper will now find new devices!"
+        msg += "🚀 SUCCESS! We can now extract real device data!\n"
+        msg += "Your daily scraper will start working!"
     else:
-        msg = f"🧪 TEST RESULTS: No devices found\n"
-        msg += f"Method tested: {method}\n\n"
-        msg += f"❌ Cloudflare protection is blocking access\n\n"
-        msg += f"📅 Will keep trying daily at 7 AM IST\n"
-        msg += f"💡 Consider alternative approaches or manual checking"
+        msg = f"🔍 TEST RESULTS: HTML extraction attempted\n"
+        msg += f"❌ No device data found in page HTML\n\n"
+        msg += f"The page loads but device data might be:\n"
+        msg += f"• Loaded dynamically after user interaction\n"
+        msg += f"• Requires authentication\n"
+        msg += f"• Hidden in complex JavaScript\n\n"
+        msg += f"📅 Will keep trying daily at 7 AM IST"
     
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
@@ -230,36 +218,25 @@ def send_test_results(devices, method=""):
         print(f"Telegram error: {e}")
 
 async def main():
-    print("=== ENHANCED NBTC SCRAPER TEST ===")
-    print("Testing enhanced methods to bypass Cloudflare...\n")
+    print("=== HTML EXTRACTION TEST ===")
+    print("Trying to extract device data directly from page HTML...\n")
     
-    devices = []
-    method_used = ""
-    
-    # Method 1: Enhanced browser with Cloudflare bypass
-    devices = await test_enhanced_browser()
-    if devices:
-        method_used = "Enhanced Browser"
-    
-    # Method 2: Session-based requests (if browser failed)
-    if not devices:
-        devices = await test_direct_requests_with_session()
-        if devices:
-            method_used = "Session-based Requests"
+    devices = await extract_devices_from_html()
     
     print(f"\n=== FINAL RESULTS ===")
     print(f"Total devices found: {len(devices)}")
-    print(f"Method that worked: {method_used or 'None'}")
     
     if devices:
         print("SUCCESS! Here are the devices:")
         for i, device in enumerate(devices):
             print(f"{i+1}. {device.get('brand')} {device.get('model')} - {device.get('subType')}")
+        method_used = "HTML Extraction"
     else:
-        print("No devices found - Cloudflare protection is very strong")
+        print("No devices found - trying different extraction approach needed")
+        method_used = "HTML Extraction (failed)"
     
     # Send results via Telegram
-    send_test_results(devices, method_used or "All methods failed")
+    send_test_results(devices, method_used)
 
 if __name__ == "__main__":
     asyncio.run(main())
