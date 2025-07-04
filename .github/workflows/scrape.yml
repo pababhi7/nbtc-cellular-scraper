@@ -2,6 +2,7 @@ name: Scrape NBTC Cellular Mobile Devices
 
 on:
   schedule:
+    # 7:00 AM IST is 1:30 AM UTC
     - cron: '30 1 * * *'
   workflow_dispatch:
 
@@ -23,10 +24,27 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scrape.py
-      - name: Commit results
+      - name: Commit results (if any)
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add seen_devices.json new_devices.json
-          git commit -m "Update scraped data" || echo "No changes to commit"
-          git push
+          
+          # Add files if they exist
+          if [ -f "seen_devices.json" ]; then
+            git add seen_devices.json
+            echo "Added seen_devices.json"
+          fi
+          
+          if [ -f "new_devices.json" ]; then
+            git add new_devices.json
+            echo "Added new_devices.json"
+          fi
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update scraped data - $(date)"
+            git push
+            echo "Changes committed and pushed"
+          fi
