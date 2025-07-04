@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import sys
 
 API_URL = "https://mocheck.nbtc.go.th/api/equipments/search"
 HEADERS = {"Content-Type": "application/json"}
@@ -17,19 +18,35 @@ def fetch_devices(page=1, per_page=20):
         "search": "",
         "subType": "Cellular Mobile"
     }
-    response = requests.post(API_URL, json=payload, headers=HEADERS)
-    response.raise_for_status()
-    return response.json().get("data", [])
+    try:
+        response = requests.post(API_URL, json=payload, headers=HEADERS, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        if "data" in data:
+            return data["data"]
+        else:
+            print("API response does not contain 'data' key. Full response:", data)
+            return []
+    except Exception as e:
+        print(f"Error fetching devices: {e}")
+        sys.exit(1)
 
 def load_seen_ids():
     if os.path.exists(SEEN_FILE):
-        with open(SEEN_FILE, "r", encoding="utf-8") as f:
-            return set(json.load(f))
+        try:
+            with open(SEEN_FILE, "r", encoding="utf-8") as f:
+                return set(json.load(f))
+        except Exception as e:
+            print(f"Error loading seen IDs: {e}")
+            return set()
     return set()
 
 def save_seen_ids(ids):
-    with open(SEEN_FILE, "w", encoding="utf-8") as f:
-        json.dump(list(ids), f, ensure_ascii=False, indent=2)
+    try:
+        with open(SEEN_FILE, "w", encoding="utf-8") as f:
+            json.dump(list(ids), f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"Error saving seen IDs: {e}")
 
 def send_telegram_message(message):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
@@ -43,7 +60,9 @@ def send_telegram_message(message):
         "disable_web_page_preview": True
     }
     try:
-        requests.post(url, data=payload)
+        resp = requests.post(url, data=payload, timeout=15)
+        if resp.status_code != 200:
+            print(f"Failed to send Telegram message. Status: {resp.status_code}, Response: {resp.text}")
     except Exception as e:
         print(f"Failed to send Telegram message: {e}")
 
@@ -64,7 +83,6 @@ def main():
         if len(devices) < 20:
             break
 
-    # Notify even on first run (when seen_ids is empty)
     if new_devices:
         print(f"Found {len(new_devices)} new devices in Cellular Mobile:")
         print(json.dumps(new_devices, ensure_ascii=False, indent=2))
