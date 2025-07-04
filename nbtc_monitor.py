@@ -3,7 +3,6 @@ import os
 import json
 import asyncio
 from playwright.async_api import async_playwright
-import re
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
@@ -13,75 +12,49 @@ SEEN_FILE = "seen_devices.json"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-def parse_devices_from_text(text):
-    """
-    Parse all likely cellular device lines from NBTC page text.
-    This will match any line that looks like a device model, regardless of brand.
-    """
-    devices = []
-    found_ids = set()
-    lines = text.split('\n')
-    for line in lines:
-        line = line.strip()
-        if not line or len(line) < 5:
-            continue
-        # Match lines with a model code and "Mobile" or "Cellular" or Thai keywords
-        m = re.match(
-            r"^(.*?)([A-Z]{1,5}\d{3,}[A-Z0-9\-]*)\s*(.*?)(Mobile|Cellular|โทรศัพท์|สมาร์ทโฟน|Smartphone)?(.*)$",
-            line, re.IGNORECASE)
-        if m:
-            before, model_code, between, device_type, after = m.groups()
-            if model_code and len(model_code) >= 4 and model_code not in found_ids:
-                # Try to guess brand from before/between/after
-                brand_guess = ""
-                for part in [before, between, after]:
-                    if part:
-                        word = part.strip().split()[0]
-                        if word and word.isalpha() and len(word) > 2:
-                            brand_guess = word
-                            break
-                if not brand_guess:
-                    brand_guess = "Unknown"
-                devices.append({
-                    "id": model_code,
-                    "brand": brand_guess,
-                    "model": model_code,
-                    "description": line,
-                    "subType": "Cellular Mobile",
-                    "certificate_no": model_code
-                })
-                found_ids.add(model_code)
-    return devices
-
 async def extract_all_devices_with_pagination():
-    """Extract all devices by paginating through the NBTC site, with debug output."""
-    print("=== EXTRACTING ALL DEVICES WITH PAGINATION (DEBUG MODE) ===")
+    print("=== EXTRACTING ALL DEVICES FROM TABLE (PAGINATION) ===")
     all_devices = []
     seen_ids = set()
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True, args=['--no-sandbox'])
         page = await browser.new_page()
         await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต", wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(15000)  # Wait longer for JS to load
-        await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        await page.wait_for_timeout(2000)
+        await page.wait_for_timeout(10000)
         page_num = 1
         while True:
             print(f"Scraping page {page_num}...")
-            page_text = await page.evaluate("document.body.innerText")
-            page_html = await page.content()
-            print("=== PAGE TEXT SAMPLE ===")
-            print(page_text[:2000])
-            print("=== PAGE HTML SAMPLE ===")
-            print(page_html[:2000])
-            devices = parse_devices_from_text(page_text)
-            new_this_page = 0
-            for d in devices:
-                if d['id'] not in seen_ids:
-                    all_devices.append(d)
-                    seen_ids.add(d['id'])
-                    new_this_page += 1
-            print(f"Found {new_this_page} new devices on page {page_num}")
+            rows = await page.query_selector_all("tbody tr")
+            for row in rows:
+                cells = await row.query_selector_all("td")
+                if len(cells) >= 8:
+                    brand = (await cells[1].inner_text()).strip()
+                    model = (await cells[2].inner_text()).strip()
+                    cert = (await cells[3].inner_text()).strip()
+                    date = (await cells[4].inner_text()).strip()
+                    sub_type = (await cells[6].inner_text()).strip()
+                    # Get link if available
+                    link = ""
+                    try:
+                        a = await cells[7].query_selector("a")
+                        if a:
+                            href = await a.get_attribute("href")
+                            if href:
+                                link = "https://mocheck.nbtc.go.th" + href
+                    except:
+                        pass
+                    if model and model not in seen_ids:
+                        all_devices.append({
+                            "id": model,
+                            "brand": brand,
+                            "model": model,
+                            "certificate_no": cert,
+                            "date": date,
+                            "subType": sub_type,
+                            "link": link
+                        })
+                        seen_ids.add(model)
+            print(f"Found {len(all_devices)} unique devices so far")
             # Try to click "Next" or "ถัดไป"
             next_button = await page.query_selector("button:has-text('ถัดไป'), button:has-text('Next'), .pagination-next")
             if next_button:
@@ -147,15 +120,21 @@ def send_new_device_notification(new_devices, is_first_run=False):
         for i, device in enumerate(new_devices[:5]):
             brand = device.get('brand', 'Unknown')
             model = device.get('model', 'Unknown')
-            desc = device.get('description', '')
+            cert = device.get('certificate_no', '')
+            date = device.get('date', '')
+            link = device.get('link', '')
             msg += f"{i+1}. <b>{brand} {model}</b>\n"
-            if desc and desc != model:
-                msg += f"   📝 {desc}\n"
-            msg += f"   🔍 Model: <code>{model}</code>\n\n"
+            if cert:
+                msg += f"   📝 Cert: {cert}\n"
+            if date:
+                msg += f"   📅 Date: {date}\n"
+            if link:
+                msg += f"   🔗 <a href='{link}'>รายละเอียด</a>\n"
+            msg += "\n"
         if len(new_devices) > 5:
             msg += f"...and {len(new_devices)-5} more devices!\n\n"
         msg += f"🎉 <b>These devices are newly approved by NBTC!</b>\n"
-        msg += f"🔗 Search them at: <a href='https://mocheck.nbtc.go.th/search-equipments'>NBTC Search</a>"
+        msg += f"🔗 <a href='https://mocheck.nbtc.go.th/search-equipments'>NBTC Search</a>"
     else:
         return
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -175,7 +154,7 @@ def send_new_device_notification(new_devices, is_first_run=False):
         print(f"❌ Failed to send notification: {e}")
 
 async def main():
-    print("=== NBTC NEW DEVICE MONITOR (PAGINATION, DEBUG MODE) ===")
+    print("=== NBTC NEW DEVICE MONITOR (TABLE/PAGINATION) ===")
     seen_device_ids = load_seen_devices()
     is_first_run = len(seen_device_ids) == 0
     current_devices = await extract_all_devices_with_pagination()
