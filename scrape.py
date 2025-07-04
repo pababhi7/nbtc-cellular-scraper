@@ -1,51 +1,45 @@
 import sys
 import os
-import time
+import json
+import asyncio
+from playwright.async_api import async_playwright
 
-# Force UTF-8 for all output and file operations
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
 import requests
-import json
-import urllib.parse
 
-API_URL = "https://mocheck.nbtc.go.th/api/equipments/search"
-HEADERS = {
-    "Content-Type": "application/json",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/plain, */*",
-    "Origin": "https://mocheck.nbtc.go.th",
-    "Referer": "https://mocheck.nbtc.go.th/search-equipments?status=%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95"
-}
 SEEN_FILE = "seen_devices.json"
-
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-def fetch_devices(page=1, per_page=20):
-    # Add delay to avoid being blocked
-    time.sleep(3)
-    
-    status_encoded = "%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95"
-    payload = {
-        "status": urllib.parse.unquote(status_encoded),
-        "page": page,
-        "perPage": per_page,
-        "search": "",
-        "subType": "Cellular Mobile"
-    }
-    try:
-        response = requests.post(API_URL, json=payload, headers=HEADERS, timeout=30)
-        response.raise_for_status()
-        data = response.json()
-        if "data" in data:
-            return data["data"]
-        else:
-            print("API response does not contain 'data' key.")
-            return []
-    except Exception as e:
-        print(f"Error fetching devices: {e}")
-        sys.exit(1)
+async def fetch_devices_with_browser():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        page = await browser.new_page()
+        
+        # Navigate to the search page
+        await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95")
+        await page.wait_for_timeout(3000)  # Wait 3 seconds
+        
+        # Intercept API calls
+        devices = []
+        
+        async def handle_response(response):
+            if "api/equipments/search" in response.url:
+                try:
+                    data = await response.json()
+                    if "data" in data:
+                        devices.extend(data["data"])
+                except:
+                    pass
+        
+        page.on("response", handle_response)
+        
+        # Trigger the search by interacting with the page
+        await page.wait_for_timeout(5000)  # Wait for data to load
+        
+        await browser.close()
+        return devices
 
 def load_seen_ids():
     if os.path.exists(SEEN_FILE):
@@ -82,27 +76,31 @@ def send_telegram_message(message):
     except Exception as e:
         print(f"Failed to send Telegram message: {e}")
 
-def main():
+async def main():
     seen_ids = load_seen_ids()
     new_ids = set()
     new_devices = []
 
-    for page in range(1, 3):  # Reduced to 3 pages to avoid too many requests
-        devices = fetch_devices(page=page, per_page=20)
-        if not devices:
-            break
+    try:
+        devices = await fetch_devices_with_browser()
+        print(f"Found {len(devices)} total devices")
+        
         for device in devices:
-            device_id = device.get("id") or device.get("certificate_no")
-            if device_id and device_id not in seen_ids:
-                new_devices.append(device)
-                new_ids.add(device_id)
-        if len(devices) < 20:
-            break
+            # Filter for Cellular Mobile devices
+            if device.get("subType") == "Cellular Mobile":
+                device_id = device.get("id") or device.get("certificate_no")
+                if device_id and device_id not in seen_ids:
+                    new_devices.append(device)
+                    new_ids.add(device_id)
+    except Exception as e:
+        print(f"Error fetching devices: {e}")
+        sys.exit(1)
 
     if new_devices:
         print(f"Found {len(new_devices)} new devices in Cellular Mobile:")
         with open("new_devices.json", "w", encoding="utf-8") as f:
             json.dump(new_devices, f, ensure_ascii=False, indent=2)
+        
         msg = f"📱 {len(new_devices)} new Cellular Mobile devices found!\n"
         for d in new_devices[:5]:
             brand = d.get('brand', '')
@@ -121,4 +119,4 @@ def main():
     save_seen_ids(all_ids)
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
