@@ -4,6 +4,7 @@ import json
 import asyncio
 from playwright.async_api import async_playwright
 import re
+from datetime import datetime
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
@@ -12,19 +13,15 @@ import requests
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-async def extract_devices_from_html():
-    """Extract device data directly from page HTML"""
-    print("=== HTML EXTRACTION METHOD ===")
+async def extract_recent_devices():
+    """Extract the most recent devices for verification"""
+    print("=== EXTRACTING RECENT DEVICES FOR VERIFICATION ===")
     
     try:
         async with async_playwright() as p:
             browser = await p.chromium.launch(
                 headless=True,
-                args=[
-                    '--no-sandbox',
-                    '--disable-blink-features=AutomationControlled',
-                    '--disable-web-security'
-                ]
+                args=['--no-sandbox', '--disable-blink-features=AutomationControlled']
             )
             
             context = await browser.new_context(
@@ -34,209 +31,339 @@ async def extract_devices_from_html():
             
             page = await context.new_page()
             
-            # Hide automation indicators
-            await page.add_init_script("""
-                Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
-            """)
+            await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
             
-            print("Loading page with status filter...")
-            # Go directly to the page with status filter
+            print("Loading NBTC page (devices are usually sorted by newest first)...")
             await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต", 
                            wait_until="domcontentloaded", timeout=60000)
             
-            # Wait for Cloudflare and page to fully load
-            await page.wait_for_timeout(15000)
+            await page.wait_for_timeout(15000)  # Wait for full page load
             
-            # Check if we have device data in the page
-            print("Analyzing page content...")
+            # Try to get the page structure first
+            print("Analyzing page structure...")
             
-            # Method 1: Look for table rows or card elements
-            device_elements = await page.query_selector_all(
-                "tr, .card, .equipment-item, .device-card, .equipment-row, .item-row"
-            )
-            print(f"Found {len(device_elements)} potential device elements")
-            
-            devices = []
-            
-            # Method 2: Extract all text and look for patterns
-            page_text = await page.evaluate("document.body.innerText")
-            print(f"Page text length: {len(page_text)} characters")
-            
-            # Look for device patterns in text
-            lines = page_text.split('\n')
-            device_info = []
-            
-            for i, line in enumerate(lines):
-                line = line.strip()
-                if line and any(keyword in line.upper() for keyword in ['SAMSUNG', 'APPLE', 'XIAOMI', 'OPPO', 'VIVO', 'HUAWEI', 'NOKIA']):
-                    # Found a potential device line, get context
-                    context_lines = lines[max(0, i-2):i+3]
-                    device_info.append('\n'.join(context_lines))
-                    print(f"Found potential device: {line}")
-            
-            # Method 3: Look for JSON data in script tags
-            script_content = await page.evaluate("""
+            # Check if there are any data tables or structured content
+            structured_elements = await page.evaluate("""
                 () => {
-                    let allScripts = '';
-                    document.querySelectorAll('script').forEach(script => {
-                        if (script.textContent && (
-                            script.textContent.includes('equipment') || 
-                            script.textContent.includes('device') ||
-                            script.textContent.includes('data')
-                        )) {
-                            allScripts += script.textContent + '\\n\\n';
+                    const elements = [];
+                    
+                    // Look for tables
+                    const tables = document.querySelectorAll('table');
+                    tables.forEach((table, index) => {
+                        const rows = table.querySelectorAll('tr');
+                        if (rows.length > 1) {
+                            elements.push({
+                                type: 'table',
+                                index: index,
+                                rows: rows.length,
+                                hasHeaders: table.querySelector('th') !== null
+                            });
                         }
                     });
-                    return allScripts;
+                    
+                    // Look for cards or items
+                    const cards = document.querySelectorAll('.card, .item, .equipment, .device');
+                    elements.push({
+                        type: 'cards',
+                        count: cards.length
+                    });
+                    
+                    // Look for lists
+                    const lists = document.querySelectorAll('ul, ol');
+                    lists.forEach((list, index) => {
+                        const items = list.querySelectorAll('li');
+                        if (items.length > 5) {
+                            elements.push({
+                                type: 'list',
+                                index: index,
+                                items: items.length
+                            });
+                        }
+                    });
+                    
+                    return elements;
                 }
             """)
             
-            print(f"Script content length: {len(script_content)} characters")
+            print(f"Found structured elements: {structured_elements}")
             
-            # Try to extract JSON from scripts
-            json_matches = re.findall(r'\{[^{}]*"data"\s*:\s*\[[^\]]*\][^{}]*\}', script_content)
-            print(f"Found {len(json_matches)} potential JSON data blocks")
+            # Get all page text
+            page_text = await page.evaluate("document.body.innerText")
+            print(f"Page text length: {len(page_text)} characters")
             
-            for match in json_matches:
-                try:
-                    data = json.loads(match)
-                    if "data" in data and isinstance(data["data"], list):
-                        devices.extend(data["data"])
-                        print(f"Extracted {len(data['data'])} devices from JSON")
-                except:
-                    continue
+            # Try to extract table data if tables exist
+            recent_devices = []
             
-            # Method 4: Try to trigger data loading with different approaches
-            if not devices and not device_info:
-                print("No devices found yet, trying to trigger data loading...")
-                
-                # Try clicking different elements
-                clickable_elements = await page.query_selector_all(
-                    "button, a, .btn, .link, input[type='submit']"
-                )
-                
-                for element in clickable_elements[:5]:  # Try first 5 clickable elements
-                    try:
-                        element_text = await element.inner_text()
-                        print(f"Trying to click: {element_text}")
-                        await element.click()
-                        await page.wait_for_timeout(3000)
-                        
-                        # Check if new content appeared
-                        new_elements = await page.query_selector_all(".equipment-item, .device-card")
-                        if new_elements:
-                            print(f"Found {len(new_elements)} new elements after clicking")
-                            break
-                    except:
-                        continue
+            if any(elem['type'] == 'table' for elem in structured_elements):
+                print("Extracting data from tables...")
+                recent_devices = await extract_from_tables(page)
             
-            # Method 5: Check for any tables with data
-            tables = await page.query_selector_all("table")
-            print(f"Found {len(tables)} tables")
-            
-            for table in tables:
-                try:
-                    table_text = await table.inner_text()
-                    if any(keyword in table_text.upper() for keyword in ['BRAND', 'MODEL', 'CERTIFICATE', 'TYPE']):
-                        print("Found table with device-like headers")
-                        rows = await table.query_selector_all("tr")
-                        print(f"Table has {len(rows)} rows")
-                        
-                        for row in rows[1:6]:  # Skip header, get first 5 data rows
-                            try:
-                                cells = await row.query_selector_all("td")
-                                if len(cells) >= 3:
-                                    cell_texts = []
-                                    for cell in cells:
-                                        cell_text = await cell.inner_text()
-                                        cell_texts.append(cell_text.strip())
-                                    
-                                    if cell_texts[0]:  # If first cell has content
-                                        device = {
-                                            "brand": cell_texts[0] if len(cell_texts) > 0 else "Unknown",
-                                            "model": cell_texts[1] if len(cell_texts) > 1 else "Unknown",
-                                            "subType": "Cellular Mobile",
-                                            "certificate_no": cell_texts[2] if len(cell_texts) > 2 else "Unknown",
-                                            "id": f"html_extracted_{len(devices)}"
-                                        }
-                                        devices.append(device)
-                                        print(f"Extracted from table: {device['brand']} {device['model']}")
-                            except:
-                                continue
-                except:
-                    continue
+            # If no table data, parse from text
+            if not recent_devices:
+                print("No table data found, parsing from text...")
+                recent_devices = parse_recent_from_text(page_text)
             
             await browser.close()
-            
-            print(f"Total devices extracted: {len(devices)}")
-            return devices[:5]  # Return first 5 for testing
+            return recent_devices[:5]  # Return only top 5
     
     except Exception as e:
-        print(f"HTML extraction error: {e}")
+        print(f"Extraction error: {e}")
         return []
 
-def send_test_results(devices, method=""):
-    """Send test results via Telegram"""
+async def extract_from_tables(page):
+    """Extract device data from HTML tables"""
+    print("Attempting to extract from HTML tables...")
+    
+    try:
+        table_data = await page.evaluate("""
+            () => {
+                const devices = [];
+                const tables = document.querySelectorAll('table');
+                
+                for (let table of tables) {
+                    const rows = table.querySelectorAll('tr');
+                    
+                    // Skip if too few rows
+                    if (rows.length < 2) continue;
+                    
+                    // Get headers if they exist
+                    const headerRow = table.querySelector('tr:first-child');
+                    const headers = [];
+                    if (headerRow) {
+                        headerRow.querySelectorAll('th, td').forEach(cell => {
+                            headers.push(cell.innerText.trim());
+                        });
+                    }
+                    
+                    // Extract data rows
+                    for (let i = 1; i < Math.min(rows.length, 6); i++) {
+                        const row = rows[i];
+                        const cells = row.querySelectorAll('td');
+                        
+                        if (cells.length >= 2) {
+                            const rowData = [];
+                            cells.forEach(cell => {
+                                rowData.push(cell.innerText.trim());
+                            });
+                            
+                            // Look for device-like data
+                            const rowText = rowData.join(' ');
+                            if (rowText.match(/(CPH|SM-|A\\d{4}|\\d{10}[A-Z]|vivo|OPPO|Samsung|Apple|Xiaomi)/i)) {
+                                devices.push({
+                                    headers: headers,
+                                    data: rowData,
+                                    fullText: rowText
+                                });
+                            }
+                        }
+                    }
+                }
+                
+                return devices;
+            }
+        """)
+        
+        print(f"Extracted {len(table_data)} potential device rows from tables")
+        
+        # Convert table data to device objects
+        devices = []
+        for item in table_data:
+            device = parse_table_row_to_device(item)
+            if device:
+                devices.append(device)
+        
+        return devices
+    
+    except Exception as e:
+        print(f"Table extraction error: {e}")
+        return []
+
+def parse_table_row_to_device(table_item):
+    """Convert table row data to device object"""
+    try:
+        data = table_item['data']
+        full_text = table_item['fullText']
+        
+        # Try to identify brand and model from the data
+        brand = "Unknown"
+        model = "Unknown"
+        description = ""
+        device_id = ""
+        
+        # Look for known patterns in the row data
+        for cell in data:
+            cell_upper = cell.upper()
+            
+            # Check for brand names
+            if any(b in cell_upper for b in ['OPPO', 'SAMSUNG', 'APPLE', 'XIAOMI', 'VIVO', 'HUAWEI']):
+                brand = next(b for b in ['OPPO', 'SAMSUNG', 'APPLE', 'XIAOMI', 'VIVO', 'HUAWEI'] if b in cell_upper)
+            
+            # Check for model patterns
+            if re.search(r'CPH\d+', cell):
+                model = re.search(r'CPH\d+', cell).group()
+                device_id = model
+                brand = "OPPO"
+            elif re.search(r'SM-[A-Z0-9]+', cell):
+                model = re.search(r'SM-[A-Z0-9]+', cell).group()
+                device_id = model
+                brand = "Samsung"
+            elif re.search(r'A\d{4}', cell):
+                model = re.search(r'A\d{4}', cell).group()
+                device_id = model
+                brand = "Apple"
+            elif re.search(r'\d{10,}[A-Z]+', cell):
+                model = re.search(r'\d{10,}[A-Z]+', cell).group()
+                device_id = model
+                brand = "Xiaomi"
+        
+        if device_id:
+            device = {
+                "id": device_id,
+                "brand": brand,
+                "model": model,
+                "description": description,
+                "subType": "Cellular Mobile",
+                "certificate_no": device_id,
+                "link": f"https://mocheck.nbtc.go.th/search-equipments?search={device_id}",
+                "source": "table_extraction",
+                "table_data": data,
+                "verification_status": "extracted_from_table"
+            }
+            return device
+    
+    except Exception as e:
+        print(f"Error parsing table row: {e}")
+    
+    return None
+
+def parse_recent_from_text(text):
+    """Parse recent devices from page text (fallback method)"""
+    devices = []
+    
+    print("Parsing recent devices from text (taking first matches as most recent)...")
+    
+    # Track found devices to avoid duplicates
+    found_devices = set()
+    
+    # Pattern matching for different brands (take first few matches as "recent")
+    patterns = [
+        (r'(CPH\d+)\s*\((.*?)\)', "OPPO"),
+        (r'(\d{10,}[A-Z]+)\s*\((Xiaomi.*?)\)', "Xiaomi"),
+        (r'(SM-[A-Z0-9]+)\s*(?:\((.*?)\))?', "Samsung"),
+        (r'(A\d{4})\s*(?:\((.*?)\))?', "Apple"),
+        (r'(vivo \d+[A-Z]*)\s*(?:\((.*?)\))?', "vivo")
+    ]
+    
+    for pattern, brand in patterns:
+        matches = re.findall(pattern, text)
+        for match in matches[:2]:  # Take first 2 of each brand as "recent"
+            if isinstance(match, tuple) and len(match) >= 2:
+                model_code, description = match[0], match[1]
+            else:
+                model_code, description = match, ""
+            
+            if model_code not in found_devices:
+                device = {
+                    "id": model_code.replace(" ", "_"),
+                    "brand": brand,
+                    "model": model_code,
+                    "description": description,
+                    "subType": "Cellular Mobile",
+                    "certificate_no": model_code.replace(" ", "_"),
+                    "link": f"https://mocheck.nbtc.go.th/search-equipments?search={model_code.replace(' ', '%20')}",
+                    "source": "text_extraction",
+                    "verification_status": "needs_manual_verification"
+                }
+                devices.append(device)
+                found_devices.add(model_code)
+                
+                if len(devices) >= 5:
+                    break
+        
+        if len(devices) >= 5:
+            break
+    
+    return devices
+
+def send_verification_notification(devices):
+    """Send verification notification with recent devices"""
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print("No Telegram credentials - skipping notification")
+        print("No Telegram credentials")
         return
     
-    if devices:
-        msg = f"🎉 BREAKTHROUGH! Found {len(devices)} devices!\n"
-        msg += f"Method: {method}\n\n"
-        for i, device in enumerate(devices):
-            brand = device.get('brand', 'Unknown')
-            model = device.get('model', 'Unknown')
-            subtype = device.get('subType', 'Unknown')
-            cert = device.get('certificate_no', 'Unknown')
-            msg += f"{i+1}. {brand} {model}\n   Type: {subtype}\n   Cert: {cert}\n\n"
-        msg += "🚀 SUCCESS! We can now extract real device data!\n"
-        msg += "Your daily scraper will start working!"
-    else:
-        msg = f"🔍 TEST RESULTS: HTML extraction attempted\n"
-        msg += f"❌ No device data found in page HTML\n\n"
-        msg += f"The page loads but device data might be:\n"
-        msg += f"• Loaded dynamically after user interaction\n"
-        msg += f"• Requires authentication\n"
-        msg += f"• Hidden in complex JavaScript\n\n"
-        msg += f"📅 Will keep trying daily at 7 AM IST"
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
+    
+    msg = f"🔍 VERIFICATION TEST - {current_time}\n\n"
+    msg += f"📋 Found {len(devices)} devices for authenticity check:\n\n"
+    
+    for i, device in enumerate(devices):
+        brand = device.get('brand', 'Unknown')
+        model = device.get('model', 'Unknown')
+        desc = device.get('description', '')
+        link = device.get('link', '')
+        source = device.get('source', 'unknown')
+        
+        msg += f"{i+1}. <b>{brand} {model}</b>\n"
+        if desc and desc != model and desc.strip():
+            msg += f"   📝 {desc}\n"
+        msg += f"   🔗 <a href='{link}'>Verify on NBTC Site</a>\n"
+        msg += f"   📊 Source: {source}\n\n"
+    
+    msg += f"✅ <b>VERIFICATION STEPS:</b>\n"
+    msg += f"1. Click each device link above\n"
+    msg += f"2. Check if it opens NBTC's official page\n"
+    msg += f"3. Verify device details match\n\n"
+    msg += f"🎯 <b>If all links work → Our scraper is authentic!</b>"
     
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": msg,
+        "parse_mode": "HTML",
         "disable_web_page_preview": True
     }
     
     try:
         resp = requests.post(url, data=payload, timeout=15)
         if resp.status_code == 200:
-            print("Test results sent to Telegram!")
+            print("✅ Verification notification sent!")
         else:
-            print(f"Telegram failed: {resp.status_code}")
+            print(f"❌ Telegram failed: {resp.status_code}")
     except Exception as e:
-        print(f"Telegram error: {e}")
+        print(f"❌ Telegram error: {e}")
 
 async def main():
-    print("=== HTML EXTRACTION TEST ===")
-    print("Trying to extract device data directly from page HTML...\n")
+    print("=== NBTC RECENT DEVICES VERIFICATION ===")
+    print("Extracting recent devices for authenticity check...\n")
     
-    devices = await extract_devices_from_html()
+    devices = await extract_recent_devices()
     
-    print(f"\n=== FINAL RESULTS ===")
-    print(f"Total devices found: {len(devices)}")
+    print(f"\n=== VERIFICATION RESULTS ===")
+    print(f"Found {len(devices)} recent devices for verification")
     
     if devices:
-        print("SUCCESS! Here are the devices:")
+        print("\nRecent devices found:")
         for i, device in enumerate(devices):
-            print(f"{i+1}. {device.get('brand')} {device.get('model')} - {device.get('subType')}")
-        method_used = "HTML Extraction"
+            print(f"{i+1}. {device['brand']} {device['model']}")
+            print(f"   Description: {device.get('description', 'N/A')}")
+            print(f"   Link: {device['link']}")
+            print(f"   Source: {device.get('source', 'unknown')}")
+            print()
+        
+        send_verification_notification(devices)
+        
+        # Save verification data
+        with open("verification_devices.json", "w", encoding="utf-8") as f:
+            json.dump(devices, f, ensure_ascii=False, indent=2)
+        print("✅ Verification data saved to verification_devices.json")
+        
+        print("\n🔍 NEXT STEPS:")
+        print("1. Check your Telegram for the verification message")
+        print("2. Click each device link to verify it exists on NBTC")
+        print("3. If all links work, our scraper is getting real data!")
+        
     else:
-        print("No devices found - trying different extraction approach needed")
-        method_used = "HTML Extraction (failed)"
-    
-    # Send results via Telegram
-    send_test_results(devices, method_used)
+        print("❌ No recent devices found - may need to adjust extraction method")
 
 if __name__ == "__main__":
     asyncio.run(main())
