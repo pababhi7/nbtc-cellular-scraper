@@ -9,14 +9,21 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 async def extract_all_devices():
-    print("=== EXTRACTING ALL DEVICES FROM NBTC TABLE (WITH PAGINATION) ===")
+    print("=== EXTRACTING ALL DEVICES FROM NBTC TABLE (WITH PAGINATION & DEBUG) ===")
     all_devices = []
     seen_ids = set()
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True, args=['--no-sandbox'])
+        browser = await p.chromium.launch(headless=False, args=['--no-sandbox'])
         page = await browser.new_page()
         await page.goto("https://mocheck.nbtc.go.th/search-equipments?status=อนุญาต", wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(10000)
+        try:
+            await page.wait_for_selector("tbody tr", timeout=30000)
+        except Exception as e:
+            print("❌ Table rows not found after waiting 30 seconds.")
+        # Print table HTML for debug
+        table_html = await page.evaluate("document.querySelector('table') ? document.querySelector('table').outerHTML : 'NO TABLE FOUND'")
+        print("=== TABLE HTML SAMPLE ===")
+        print(table_html[:2000])
         page_num = 1
         while True:
             print(f"Scraping page {page_num}...")
@@ -148,7 +155,7 @@ def send_new_device_notification(new_devices, is_first_run=False):
         print(f"❌ Failed to send notification: {e}")
 
 async def main():
-    print("=== NBTC NEW DEVICE MONITOR (TABLE/PAGINATION) ===")
+    print("=== NBTC NEW DEVICE MONITOR (TABLE/PAGINATION/DEBUG) ===")
     seen_device_ids = load_seen_devices()
     is_first_run = len(seen_device_ids) == 0
     current_devices = await extract_all_devices()
