@@ -22,7 +22,7 @@ class NBTCMonitor:
     def __init__(self):
         self.devices = []
         self.new_devices = []
-        self.seen_devices = set()  # Set of "brand|model" strings
+        self.seen_devices = set()  # Set of "brand|model" or "model" strings
 
     async def method_1_direct_api(self):
         print("🚀 Method 1: API with pagination (all devices, all statuses)...")
@@ -78,6 +78,7 @@ class NBTCMonitor:
                 devices = self.parse_devices_from_text(page_text)
                 if devices:
                     print(f"✅ Browser Text: Found {len(devices)} devices")
+                    print("Sample scraped devices:", devices[:3])
                     return devices
         except Exception as e:
             print(f"❌ Browser method failed: {e}")
@@ -105,10 +106,12 @@ class NBTCMonitor:
                             devices = data["data"]
                             if devices:
                                 print(f"✅ Mobile API: Found {len(devices)} devices")
+                                print("Sample scraped devices:", devices[:3])
                                 return devices
                     devices = self.parse_devices_from_text(response.text)
                     if devices:
                         print(f"✅ Mobile HTML: Found {len(devices)} devices")
+                        print("Sample scraped devices:", devices[:3])
                         return devices
             except:
                 continue
@@ -118,21 +121,41 @@ class NBTCMonitor:
     def parse_devices_from_text(self, text):
         devices = []
         found_ids = set()
-        pattern = r'([A-Z0-9\-]{4,})\s*\(([^)]{3,})\)'
-        matches = re.findall(pattern, text, re.IGNORECASE)
+        # Try to extract brand and model from lines like "vivo - V2436 (Y39 5G)"
+        pattern = r'([A-Za-z0-9]+)\s*-\s*([A-Z0-9\-]{4,})\s*\(([^)]{3,})\)'
+        matches = re.findall(pattern, text)
         for match in matches:
-            model_code, description = match[0].strip(), match[1].strip()
-            if model_code and model_code not in found_ids:
+            brand, model_code, description = match[0].strip(), match[1].strip(), match[2].strip()
+            key = f"{brand.lower()}|{model_code.lower()}"
+            if key not in found_ids:
                 device = {
                     "id": model_code,
-                    "brand": "",
+                    "brand": brand,
                     "model": model_code,
                     "description": description,
                     "subType": "",
                     "certificate_no": model_code
                 }
                 devices.append(device)
-                found_ids.add(model_code)
+                found_ids.add(key)
+        # Fallback: just model (if above pattern fails)
+        if not devices:
+            pattern = r'([A-Z0-9\-]{4,})\s*\(([^)]{3,})\)'
+            matches = re.findall(pattern, text, re.IGNORECASE)
+            for match in matches:
+                model_code, description = match[0].strip(), match[1].strip()
+                key = model_code.lower()
+                if key not in found_ids:
+                    device = {
+                        "id": model_code,
+                        "brand": "",
+                        "model": model_code,
+                        "description": description,
+                        "subType": "",
+                        "certificate_no": model_code
+                    }
+                    devices.append(device)
+                    found_ids.add(key)
         return devices
 
     def load_seen_devices(self):
@@ -162,11 +185,13 @@ class NBTCMonitor:
             print(f"❌ Error saving seen devices: {e}")
 
     def device_key(self, device):
-        # Use brand|model as unique key (case-insensitive)
+        # Use brand|model as unique key, fallback to model if brand is missing
         brand = (device.get("brand") or "").strip().lower()
         model = (device.get("model") or "").strip().lower()
         if brand and model:
             return f"{brand}|{model}"
+        elif model:
+            return model
         return None
 
     def find_new_devices(self):
@@ -180,12 +205,9 @@ class NBTCMonitor:
 
     def fetch_device_detail(self, device):
         # Try to get detail page using model code (or certificate_no if available)
-        # If API provides a detail URL, use it. Otherwise, try to guess.
-        # Here, we try with model code as fallback.
         model_code = device.get("model") or device.get("id")
         if not model_code:
             return device
-        # Try both model code and certificate_no
         tried = set()
         for key in [device.get("certificate_no"), model_code]:
             if not key or key in tried:
@@ -197,7 +219,6 @@ class NBTCMonitor:
                 if resp.status_code != 200:
                     continue
                 soup = BeautifulSoup(resp.text, "html.parser")
-                # Parse model, brand, date of issue, etc.
                 model = soup.find("h3", class_="header-model")
                 model = model.text.strip() if model else device.get("model", "")
                 brand = ""
@@ -215,12 +236,10 @@ class NBTCMonitor:
                 return device
             except Exception as e:
                 print(f"❌ Error fetching detail for {key}: {e}")
-        # If all fails, return as is
         device["is_pending"] = True
         return device
 
     def enrich_new_devices(self):
-        # For each new device, fetch detail page and update info
         for i, device in enumerate(self.new_devices):
             self.new_devices[i] = self.fetch_device_detail(device)
 
