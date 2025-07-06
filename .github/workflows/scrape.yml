@@ -56,8 +56,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "ℹ️ No changes to commit"
           else
-            git pull --rebase
             git commit -m "🤖 Update device data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git pull --rebase
             git push || echo "⚠️ Git push failed"
             echo "✅ Changes committed and pushed"
           fi
