@@ -204,10 +204,9 @@ class NBTCMonitor:
         print(f"📊 Found {len(self.new_devices)} new devices out of {len(self.devices)} total")
 
     def fetch_device_detail(self, device):
-        # Try to get detail page using model code (or certificate_no if available)
         model_code = device.get("model") or device.get("id")
         if not model_code:
-            return device
+            return None
         tried = set()
         for key in [device.get("certificate_no"), model_code]:
             if not key or key in tried:
@@ -229,19 +228,28 @@ class NBTCMonitor:
                 for div in soup.find_all("div", class_="detail_heading"):
                     if "Date of issue" in div.text:
                         date_of_issue = div.find_next_sibling("div").text.strip()
+                # Extract equipment type
+                equipment_type = ""
+                for div in soup.find_all("div", class_="detail_heading"):
+                    if "Types of telecommunication equipment" in div.text:
+                        equipment_type = div.find_next_sibling("div").text.strip()
                 device["model"] = model
                 device["brand"] = brand
                 device["date_of_issue"] = date_of_issue
                 device["is_pending"] = "not specified" in date_of_issue.lower()
+                device["equipment_type"] = equipment_type
                 return device
             except Exception as e:
                 print(f"❌ Error fetching detail for {key}: {e}")
-        device["is_pending"] = True
-        return device
+        return None
 
     def enrich_new_devices(self):
-        for i, device in enumerate(self.new_devices):
-            self.new_devices[i] = self.fetch_device_detail(device)
+        enriched = []
+        for device in self.new_devices:
+            detail = self.fetch_device_detail(device)
+            if detail and "cellular mobile service" in (detail.get("equipment_type", "").lower()):
+                enriched.append(detail)
+        self.new_devices = enriched
 
     def send_notification(self, is_first_run=False):
         if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
