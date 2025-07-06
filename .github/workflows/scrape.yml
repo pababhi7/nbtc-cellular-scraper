@@ -2,7 +2,6 @@ name: NBTC Device Monitor
 
 on:
   schedule:
-    # 7:00 AM IST is 1:30 AM UTC
     - cron: '30 1 * * *'
   workflow_dispatch:
     inputs:
@@ -58,7 +57,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "ℹ️ No changes to commit"
           else
+            git pull --rebase
             git commit -m "🤖 Update device data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-            git push
+            git push || echo "⚠️ Git push failed"
             echo "✅ Changes committed and pushed"
           fi
