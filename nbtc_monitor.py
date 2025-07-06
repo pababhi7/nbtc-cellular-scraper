@@ -2,27 +2,30 @@ import sys
 import os
 import json
 import asyncio
-from playwright.async_api import async_playwright
 import re
 from datetime import datetime
-
-os.environ["PYTHONIOENCODING"] = "utf-8"
+from collections import Counter
 
 import requests
+from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
+
+os.environ["PYTHONIOENCODING"] = "utf-8"
 
 SEEN_FILE = "seen_devices.json"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
+DETAIL_URL_TEMPLATE = "https://mocheck.nbtc.go.th/equipments/detail/{}"
+
 class NBTCMonitor:
     def __init__(self):
         self.devices = []
         self.new_devices = []
-        self.seen_devices = set()
-        
+        self.seen_devices = set()  # Set of "brand|model" strings
+
     async def method_1_direct_api(self):
-        """Fetch all cellular devices using paginated API, all statuses."""
-        print("🚀 Method 1: API with pagination (all statuses)...")
+        print("🚀 Method 1: API with pagination (all devices, all statuses)...")
         endpoint = "https://mocheck.nbtc.go.th/api/equipments/search"
         headers = {
             "Content-Type": "application/json",
@@ -35,14 +38,13 @@ class NBTCMonitor:
         page = 1
         per_page = 50
         while True:
-            # status: "" means all statuses (approved, testing, etc)
-            payload = {"status": "", "page": page, "perPage": per_page, "search": "", "subType": "Cellular Mobile"}
+            payload = {"status": "", "page": page, "perPage": per_page, "search": ""}
             try:
                 response = requests.post(endpoint, json=payload, headers=headers, timeout=30)
                 if response.status_code == 200:
                     data = response.json()
                     if "data" in data and data["data"]:
-                        devices = [d for d in data["data"] if self.is_cellular_device(d)]
+                        devices = data["data"]
                         all_devices.extend(devices)
                         print(f"  - Page {page}: {len(devices)} devices")
                         if len(data["data"]) < per_page:
@@ -55,11 +57,11 @@ class NBTCMonitor:
             except Exception as e:
                 print(f"❌ API error: {e}")
                 break
-        print(f"✅ API Success: Found {len(all_devices)} devices")
+        brands = Counter([d.get("brand", "Unknown") for d in all_devices])
+        print("Brands found:", brands)
         return all_devices
-    
+
     async def method_2_optimized_browser(self):
-        """Fallback: Scrape using browser automation."""
         print("🌐 Method 2: Browser scraping...")
         try:
             async with async_playwright() as p:
@@ -80,9 +82,8 @@ class NBTCMonitor:
         except Exception as e:
             print(f"❌ Browser method failed: {e}")
         return []
-    
+
     async def method_3_mobile_endpoint(self):
-        """Fallback: Try mobile/lite endpoints."""
         print("📱 Method 3: Mobile endpoints...")
         mobile_urls = [
             "https://mocheck.nbtc.go.th/m/search",
@@ -101,7 +102,7 @@ class NBTCMonitor:
                     if "application/json" in response.headers.get("content-type", ""):
                         data = response.json()
                         if "data" in data:
-                            devices = [d for d in data["data"] if self.is_cellular_device(d)]
+                            devices = data["data"]
                             if devices:
                                 print(f"✅ Mobile API: Found {len(devices)} devices")
                                 return devices
@@ -113,9 +114,8 @@ class NBTCMonitor:
                 continue
         print("❌ Mobile endpoints failed")
         return []
-    
+
     def parse_devices_from_text(self, text):
-        """Generic pattern: extract anything like CODE (description)."""
         devices = []
         found_ids = set()
         pattern = r'([A-Z0-9\-]{4,})\s*\(([^)]{3,})\)'
@@ -128,28 +128,14 @@ class NBTCMonitor:
                     "brand": "",
                     "model": model_code,
                     "description": description,
-                    "subType": "Cellular Mobile",
+                    "subType": "",
                     "certificate_no": model_code
                 }
                 devices.append(device)
                 found_ids.add(model_code)
         return devices
-    
-    def is_cellular_device(self, device):
-        """Check if device is cellular mobile (very generic)."""
-        if not isinstance(device, dict):
-            return False
-        sub_type = device.get("subType", "").lower()
-        if "cellular" in sub_type or "mobile" in sub_type:
-            return True
-        for field in ["type", "category", "description"]:
-            value = str(device.get(field, "")).lower()
-            if any(keyword in value for keyword in ["mobile", "cellular", "phone", "smartphone"]):
-                return True
-        return False
-    
+
     def load_seen_devices(self):
-        """Load previously seen device IDs."""
         if os.path.exists(SEEN_FILE):
             try:
                 with open(SEEN_FILE, "r", encoding="utf-8") as f:
@@ -162,47 +148,106 @@ class NBTCMonitor:
         else:
             print("📝 First run - no previous devices")
             self.seen_devices = set()
-    
+
     def save_seen_devices(self):
-        """Save all seen device IDs to file."""
         try:
             for d in self.devices:
-                if d.get("id"):
-                    self.seen_devices.add(d.get("id"))
+                key = self.device_key(d)
+                if key:
+                    self.seen_devices.add(key)
             with open(SEEN_FILE, "w", encoding="utf-8") as f:
                 json.dump(list(self.seen_devices), f, ensure_ascii=False, indent=2)
             print(f"💾 Saved {len(self.seen_devices)} device IDs")
         except Exception as e:
             print(f"❌ Error saving seen devices: {e}")
-    
+
+    def device_key(self, device):
+        # Use brand|model as unique key (case-insensitive)
+        brand = (device.get("brand") or "").strip().lower()
+        model = (device.get("model") or "").strip().lower()
+        if brand and model:
+            return f"{brand}|{model}"
+        return None
+
     def find_new_devices(self):
-        """Find devices that are NEW (never seen before)."""
         self.new_devices = []
         for device in self.devices:
-            device_id = device.get("id")
-            if device_id and device_id not in self.seen_devices:
+            key = self.device_key(device)
+            if key and key not in self.seen_devices:
                 self.new_devices.append(device)
-                print(f"🆕 NEW: {device.get('model')} ({device.get('description')})")
+                print(f"🆕 NEW: {device.get('brand')} {device.get('model')}")
         print(f"📊 Found {len(self.new_devices)} new devices out of {len(self.devices)} total")
-    
+
+    def fetch_device_detail(self, device):
+        # Try to get detail page using model code (or certificate_no if available)
+        # If API provides a detail URL, use it. Otherwise, try to guess.
+        # Here, we try with model code as fallback.
+        model_code = device.get("model") or device.get("id")
+        if not model_code:
+            return device
+        # Try both model code and certificate_no
+        tried = set()
+        for key in [device.get("certificate_no"), model_code]:
+            if not key or key in tried:
+                continue
+            tried.add(key)
+            url = DETAIL_URL_TEMPLATE.format(key)
+            try:
+                resp = requests.get(url, timeout=20)
+                if resp.status_code != 200:
+                    continue
+                soup = BeautifulSoup(resp.text, "html.parser")
+                # Parse model, brand, date of issue, etc.
+                model = soup.find("h3", class_="header-model")
+                model = model.text.strip() if model else device.get("model", "")
+                brand = ""
+                for div in soup.find_all("div", class_="detail_heading"):
+                    if "Seal" in div.text:
+                        brand = div.find_next_sibling("div").text.strip()
+                date_of_issue = ""
+                for div in soup.find_all("div", class_="detail_heading"):
+                    if "Date of issue" in div.text:
+                        date_of_issue = div.find_next_sibling("div").text.strip()
+                device["model"] = model
+                device["brand"] = brand
+                device["date_of_issue"] = date_of_issue
+                device["is_pending"] = "not specified" in date_of_issue.lower()
+                return device
+            except Exception as e:
+                print(f"❌ Error fetching detail for {key}: {e}")
+        # If all fails, return as is
+        device["is_pending"] = True
+        return device
+
+    def enrich_new_devices(self):
+        # For each new device, fetch detail page and update info
+        for i, device in enumerate(self.new_devices):
+            self.new_devices[i] = self.fetch_device_detail(device)
+
     def send_notification(self, is_first_run=False):
-        """Send Telegram notification."""
         if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
             print("❌ No Telegram credentials")
             return
         if is_first_run:
             msg = f"🎉 <b>NBTC Monitor Started!</b>\n\n"
             msg += f"✅ Found {len(self.devices)} devices on first scan\n"
-            msg += f"📅 Monitoring for NEW devices daily at 7 AM IST\n\n"
+            msg += f"📅 Monitoring for NEW devices daily at 4 AM and 5 AM IST\n\n"
             msg += f"🚀 <b>You'll only get notified about NEW devices!</b>"
         elif self.new_devices:
-            msg = f"📱 <b>{len(self.new_devices)} NEW cellular devices found!</b>\n\n"
+            msg = f"📱 <b>{len(self.new_devices)} NEW devices found!</b>\n\n"
             for i, device in enumerate(self.new_devices[:5]):
+                brand = device.get('brand', 'Unknown')
                 model = device.get('model', 'Unknown')
                 desc = device.get('description', '')
-                msg += f"{i+1}. <b>{model}</b>\n"
+                date = device.get('date_of_issue', '')
+                pending = device.get('is_pending', False)
+                msg += f"{i+1}. <b>{brand} {model}</b>\n"
                 if desc and desc != model:
                     msg += f"   📝 {desc}\n"
+                if pending:
+                    msg += f"   ⏳ <b>Status:</b> <code>Pending (date not specified)</code>\n"
+                elif date:
+                    msg += f"   🗓️ <b>Date of issue:</b> <code>{date}</code>\n"
                 msg += f"   🔍 Model: <code>{model}</code>\n\n"
             if len(self.new_devices) > 5:
                 msg += f"...and {len(self.new_devices)-5} more!\n\n"
@@ -224,9 +269,8 @@ class NBTCMonitor:
                 print(f"❌ Telegram failed: {resp.status_code}")
         except Exception as e:
             print(f"❌ Notification error: {e}")
-    
+
     async def run_monitoring(self):
-        """Main monitoring function with multiple methods."""
         print("=== 🔍 NBTC DEVICE MONITOR ===")
         print(f"⏰ Started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         self.load_seen_devices()
@@ -252,6 +296,7 @@ class NBTCMonitor:
             return
         self.find_new_devices()
         if self.new_devices:
+            self.enrich_new_devices()
             with open("new_devices.json", "w", encoding="utf-8") as f:
                 json.dump(self.new_devices, f, ensure_ascii=False, indent=2)
         self.send_notification(is_first_run)
