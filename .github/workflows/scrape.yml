@@ -2,7 +2,8 @@ name: NBTC Device Monitor
 
 on:
   schedule:
-    - cron: '30 1 * * *'
+    - cron: '30 22 * * *'  # 4:00 AM IST
+    - cron: '30 23 * * *'  # 5:00 AM IST
   workflow_dispatch:
     inputs:
       force_run:
@@ -28,7 +29,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install requests playwright
+          pip install requests playwright beautifulsoup4
           playwright install chromium
           
       - name: Run NBTC monitor
@@ -42,7 +43,6 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          # Add any generated files
           if [ -f "seen_devices.json" ]; then
             git add seen_devices.json
             echo "✅ Added seen_devices.json"
@@ -53,7 +53,6 @@ jobs:
             echo "✅ Added new_devices.json"
           fi
           
-          # Check if there are changes to commit
           if git diff --staged --quiet; then
             echo "ℹ️ No changes to commit"
           else
