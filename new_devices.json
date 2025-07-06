@@ -1,10 +1,4979 @@
 [
   {
-    "id": "e881b2070",
-    "brand": "Ray",
-    "model": "e881b2070",
-    "description": "Ray ID: 95a03c8e881b2070",
-    "subType": "Cellular Mobile",
-    "certificate_no": "e881b2070"
+    "id": "4AA10-2BA2",
+    "brand": "6GK5876",
+    "model": "4AA10-2BA2",
+    "description": "SCALANCE M876-4",
+    "subType": "",
+    "certificate_no": "4AA10-2BA2",
+    "is_pending": true
+  },
+  {
+    "id": "1001013-BV",
+    "brand": "AAA",
+    "model": "1001013-BV",
+    "description": "T290i",
+    "subType": "",
+    "certificate_no": "1001013-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1001021-BV",
+    "brand": "AAA",
+    "model": "1001021-BV",
+    "description": "J300i",
+    "subType": "",
+    "certificate_no": "1001021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1001031-BV",
+    "brand": "AAA",
+    "model": "1001031-BV",
+    "description": "Z300i",
+    "subType": "",
+    "certificate_no": "1001031-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002012-BV",
+    "brand": "AAA",
+    "model": "1002012-BV",
+    "description": "J220i",
+    "subType": "",
+    "certificate_no": "1002012-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002021-BV",
+    "brand": "AAA",
+    "model": "1002021-BV",
+    "description": "J100i",
+    "subType": "",
+    "certificate_no": "1002021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002041-BV",
+    "brand": "AAA",
+    "model": "1002041-BV",
+    "description": "J120i",
+    "subType": "",
+    "certificate_no": "1002041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002042-BV",
+    "brand": "AAA",
+    "model": "1002042-BV",
+    "description": "J110i",
+    "subType": "",
+    "certificate_no": "1002042-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002051-BV",
+    "brand": "AAA",
+    "model": "1002051-BV",
+    "description": "K200i",
+    "subType": "",
+    "certificate_no": "1002051-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002052-BV",
+    "brand": "AAA",
+    "model": "1002052-BV",
+    "description": "K220i",
+    "subType": "",
+    "certificate_no": "1002052-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002061-BV",
+    "brand": "AAA",
+    "model": "1002061-BV",
+    "description": "T250i",
+    "subType": "",
+    "certificate_no": "1002061-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002081-BV",
+    "brand": "AAA",
+    "model": "1002081-BV",
+    "description": "T280i",
+    "subType": "",
+    "certificate_no": "1002081-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002092-BV",
+    "brand": "AAA",
+    "model": "1002092-BV",
+    "description": "J132",
+    "subType": "",
+    "certificate_no": "1002092-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1002062-BV",
+    "brand": "AAB",
+    "model": "1002062-BV",
+    "description": "K330",
+    "subType": "",
+    "certificate_no": "1002062-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1021044-BV",
+    "brand": "AAB",
+    "model": "1021044-BV",
+    "description": "K508 หรือ K508i",
+    "subType": "",
+    "certificate_no": "1021044-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1021062-BV",
+    "brand": "AAB",
+    "model": "1021062-BV",
+    "description": "J210i",
+    "subType": "",
+    "certificate_no": "1021062-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1021071-BV",
+    "brand": "AAB",
+    "model": "1021071-BV",
+    "description": "K300i",
+    "subType": "",
+    "certificate_no": "1021071-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022011-BV",
+    "brand": "AAB",
+    "model": "1022011-BV",
+    "description": "K750i",
+    "subType": "",
+    "certificate_no": "1022011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022013-BV",
+    "brand": "AAB",
+    "model": "1022013-BV",
+    "description": "W800i",
+    "subType": "",
+    "certificate_no": "1022013-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022014-BV",
+    "brand": "AAB",
+    "model": "1022014-BV",
+    "description": "W700i",
+    "subType": "",
+    "certificate_no": "1022014-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022015-BV",
+    "brand": "AAB",
+    "model": "1022015-BV",
+    "description": "Z550i",
+    "subType": "",
+    "certificate_no": "1022015-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022016-BV",
+    "brand": "AAB",
+    "model": "1022016-BV",
+    "description": "Z558i",
+    "subType": "",
+    "certificate_no": "1022016-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022021-BV",
+    "brand": "AAB",
+    "model": "1022021-BV",
+    "description": "W550i",
+    "subType": "",
+    "certificate_no": "1022021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022031-BV",
+    "brand": "AAB",
+    "model": "1022031-BV",
+    "description": "Z530i",
+    "subType": "",
+    "certificate_no": "1022031-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022041-BV",
+    "brand": "AAB",
+    "model": "1022041-BV",
+    "description": "K510i",
+    "subType": "",
+    "certificate_no": "1022041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022042-BV",
+    "brand": "AAB",
+    "model": "1022042-BV",
+    "description": "K310i",
+    "subType": "",
+    "certificate_no": "1022042-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022043-BV",
+    "brand": "AAB",
+    "model": "1022043-BV",
+    "description": "K320i",
+    "subType": "",
+    "certificate_no": "1022043-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022044-BV",
+    "brand": "AAB",
+    "model": "1022044-BV",
+    "description": "W200i",
+    "subType": "",
+    "certificate_no": "1022044-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022051-BV",
+    "brand": "AAB",
+    "model": "1022051-BV",
+    "description": "Z310i",
+    "subType": "",
+    "certificate_no": "1022051-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022091-BV",
+    "brand": "AAB",
+    "model": "1022091-BV",
+    "description": "Z320i",
+    "subType": "",
+    "certificate_no": "1022091-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022111-BV",
+    "brand": "AAB",
+    "model": "1022111-BV",
+    "description": "W380i",
+    "subType": "",
+    "certificate_no": "1022111-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022121-BV",
+    "brand": "AAB",
+    "model": "1022121-BV",
+    "description": "W350i",
+    "subType": "",
+    "certificate_no": "1022121-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022151-BV",
+    "brand": "AAB",
+    "model": "1022151-BV",
+    "description": "R300",
+    "subType": "",
+    "certificate_no": "1022151-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022161-BV",
+    "brand": "AAB",
+    "model": "1022161-BV",
+    "description": "R306",
+    "subType": "",
+    "certificate_no": "1022161-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022171-BV",
+    "brand": "AAB",
+    "model": "1022171-BV",
+    "description": "T303",
+    "subType": "",
+    "certificate_no": "1022171-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1880010-BV",
+    "brand": "AAB",
+    "model": "1880010-BV",
+    "description": "W205",
+    "subType": "",
+    "certificate_no": "1880010-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1880013-BV",
+    "brand": "AAB",
+    "model": "1880013-BV",
+    "description": "S312",
+    "subType": "",
+    "certificate_no": "1880013-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1880025-BV",
+    "brand": "AAB",
+    "model": "1880025-BV",
+    "description": "W100i",
+    "subType": "",
+    "certificate_no": "1880025-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1880027-BV",
+    "brand": "AAB",
+    "model": "1880027-BV",
+    "description": "W150i(YENDO",
+    "subType": "",
+    "certificate_no": "1880027-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1880033-BV",
+    "brand": "AAB",
+    "model": "1880033-BV",
+    "description": "MUGUA CK13i",
+    "subType": "",
+    "certificate_no": "1880033-BV",
+    "is_pending": true
+  },
+  {
+    "id": "188031-BV",
+    "brand": "AAB",
+    "model": "188031-BV",
+    "description": "CK15i Feng Li",
+    "subType": "",
+    "certificate_no": "188031-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052011-BV",
+    "brand": "AAC",
+    "model": "1052011-BV",
+    "description": "Z520i",
+    "subType": "",
+    "certificate_no": "1052011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052021-BV",
+    "brand": "AAC",
+    "model": "1052021-BV",
+    "description": "K550i",
+    "subType": "",
+    "certificate_no": "1052021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052022-BV",
+    "brand": "AAC",
+    "model": "1052022-BV",
+    "description": "W610i",
+    "subType": "",
+    "certificate_no": "1052022-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052041-BV",
+    "brand": "AAC",
+    "model": "1052041-BV",
+    "description": "S500i",
+    "subType": "",
+    "certificate_no": "1052041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052042-BV",
+    "brand": "AAC",
+    "model": "1052042-BV",
+    "description": "W580i",
+    "subType": "",
+    "certificate_no": "1052042-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052091-BV",
+    "brand": "AAC",
+    "model": "1052091-BV",
+    "description": "W302",
+    "subType": "",
+    "certificate_no": "1052091-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052121-BV",
+    "brand": "AAC",
+    "model": "1052121-BV",
+    "description": "S302",
+    "subType": "",
+    "certificate_no": "1052121-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052161-BV",
+    "brand": "AAC",
+    "model": "1052161-BV",
+    "description": "F305",
+    "subType": "",
+    "certificate_no": "1052161-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1880014-BV",
+    "brand": "AAD",
+    "model": "1880014-BV",
+    "description": "W395",
+    "subType": "",
+    "certificate_no": "1880014-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3021011-BV",
+    "brand": "AAD",
+    "model": "3021011-BV",
+    "description": "Z800i",
+    "subType": "",
+    "certificate_no": "3021011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3021021-BV",
+    "brand": "AAD",
+    "model": "3021021-BV",
+    "description": "K600i",
+    "subType": "",
+    "certificate_no": "3021021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3021023-BV",
+    "brand": "AAD",
+    "model": "3021023-BV",
+    "description": "K608i",
+    "subType": "",
+    "certificate_no": "3021023-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022011-BV",
+    "brand": "AAD",
+    "model": "3022011-BV",
+    "description": "W900i",
+    "subType": "",
+    "certificate_no": "3022011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022021-BV",
+    "brand": "AAD",
+    "model": "3022021-BV",
+    "description": "W850i",
+    "subType": "",
+    "certificate_no": "3022021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022041-BV",
+    "brand": "AAD",
+    "model": "3022041-BV",
+    "description": "K610i",
+    "subType": "",
+    "certificate_no": "3022041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022044-BV",
+    "brand": "AAD",
+    "model": "3022044-BV",
+    "description": "Z610i",
+    "subType": "",
+    "certificate_no": "3022044-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022051-BV",
+    "brand": "AAD",
+    "model": "3022051-BV",
+    "description": "W880i",
+    "subType": "",
+    "certificate_no": "3022051-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022061-BV",
+    "brand": "AAD",
+    "model": "3022061-BV",
+    "description": "K810i",
+    "subType": "",
+    "certificate_no": "3022061-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022071-BV",
+    "brand": "AAD",
+    "model": "3022071-BV",
+    "description": "W660i",
+    "subType": "",
+    "certificate_no": "3022071-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022081-BV",
+    "brand": "AAD",
+    "model": "3022081-BV",
+    "description": "T650i",
+    "subType": "",
+    "certificate_no": "3022081-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022082-BV",
+    "brand": "AAD",
+    "model": "3022082-BV",
+    "description": "K770i",
+    "subType": "",
+    "certificate_no": "3022082-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022091-BV",
+    "brand": "AAD",
+    "model": "3022091-BV",
+    "description": "K530i",
+    "subType": "",
+    "certificate_no": "3022091-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022121-BV",
+    "brand": "AAD",
+    "model": "3022121-BV",
+    "description": "G502",
+    "subType": "",
+    "certificate_no": "3022121-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052021-BV",
+    "brand": "AAD",
+    "model": "3052021-BV",
+    "description": "W910i",
+    "subType": "",
+    "certificate_no": "3052021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052041-BV",
+    "brand": "AAD",
+    "model": "3052041-BV",
+    "description": "W890i",
+    "subType": "",
+    "certificate_no": "3052041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052042-BV",
+    "brand": "AAD",
+    "model": "3052042-BV",
+    "description": "T700",
+    "subType": "",
+    "certificate_no": "3052042-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052051-BV",
+    "brand": "AAD",
+    "model": "3052051-BV",
+    "description": "Z770i",
+    "subType": "",
+    "certificate_no": "3052051-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052071-BV",
+    "brand": "AAD",
+    "model": "3052071-BV",
+    "description": "K660i",
+    "subType": "",
+    "certificate_no": "3052071-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052081-BV",
+    "brand": "AAD",
+    "model": "3052081-BV",
+    "description": "C702",
+    "subType": "",
+    "certificate_no": "3052081-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052091-BV",
+    "brand": "AAD",
+    "model": "3052091-BV",
+    "description": "W980",
+    "subType": "",
+    "certificate_no": "3052091-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052101-BV",
+    "brand": "AAD",
+    "model": "3052101-BV",
+    "description": "C902",
+    "subType": "",
+    "certificate_no": "3052101-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052111-BV",
+    "brand": "AAD",
+    "model": "3052111-BV",
+    "description": "W595",
+    "subType": "",
+    "certificate_no": "3052111-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3052121-BV",
+    "brand": "AAD",
+    "model": "3052121-BV",
+    "description": "W902",
+    "subType": "",
+    "certificate_no": "3052121-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3252011-BV",
+    "brand": "AAD",
+    "model": "3252011-BV",
+    "description": "K850i",
+    "subType": "",
+    "certificate_no": "3252011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3252041-BV",
+    "brand": "AAD",
+    "model": "3252041-BV",
+    "description": "W760i",
+    "subType": "",
+    "certificate_no": "3252041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3352021-BV",
+    "brand": "AAD",
+    "model": "3352021-BV",
+    "description": "C905",
+    "subType": "",
+    "certificate_no": "3352021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880005-BV",
+    "brand": "AAD",
+    "model": "3880005-BV",
+    "description": "W705a",
+    "subType": "",
+    "certificate_no": "3880005-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880010-BV",
+    "brand": "AAD",
+    "model": "3880010-BV",
+    "description": "C510a",
+    "subType": "",
+    "certificate_no": "3880010-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880015-BV",
+    "brand": "AAD",
+    "model": "3880015-BV",
+    "description": "C901",
+    "subType": "",
+    "certificate_no": "3880015-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880020-BV",
+    "brand": "AAD",
+    "model": "3880020-BV",
+    "description": "Satio U1i",
+    "subType": "",
+    "certificate_no": "3880020-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880027-BV",
+    "brand": "AAD",
+    "model": "3880027-BV",
+    "description": "C903a",
+    "subType": "",
+    "certificate_no": "3880027-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880031-BV",
+    "brand": "AAD",
+    "model": "3880031-BV",
+    "description": "T707a",
+    "subType": "",
+    "certificate_no": "3880031-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880032-BV",
+    "brand": "AAD",
+    "model": "3880032-BV",
+    "description": "Aino U10i",
+    "subType": "",
+    "certificate_no": "3880032-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880035-BV",
+    "brand": "AAD",
+    "model": "3880035-BV",
+    "description": "W995a",
+    "subType": "",
+    "certificate_no": "3880035-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880039-BV",
+    "brand": "AAD",
+    "model": "3880039-BV",
+    "description": "T715",
+    "subType": "",
+    "certificate_no": "3880039-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880046-BV",
+    "brand": "AAD",
+    "model": "3880046-BV",
+    "description": "Yari U100i",
+    "subType": "",
+    "certificate_no": "3880046-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880052-BV",
+    "brand": "AAD",
+    "model": "3880052-BV",
+    "description": "J105i",
+    "subType": "",
+    "certificate_no": "3880052-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880056-BV",
+    "brand": "AAD",
+    "model": "3880056-BV",
+    "description": "XPERIA X10i",
+    "subType": "",
+    "certificate_no": "3880056-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880058-BV",
+    "brand": "AAD",
+    "model": "3880058-BV",
+    "description": "U5i",
+    "subType": "",
+    "certificate_no": "3880058-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880065-BV",
+    "brand": "AAD",
+    "model": "3880065-BV",
+    "description": "J10i2 Elm",
+    "subType": "",
+    "certificate_no": "3880065-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880069-BV",
+    "brand": "AAD",
+    "model": "3880069-BV",
+    "description": "E10i",
+    "subType": "",
+    "certificate_no": "3880069-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880077-BV",
+    "brand": "AAD",
+    "model": "3880077-BV",
+    "description": "U8i",
+    "subType": "",
+    "certificate_no": "3880077-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880087-BV",
+    "brand": "AAD",
+    "model": "3880087-BV",
+    "description": "R800a XPERIA PLAY",
+    "subType": "",
+    "certificate_no": "3880087-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880088-BV",
+    "brand": "AAD",
+    "model": "3880088-BV",
+    "description": "R800i XPERIA PLAY",
+    "subType": "",
+    "certificate_no": "3880088-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880091-BV",
+    "brand": "AAD",
+    "model": "3880091-BV",
+    "description": "E15i(X8",
+    "subType": "",
+    "certificate_no": "3880091-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880092-BV",
+    "brand": "AAD",
+    "model": "3880092-BV",
+    "description": "E15a-X8 SHAKIRA",
+    "subType": "",
+    "certificate_no": "3880092-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880097-AV",
+    "brand": "AAD",
+    "model": "3880097-AV",
+    "description": "LT18i",
+    "subType": "",
+    "certificate_no": "3880097-AV",
+    "is_pending": true
+  },
+  {
+    "id": "3880097-BV",
+    "brand": "AAD",
+    "model": "3880097-BV",
+    "description": "LT15i",
+    "subType": "",
+    "certificate_no": "3880097-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880098-AV",
+    "brand": "AAD",
+    "model": "3880098-AV",
+    "description": "LT18a",
+    "subType": "",
+    "certificate_no": "3880098-AV",
+    "is_pending": true
+  },
+  {
+    "id": "3880098-BV",
+    "brand": "AAD",
+    "model": "3880098-BV",
+    "description": "LT15a XPERIA ARC",
+    "subType": "",
+    "certificate_no": "3880098-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880100-AV",
+    "brand": "AAD",
+    "model": "3880100-AV",
+    "description": "MT11i",
+    "subType": "",
+    "certificate_no": "3880100-AV",
+    "is_pending": true
+  },
+  {
+    "id": "3880100-BV",
+    "brand": "AAD",
+    "model": "3880100-BV",
+    "description": "XPERIA NEO/ MT15i",
+    "subType": "",
+    "certificate_no": "3880100-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880101-AV",
+    "brand": "AAD",
+    "model": "3880101-AV",
+    "description": "MT11a",
+    "subType": "",
+    "certificate_no": "3880101-AV",
+    "is_pending": true
+  },
+  {
+    "id": "3880101-BV",
+    "brand": "AAD",
+    "model": "3880101-BV",
+    "description": "MT15a(HALLON a Variant",
+    "subType": "",
+    "certificate_no": "3880101-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880104-BV",
+    "brand": "AAD",
+    "model": "3880104-BV",
+    "description": "Xperia mini Pro SK17i",
+    "subType": "",
+    "certificate_no": "3880104-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880107-BV",
+    "brand": "AAD",
+    "model": "3880107-BV",
+    "description": "XPERIA mini ST15i",
+    "subType": "",
+    "certificate_no": "3880107-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880110-BV",
+    "brand": "AAD",
+    "model": "3880110-BV",
+    "description": "MK16i Xperia pro",
+    "subType": "",
+    "certificate_no": "3880110-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880118-BV",
+    "brand": "AAD",
+    "model": "3880118-BV",
+    "description": "ST18a",
+    "subType": "",
+    "certificate_no": "3880118-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880119-BV",
+    "brand": "AAD",
+    "model": "3880119-BV",
+    "description": "Xperia ray ST18i",
+    "subType": "",
+    "certificate_no": "3880119-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880120-AV",
+    "brand": "AAD",
+    "model": "3880120-AV",
+    "description": "LT26i",
+    "subType": "",
+    "certificate_no": "3880120-AV",
+    "is_pending": true
+  },
+  {
+    "id": "3880120-CV",
+    "brand": "AAD",
+    "model": "3880120-CV",
+    "description": "LT26ii",
+    "subType": "",
+    "certificate_no": "3880120-CV",
+    "is_pending": true
+  },
+  {
+    "id": "3880121-BV",
+    "brand": "AAD",
+    "model": "3880121-BV",
+    "description": "ST17i",
+    "subType": "",
+    "certificate_no": "3880121-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880123-BV",
+    "brand": "AAD",
+    "model": "3880123-BV",
+    "description": "WT19i",
+    "subType": "",
+    "certificate_no": "3880123-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880124-BV",
+    "brand": "AAD",
+    "model": "3880124-BV",
+    "description": "WT19a",
+    "subType": "",
+    "certificate_no": "3880124-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880130-BV",
+    "brand": "AAD",
+    "model": "3880130-BV",
+    "description": "XPERIA / ST25i",
+    "subType": "",
+    "certificate_no": "3880130-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880131-BV",
+    "brand": "AAD",
+    "model": "3880131-BV",
+    "description": "XPERIA / ST25a",
+    "subType": "",
+    "certificate_no": "3880131-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880134-BV",
+    "brand": "AAD",
+    "model": "3880134-BV",
+    "description": "XPERIA/ MT27i",
+    "subType": "",
+    "certificate_no": "3880134-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880135-BV",
+    "brand": "AAD",
+    "model": "3880135-BV",
+    "description": "LT22i",
+    "subType": "",
+    "certificate_no": "3880135-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1022011-BV",
+    "brand": "AAF",
+    "model": "1022011-BV",
+    "description": "K790i",
+    "subType": "",
+    "certificate_no": "1022011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052031-BV",
+    "brand": "AAF",
+    "model": "1052031-BV",
+    "description": "W300i",
+    "subType": "",
+    "certificate_no": "1052031-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052041-BV",
+    "brand": "AAF",
+    "model": "1052041-BV",
+    "description": "W710i",
+    "subType": "",
+    "certificate_no": "1052041-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052043-BV",
+    "brand": "AAF",
+    "model": "1052043-BV",
+    "description": "Z710i",
+    "subType": "",
+    "certificate_no": "1052043-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1052051-BV",
+    "brand": "AAF",
+    "model": "1052051-BV",
+    "description": "W810i",
+    "subType": "",
+    "certificate_no": "1052051-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1021051-BV",
+    "brand": "AB",
+    "model": "1021051-BV",
+    "description": "S700 หรือ S700i",
+    "subType": "",
+    "certificate_no": "1021051-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1021061-BV",
+    "brand": "AB",
+    "model": "1021061-BV",
+    "description": "J200",
+    "subType": "",
+    "certificate_no": "1021061-BV",
+    "is_pending": true
+  },
+  {
+    "id": "100EUS",
+    "brand": "AC785",
+    "model": "100EUS",
+    "description": "AirCard 785S",
+    "subType": "",
+    "certificate_no": "100EUS",
+    "is_pending": true
+  },
+  {
+    "id": "3880024-BV",
+    "brand": "ADD",
+    "model": "3880024-BV",
+    "description": "W508a",
+    "subType": "",
+    "certificate_no": "3880024-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880072-BV",
+    "brand": "ADD",
+    "model": "3880072-BV",
+    "description": "U20i",
+    "subType": "",
+    "certificate_no": "3880072-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880084-BV",
+    "brand": "ADD",
+    "model": "3880084-BV",
+    "description": "W20",
+    "subType": "",
+    "certificate_no": "3880084-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3880095-BV",
+    "brand": "ADD",
+    "model": "3880095-BV",
+    "description": "J108i",
+    "subType": "",
+    "certificate_no": "3880095-BV",
+    "is_pending": true
+  },
+  {
+    "id": "AL09HN",
+    "brand": "AGM3",
+    "model": "AL09HN",
+    "description": "HONOR Pad X8",
+    "subType": "",
+    "certificate_no": "AL09HN",
+    "is_pending": true
+  },
+  {
+    "id": "9800",
+    "brand": "ALR",
+    "model": "9800",
+    "description": "ALR-9800-WR1",
+    "subType": "",
+    "certificate_no": "9800",
+    "is_pending": true
+  },
+  {
+    "id": "NB1739",
+    "brand": "AOD",
+    "model": "NB1739",
+    "description": "ANSI",
+    "subType": "",
+    "certificate_no": "NB1739",
+    "is_pending": true
+  },
+  {
+    "id": "LTE4EA",
+    "brand": "AR617VW",
+    "model": "LTE4EA",
+    "description": "EC25-E",
+    "subType": "",
+    "certificate_no": "LTE4EA",
+    "is_pending": true
+  },
+  {
+    "id": "1051021-AB",
+    "brand": "BAC",
+    "model": "1051021-AB",
+    "description": "GR64",
+    "subType": "",
+    "certificate_no": "1051021-AB",
+    "is_pending": true
+  },
+  {
+    "id": "1051021-BA",
+    "brand": "BAC",
+    "model": "1051021-BA",
+    "description": "GR64",
+    "subType": "",
+    "certificate_no": "1051021-BA",
+    "is_pending": true
+  },
+  {
+    "id": "41A11",
+    "brand": "BC3",
+    "model": "41A11",
+    "description": "C168",
+    "subType": "",
+    "certificate_no": "41A11",
+    "is_pending": true
+  },
+  {
+    "id": "41A31",
+    "brand": "BC3",
+    "model": "41A31",
+    "description": "W360",
+    "subType": "",
+    "certificate_no": "41A31",
+    "is_pending": true
+  },
+  {
+    "id": "41B11",
+    "brand": "BC3",
+    "model": "41B11",
+    "description": "W220",
+    "subType": "",
+    "certificate_no": "41B11",
+    "is_pending": true
+  },
+  {
+    "id": "41A11",
+    "brand": "BC4",
+    "model": "41A11",
+    "description": "EM325",
+    "subType": "",
+    "certificate_no": "41A11",
+    "is_pending": true
+  },
+  {
+    "id": "TD930",
+    "brand": "BF",
+    "model": "TD930",
+    "description": "VHF",
+    "subType": "",
+    "certificate_no": "TD930",
+    "is_pending": true
+  },
+  {
+    "id": "4411B11",
+    "brand": "BQ4",
+    "model": "4411B11",
+    "description": "ZN200",
+    "subType": "",
+    "certificate_no": "4411B11",
+    "is_pending": true
+  },
+  {
+    "id": "240XL",
+    "brand": "BS",
+    "model": "240XL",
+    "description": "GSM1800",
+    "subType": "",
+    "certificate_no": "240XL",
+    "is_pending": true
+  },
+  {
+    "id": "W2403",
+    "brand": "BS",
+    "model": "W2403",
+    "description": "Black Shark Watch X",
+    "subType": "",
+    "certificate_no": "W2403",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "BTK",
+    "model": "AL09",
+    "description": "MatePad 11.5”",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "3334411A11",
+    "brand": "BURQ0",
+    "model": "3334411A11",
+    "description": "XT502",
+    "subType": "",
+    "certificate_no": "3334411A11",
+    "is_pending": true
+  },
+  {
+    "id": "41C11",
+    "brand": "CC3",
+    "model": "41C11",
+    "description": "C113",
+    "subType": "",
+    "certificate_no": "41C11",
+    "is_pending": true
+  },
+  {
+    "id": "41C21",
+    "brand": "CC3",
+    "model": "41C21",
+    "description": "C156",
+    "subType": "",
+    "certificate_no": "41C21",
+    "is_pending": true
+  },
+  {
+    "id": "41C31",
+    "brand": "CC3",
+    "model": "41C31",
+    "description": "V171",
+    "subType": "",
+    "certificate_no": "41C31",
+    "is_pending": true
+  },
+  {
+    "id": "41C51",
+    "brand": "CC3",
+    "model": "41C51",
+    "description": "C257",
+    "subType": "",
+    "certificate_no": "41C51",
+    "is_pending": true
+  },
+  {
+    "id": "41C61",
+    "brand": "CC3",
+    "model": "41C61",
+    "description": "C139",
+    "subType": "",
+    "certificate_no": "41C61",
+    "is_pending": true
+  },
+  {
+    "id": "41C62",
+    "brand": "CC3",
+    "model": "41C62",
+    "description": "W208",
+    "subType": "",
+    "certificate_no": "41C62",
+    "is_pending": true
+  },
+  {
+    "id": "41C72",
+    "brand": "CC3",
+    "model": "41C72",
+    "description": "W213",
+    "subType": "",
+    "certificate_no": "41C72",
+    "is_pending": true
+  },
+  {
+    "id": "41C82",
+    "brand": "CC3",
+    "model": "41C82",
+    "description": "W230",
+    "subType": "",
+    "certificate_no": "41C82",
+    "is_pending": true
+  },
+  {
+    "id": "41E11",
+    "brand": "CC3",
+    "model": "41E11",
+    "description": "W156",
+    "subType": "",
+    "certificate_no": "41E11",
+    "is_pending": true
+  },
+  {
+    "id": "41F11",
+    "brand": "CC3",
+    "model": "41F11",
+    "description": "W270",
+    "subType": "",
+    "certificate_no": "41F11",
+    "is_pending": true
+  },
+  {
+    "id": "NX9B",
+    "brand": "CDY",
+    "model": "NX9B",
+    "description": "nova 7 SE",
+    "subType": "",
+    "certificate_no": "NX9B",
+    "is_pending": true
+  },
+  {
+    "id": "AL19",
+    "brand": "CMR",
+    "model": "AL19",
+    "description": "HUAWEI MediaPad M5 Pro",
+    "subType": "",
+    "certificate_no": "AL19",
+    "is_pending": true
+  },
+  {
+    "id": "AL19B",
+    "brand": "CMR",
+    "model": "AL19B",
+    "description": "HUAWEI MediaPad M5 Pro",
+    "subType": "",
+    "certificate_no": "AL19B",
+    "is_pending": true
+  },
+  {
+    "id": "00-919",
+    "brand": "COF",
+    "model": "00-919",
+    "description": "Balise TGR IP",
+    "subType": "",
+    "certificate_no": "00-919",
+    "is_pending": true
+  },
+  {
+    "id": "8J00",
+    "brand": "ComFlex",
+    "model": "8J00",
+    "description": "850",
+    "subType": "",
+    "certificate_no": "8J00",
+    "is_pending": true
+  },
+  {
+    "id": "4411A11",
+    "brand": "CQ3",
+    "model": "4411A11",
+    "description": "W375",
+    "subType": "",
+    "certificate_no": "4411A11",
+    "is_pending": true
+  },
+  {
+    "id": "3334411A11",
+    "brand": "CRUQ7",
+    "model": "3334411A11",
+    "description": "A3100",
+    "subType": "",
+    "certificate_no": "3334411A11",
+    "is_pending": true
+  },
+  {
+    "id": "900II-301B",
+    "brand": "CT",
+    "model": "900II-301B",
+    "description": "Remote Unit",
+    "subType": "",
+    "certificate_no": "900II-301B",
+    "is_pending": true
+  },
+  {
+    "id": "411A11",
+    "brand": "CT4",
+    "model": "411A11",
+    "description": "EM330",
+    "subType": "",
+    "certificate_no": "411A11",
+    "is_pending": true
+  },
+  {
+    "id": "2024U",
+    "brand": "DB",
+    "model": "2024U",
+    "description": "2128",
+    "subType": "",
+    "certificate_no": "2024U",
+    "is_pending": true
+  },
+  {
+    "id": "2025B",
+    "brand": "DB",
+    "model": "2025B",
+    "description": "6669",
+    "subType": "",
+    "certificate_no": "2025B",
+    "is_pending": true
+  },
+  {
+    "id": "41B11",
+    "brand": "DC4",
+    "model": "41B11",
+    "description": "WX181",
+    "subType": "",
+    "certificate_no": "41B11",
+    "is_pending": true
+  },
+  {
+    "id": "41C11",
+    "brand": "DC4",
+    "model": "41C11",
+    "description": "WX260",
+    "subType": "",
+    "certificate_no": "41C11",
+    "is_pending": true
+  },
+  {
+    "id": "41E11",
+    "brand": "DC4",
+    "model": "41E11",
+    "description": "WX290",
+    "subType": "",
+    "certificate_no": "41E11",
+    "is_pending": true
+  },
+  {
+    "id": "41H11",
+    "brand": "DC4",
+    "model": "41H11",
+    "description": "EX212",
+    "subType": "",
+    "certificate_no": "41H11",
+    "is_pending": true
+  },
+  {
+    "id": "EN-002-360-05",
+    "brand": "DCST",
+    "model": "EN-002-360-05",
+    "description": "EG25-G",
+    "subType": "",
+    "certificate_no": "EN-002-360-05",
+    "is_pending": true
+  },
+  {
+    "id": "200-L",
+    "brand": "DMR",
+    "model": "200-L",
+    "description": "DSAS-L",
+    "subType": "",
+    "certificate_no": "200-L",
+    "is_pending": true
+  },
+  {
+    "id": "4411A21",
+    "brand": "DQ4",
+    "model": "4411A21",
+    "description": "EX128",
+    "subType": "",
+    "certificate_no": "4411A21",
+    "is_pending": true
+  },
+  {
+    "id": "4411B21",
+    "brand": "DQ4",
+    "model": "4411B21",
+    "description": "EX115",
+    "subType": "",
+    "certificate_no": "4411B21",
+    "is_pending": true
+  },
+  {
+    "id": "1630",
+    "brand": "DR",
+    "model": "1630",
+    "description": "Type 1",
+    "subType": "",
+    "certificate_no": "1630",
+    "is_pending": true
+  },
+  {
+    "id": "2260",
+    "brand": "DR",
+    "model": "2260",
+    "description": "Type 1",
+    "subType": "",
+    "certificate_no": "2260",
+    "is_pending": true
+  },
+  {
+    "id": "3WR4G12C",
+    "brand": "DS",
+    "model": "3WR4G12C",
+    "description": "Thailand",
+    "subType": "",
+    "certificate_no": "3WR4G12C",
+    "is_pending": true
+  },
+  {
+    "id": "33411A11",
+    "brand": "DVT6",
+    "model": "33411A11",
+    "description": "EX300",
+    "subType": "",
+    "certificate_no": "33411A11",
+    "is_pending": true
+  },
+  {
+    "id": "334411B11",
+    "brand": "DWQ7",
+    "model": "334411B11",
+    "description": "XT531",
+    "subType": "",
+    "certificate_no": "334411B11",
+    "is_pending": true
+  },
+  {
+    "id": "930M",
+    "brand": "DWR",
+    "model": "930M",
+    "description": "DWR-930M 4G/LTE Mobile Router",
+    "subType": "",
+    "certificate_no": "930M",
+    "is_pending": true
+  },
+  {
+    "id": "940M",
+    "brand": "DWR",
+    "model": "940M",
+    "description": "DWR-940M 4G/LTE Mobile Router",
+    "subType": "",
+    "certificate_no": "940M",
+    "is_pending": true
+  },
+  {
+    "id": "BE7200G",
+    "brand": "DWR",
+    "model": "BE7200G",
+    "description": "5G BE7200 Wi-Fi 7 Router",
+    "subType": "",
+    "certificate_no": "BE7200G",
+    "is_pending": true
+  },
+  {
+    "id": "U2000",
+    "brand": "DWR",
+    "model": "U2000",
+    "description": "WIFI5 5G NR MIFI",
+    "subType": "",
+    "certificate_no": "U2000",
+    "is_pending": true
+  },
+  {
+    "id": "J100",
+    "brand": "EA",
+    "model": "J100",
+    "description": "3WWDZ-45A",
+    "subType": "",
+    "certificate_no": "J100",
+    "is_pending": true
+  },
+  {
+    "id": "T5600",
+    "brand": "EI",
+    "model": "T5600",
+    "description": "Galaxy SmartTag2",
+    "subType": "",
+    "certificate_no": "T5600",
+    "is_pending": true
+  },
+  {
+    "id": "T7300",
+    "brand": "EI",
+    "model": "T7300",
+    "description": "Galaxy SmartTag+",
+    "subType": "",
+    "certificate_no": "T7300",
+    "is_pending": true
+  },
+  {
+    "id": "20-M1-RJ-E4-1",
+    "brand": "EL5G16R",
+    "model": "20-M1-RJ-E4-1",
+    "description": "SCALANCE MUB852-1(A1",
+    "subType": "",
+    "certificate_no": "20-M1-RJ-E4-1",
+    "is_pending": true
+  },
+  {
+    "id": "55F02-D0",
+    "brand": "ER450",
+    "model": "55F02-D0",
+    "description": "ER450SERIES",
+    "subType": "",
+    "certificate_no": "55F02-D0",
+    "is_pending": true
+  },
+  {
+    "id": "1021012-BV",
+    "brand": "FAB",
+    "model": "1021012-BV",
+    "description": "P910i",
+    "subType": "",
+    "certificate_no": "1021012-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022011-BV",
+    "brand": "FAD",
+    "model": "3022011-BV",
+    "description": "P990i",
+    "subType": "",
+    "certificate_no": "3022011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022012-BV",
+    "brand": "FAD",
+    "model": "3022012-BV",
+    "description": "M600i",
+    "subType": "",
+    "certificate_no": "3022012-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022013-BV",
+    "brand": "FAD",
+    "model": "3022013-BV",
+    "description": "W950i",
+    "subType": "",
+    "certificate_no": "3022013-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022015-BV",
+    "brand": "FAD",
+    "model": "3022015-BV",
+    "description": "P1i",
+    "subType": "",
+    "certificate_no": "3022015-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022018-BV",
+    "brand": "FAD",
+    "model": "3022018-BV",
+    "description": "G700",
+    "subType": "",
+    "certificate_no": "3022018-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3022019-BV",
+    "brand": "FAD",
+    "model": "3022019-BV",
+    "description": "G900",
+    "subType": "",
+    "certificate_no": "3022019-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3231011-BV",
+    "brand": "FAD",
+    "model": "3231011-BV",
+    "description": "PC300",
+    "subType": "",
+    "certificate_no": "3231011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3232012-BV",
+    "brand": "FAD",
+    "model": "3232012-BV",
+    "description": "EC400",
+    "subType": "",
+    "certificate_no": "3232012-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3232013-BV",
+    "brand": "FAD",
+    "model": "3232013-BV",
+    "description": "EC400g",
+    "subType": "",
+    "certificate_no": "3232013-BV",
+    "is_pending": true
+  },
+  {
+    "id": "3232021-BV",
+    "brand": "FAD",
+    "model": "3232021-BV",
+    "description": "MD300",
+    "subType": "",
+    "certificate_no": "3232021-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1021011-BV",
+    "brand": "FAE",
+    "model": "1021011-BV",
+    "description": "GC79",
+    "subType": "",
+    "certificate_no": "1021011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1051011-BV",
+    "brand": "FAF",
+    "model": "1051011-BV",
+    "description": "GC89",
+    "subType": "",
+    "certificate_no": "1051011-BV",
+    "is_pending": true
+  },
+  {
+    "id": "1051012-BV",
+    "brand": "FAF",
+    "model": "1051012-BV",
+    "description": "GC86",
+    "subType": "",
+    "certificate_no": "1051012-BV",
+    "is_pending": true
+  },
+  {
+    "id": "101F-EA",
+    "brand": "FortiExtender",
+    "model": "101F-EA",
+    "description": "FEX-101F-EA",
+    "subType": "",
+    "certificate_no": "101F-EA",
+    "is_pending": true
+  },
+  {
+    "id": "BSHP1-380",
+    "brand": "FR2",
+    "model": "BSHP1-380",
+    "description": "460-475MHz",
+    "subType": "",
+    "certificate_no": "BSHP1-380",
+    "is_pending": true
+  },
+  {
+    "id": "DS37R",
+    "brand": "GAT",
+    "model": "DS37R",
+    "description": "UT-G1800DB37R",
+    "subType": "",
+    "certificate_no": "DS37R",
+    "is_pending": true
+  },
+  {
+    "id": "GS37R",
+    "brand": "GAT",
+    "model": "GS37R",
+    "description": "UT-G900SB37R",
+    "subType": "",
+    "certificate_no": "GS37R",
+    "is_pending": true
+  },
+  {
+    "id": "LX2P",
+    "brand": "GFY",
+    "model": "LX2P",
+    "description": "HONOR X5b Plus",
+    "subType": "",
+    "certificate_no": "LX2P",
+    "is_pending": true
+  },
+  {
+    "id": "AL01",
+    "brand": "GLL",
+    "model": "AL01",
+    "description": "HUAWEI WATCH 3 PRO",
+    "subType": "",
+    "certificate_no": "AL01",
+    "is_pending": true
+  },
+  {
+    "id": "AL04",
+    "brand": "GLL",
+    "model": "AL04",
+    "description": "HUAWEI WATCH 3",
+    "subType": "",
+    "certificate_no": "AL04",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "GOT",
+    "model": "AL09",
+    "description": "MatePad Pro",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "IIIB-1",
+    "brand": "GZF900",
+    "model": "IIIB-1",
+    "description": "Slave Unit",
+    "subType": "",
+    "certificate_no": "IIIB-1",
+    "is_pending": true
+  },
+  {
+    "id": "ACE840-DTU",
+    "brand": "HI",
+    "model": "ACE840-DTU",
+    "description": "EC05-485",
+    "subType": "",
+    "certificate_no": "ACE840-DTU",
+    "is_pending": true
+  },
+  {
+    "id": "LX1T",
+    "brand": "HRY",
+    "model": "LX1T",
+    "description": "HONOR 20 Lite",
+    "subType": "",
+    "certificate_no": "LX1T",
+    "is_pending": true
+  },
+  {
+    "id": "H06C",
+    "brand": "HSTNH",
+    "model": "H06C",
+    "description": "iPAQ",
+    "subType": "",
+    "certificate_no": "H06C",
+    "is_pending": true
+  },
+  {
+    "id": "H06C-WL",
+    "brand": "HSTNH",
+    "model": "H06C-WL",
+    "description": "HP iPAQ HW6710",
+    "subType": "",
+    "certificate_no": "H06C-WL",
+    "is_pending": true
+  },
+  {
+    "id": "I14C-N",
+    "brand": "HSTNH",
+    "model": "I14C-N",
+    "description": "iPAQ 600 Series",
+    "subType": "",
+    "certificate_no": "I14C-N",
+    "is_pending": true
+  },
+  {
+    "id": "I18C",
+    "brand": "HSTNH",
+    "model": "I18C",
+    "description": "iPAQ 900 Series",
+    "subType": "",
+    "certificate_no": "I18C",
+    "is_pending": true
+  },
+  {
+    "id": "P21C",
+    "brand": "HSTNH",
+    "model": "P21C",
+    "description": "HP iP AQ KB1",
+    "subType": "",
+    "certificate_no": "P21C",
+    "is_pending": true
+  },
+  {
+    "id": "Q10C-BT",
+    "brand": "HSTNH",
+    "model": "Q10C-BT",
+    "description": "HP IPAQ rw6818",
+    "subType": "",
+    "certificate_no": "Q10C-BT",
+    "is_pending": true
+  },
+  {
+    "id": "Q10C-WL",
+    "brand": "HSTNH",
+    "model": "Q10C-WL",
+    "description": "HP IPAQ rw6828",
+    "subType": "",
+    "certificate_no": "Q10C-WL",
+    "is_pending": true
+  },
+  {
+    "id": "370S",
+    "brand": "HX",
+    "model": "370S",
+    "description": "UHF",
+    "subType": "",
+    "certificate_no": "370S",
+    "is_pending": true
+  },
+  {
+    "id": "A120E",
+    "brand": "IC",
+    "model": "A120E",
+    "description": "EUR",
+    "subType": "",
+    "certificate_no": "A120E",
+    "is_pending": true
+  },
+  {
+    "id": "F1010",
+    "brand": "IC",
+    "model": "F1010",
+    "description": "VERSION 3",
+    "subType": "",
+    "certificate_no": "F1010",
+    "is_pending": true
+  },
+  {
+    "id": "F1020-2",
+    "brand": "IC",
+    "model": "F1020-2",
+    "description": "VERSION 2",
+    "subType": "",
+    "certificate_no": "F1020-2",
+    "is_pending": true
+  },
+  {
+    "id": "F210",
+    "brand": "IC",
+    "model": "F210",
+    "description": "400-430MHz",
+    "subType": "",
+    "certificate_no": "F210",
+    "is_pending": true
+  },
+  {
+    "id": "F210S",
+    "brand": "IC",
+    "model": "F210S",
+    "description": "400-430 MHz",
+    "subType": "",
+    "certificate_no": "F210S",
+    "is_pending": true
+  },
+  {
+    "id": "F211",
+    "brand": "IC",
+    "model": "F211",
+    "description": "400-430MHz",
+    "subType": "",
+    "certificate_no": "F211",
+    "is_pending": true
+  },
+  {
+    "id": "F24S",
+    "brand": "IC",
+    "model": "F24S",
+    "description": "450-520MHz",
+    "subType": "",
+    "certificate_no": "F24S",
+    "is_pending": true
+  },
+  {
+    "id": "F2500",
+    "brand": "IC",
+    "model": "F2500",
+    "description": "#01 GEN",
+    "subType": "",
+    "certificate_no": "F2500",
+    "is_pending": true
+  },
+  {
+    "id": "F40GS",
+    "brand": "IC",
+    "model": "F40GS",
+    "description": "MH-Band",
+    "subType": "",
+    "certificate_no": "F40GS",
+    "is_pending": true
+  },
+  {
+    "id": "F420",
+    "brand": "IC",
+    "model": "F420",
+    "description": "L-Band",
+    "subType": "",
+    "certificate_no": "F420",
+    "is_pending": true
+  },
+  {
+    "id": "F4GS",
+    "brand": "IC",
+    "model": "F4GS",
+    "description": "470-500 MHz",
+    "subType": "",
+    "certificate_no": "F4GS",
+    "is_pending": true
+  },
+  {
+    "id": "F4GT",
+    "brand": "IC",
+    "model": "F4GT",
+    "description": "H-BAND",
+    "subType": "",
+    "certificate_no": "F4GT",
+    "is_pending": true
+  },
+  {
+    "id": "F5023",
+    "brand": "IC",
+    "model": "F5023",
+    "description": "10W",
+    "subType": "",
+    "certificate_no": "F5023",
+    "is_pending": true
+  },
+  {
+    "id": "F5123D",
+    "brand": "IC",
+    "model": "F5123D",
+    "description": "30W",
+    "subType": "",
+    "certificate_no": "F5123D",
+    "is_pending": true
+  },
+  {
+    "id": "F5400D",
+    "brand": "IC",
+    "model": "F5400D",
+    "description": "25 W",
+    "subType": "",
+    "certificate_no": "F5400D",
+    "is_pending": true
+  },
+  {
+    "id": "F6123D",
+    "brand": "IC",
+    "model": "F6123D",
+    "description": "30W",
+    "subType": "",
+    "certificate_no": "F6123D",
+    "is_pending": true
+  },
+  {
+    "id": "F6400D",
+    "brand": "IC",
+    "model": "F6400D",
+    "description": "25 W",
+    "subType": "",
+    "certificate_no": "F6400D",
+    "is_pending": true
+  },
+  {
+    "id": "FR3000",
+    "brand": "IC",
+    "model": "FR3000",
+    "description": "150-174 MHz.",
+    "subType": "",
+    "certificate_no": "FR3000",
+    "is_pending": true
+  },
+  {
+    "id": "FR6000",
+    "brand": "IC",
+    "model": "FR6000",
+    "description": "400-470 MHz",
+    "subType": "",
+    "certificate_no": "FR6000",
+    "is_pending": true
+  },
+  {
+    "id": "M85UL",
+    "brand": "IC",
+    "model": "M85UL",
+    "description": "Marine",
+    "subType": "",
+    "certificate_no": "M85UL",
+    "is_pending": true
+  },
+  {
+    "id": "R211",
+    "brand": "iDAS",
+    "model": "R211",
+    "description": "DRRU-R21113S1",
+    "subType": "",
+    "certificate_no": "R211",
+    "is_pending": true
+  },
+  {
+    "id": "R304",
+    "brand": "iDAS",
+    "model": "R304",
+    "description": "DRRU-R3042D157",
+    "subType": "",
+    "certificate_no": "R304",
+    "is_pending": true
+  },
+  {
+    "id": "LPWA-900-16-K9",
+    "brand": "IXM",
+    "model": "LPWA-900-16-K9",
+    "description": "920.2-923.4 MHz",
+    "subType": "",
+    "certificate_no": "LPWA-900-16-K9",
+    "is_pending": true
+  },
+  {
+    "id": "L29C",
+    "brand": "JAT",
+    "model": "L29C",
+    "description": "Y6s",
+    "subType": "",
+    "certificate_no": "L29C",
+    "is_pending": true
+  },
+  {
+    "id": "2150N",
+    "brand": "JSS",
+    "model": "2150N",
+    "description": "NTD-2150",
+    "subType": "",
+    "certificate_no": "2150N",
+    "is_pending": true
+  },
+  {
+    "id": "8280B",
+    "brand": "JT",
+    "model": "8280B",
+    "description": "82801",
+    "subType": "",
+    "certificate_no": "8280B",
+    "is_pending": true
+  },
+  {
+    "id": "6505M",
+    "brand": "PB",
+    "model": "6505M",
+    "description": "Lenovo V7",
+    "subType": "",
+    "certificate_no": "6505M",
+    "is_pending": true
+  },
+  {
+    "id": "7304X",
+    "brand": "TB",
+    "model": "7304X",
+    "description": "Lenovo TAB 7 Essential",
+    "subType": "",
+    "certificate_no": "7304X",
+    "is_pending": true
+  },
+  {
+    "id": "7305X",
+    "brand": "TB",
+    "model": "7305X",
+    "description": "Lenovo Tab M7",
+    "subType": "",
+    "certificate_no": "7305X",
+    "is_pending": true
+  },
+  {
+    "id": "7504X",
+    "brand": "TB",
+    "model": "7504X",
+    "description": "Lenovo TAB 7",
+    "subType": "",
+    "certificate_no": "7504X",
+    "is_pending": true
+  },
+  {
+    "id": "8505X",
+    "brand": "TB",
+    "model": "8505X",
+    "description": "Lenovo Tab M8",
+    "subType": "",
+    "certificate_no": "8505X",
+    "is_pending": true
+  },
+  {
+    "id": "8506X",
+    "brand": "TB",
+    "model": "8506X",
+    "description": "Lenovo Tab M8",
+    "subType": "",
+    "certificate_no": "8506X",
+    "is_pending": true
+  },
+  {
+    "id": "8506XS",
+    "brand": "TB",
+    "model": "8506XS",
+    "description": "Lenovo Smart Tab M8",
+    "subType": "",
+    "certificate_no": "8506XS",
+    "is_pending": true
+  },
+  {
+    "id": "J606L",
+    "brand": "TB",
+    "model": "J606L",
+    "description": "Lenovo Tab P11",
+    "subType": "",
+    "certificate_no": "J606L",
+    "is_pending": true
+  },
+  {
+    "id": "J616X",
+    "brand": "TB",
+    "model": "J616X",
+    "description": "Lenovo Tab P11 Plus",
+    "subType": "",
+    "certificate_no": "J616X",
+    "is_pending": true
+  },
+  {
+    "id": "J706L",
+    "brand": "TB",
+    "model": "J706L",
+    "description": "Lenovo Tab P11 Pro",
+    "subType": "",
+    "certificate_no": "J706L",
+    "is_pending": true
+  },
+  {
+    "id": "X306X",
+    "brand": "TB",
+    "model": "X306X",
+    "description": "Lenovo Tab M10+",
+    "subType": "",
+    "certificate_no": "X306X",
+    "is_pending": true
+  },
+  {
+    "id": "X505L",
+    "brand": "TB",
+    "model": "X505L",
+    "description": "Lenovo Tab M10",
+    "subType": "",
+    "certificate_no": "X505L",
+    "is_pending": true
+  },
+  {
+    "id": "X605L",
+    "brand": "TB",
+    "model": "X605L",
+    "description": "Lenovo Tab M10",
+    "subType": "",
+    "certificate_no": "X605L",
+    "is_pending": true
+  },
+  {
+    "id": "X606X",
+    "brand": "TB",
+    "model": "X606X",
+    "description": "Lenovo Tab M10 FHD Plus",
+    "subType": "",
+    "certificate_no": "X606X",
+    "is_pending": true
+  },
+  {
+    "id": "J706X",
+    "brand": "YT",
+    "model": "J706X",
+    "description": "Lenovo Yoga Tab 11",
+    "subType": "",
+    "certificate_no": "J706X",
+    "is_pending": true
+  },
+  {
+    "id": "X705L",
+    "brand": "YT",
+    "model": "X705L",
+    "description": "Yoga Smart Tab",
+    "subType": "",
+    "certificate_no": "X705L",
+    "is_pending": true
+  },
+  {
+    "id": "3030",
+    "brand": "LMU",
+    "model": "3030",
+    "description": "Global Variant I",
+    "subType": "",
+    "certificate_no": "3030",
+    "is_pending": true
+  },
+  {
+    "id": "TST-LTEA-P-T",
+    "brand": "MAX",
+    "model": "TST-LTEA-P-T",
+    "description": "MAX Transit",
+    "subType": "",
+    "certificate_no": "TST-LTEA-P-T",
+    "is_pending": true
+  },
+  {
+    "id": "X1-H0401",
+    "brand": "MDVR",
+    "model": "X1-H0401",
+    "description": "AHD",
+    "subType": "",
+    "certificate_no": "X1-H0401",
+    "is_pending": true
+  },
+  {
+    "id": "125-T",
+    "brand": "RM",
+    "model": "125-T",
+    "description": "M91AMNOKV5K&G638",
+    "subType": "",
+    "certificate_no": "125-T",
+    "is_pending": true
+  },
+  {
+    "id": "2TS-T",
+    "brand": "MICOM",
+    "model": "2TS-T",
+    "description": "M81AMNOKV5BK",
+    "subType": "",
+    "certificate_no": "2TS-T",
+    "is_pending": true
+  },
+  {
+    "id": "3F-T",
+    "brand": "MICOM",
+    "model": "3F-T",
+    "description": "M90AMNOKV5AK",
+    "subType": "",
+    "certificate_no": "3F-T",
+    "is_pending": true
+  },
+  {
+    "id": "5380",
+    "brand": "MC",
+    "model": "5380",
+    "description": "MC8080-200011",
+    "subType": "",
+    "certificate_no": "5380",
+    "is_pending": true
+  },
+  {
+    "id": "STG-1",
+    "brand": "MOBY",
+    "model": "STG-1",
+    "description": "6GT2003-1CA00",
+    "subType": "",
+    "certificate_no": "STG-1",
+    "is_pending": true
+  },
+  {
+    "id": "411C11",
+    "brand": "MQ3",
+    "model": "411C11",
+    "description": "C651",
+    "subType": "",
+    "certificate_no": "411C11",
+    "is_pending": true
+  },
+  {
+    "id": "411C31",
+    "brand": "MQ3",
+    "model": "411C31",
+    "description": "C381",
+    "subType": "",
+    "certificate_no": "411C31",
+    "is_pending": true
+  },
+  {
+    "id": "4411A11",
+    "brand": "MQ3",
+    "model": "4411A11",
+    "description": "V535",
+    "subType": "",
+    "certificate_no": "4411A11",
+    "is_pending": true
+  },
+  {
+    "id": "4411C31",
+    "brand": "MQ3",
+    "model": "4411C31",
+    "description": "C381P",
+    "subType": "",
+    "certificate_no": "4411C31",
+    "is_pending": true
+  },
+  {
+    "id": "4411C32",
+    "brand": "MQ3",
+    "model": "4411C32",
+    "description": "C390",
+    "subType": "",
+    "certificate_no": "4411C32",
+    "is_pending": true
+  },
+  {
+    "id": "4411G11",
+    "brand": "MQ3",
+    "model": "4411G11",
+    "description": "A780",
+    "subType": "",
+    "certificate_no": "4411G11",
+    "is_pending": true
+  },
+  {
+    "id": "4411I11",
+    "brand": "MQ3",
+    "model": "4411I11",
+    "description": "L6i",
+    "subType": "",
+    "certificate_no": "4411I11",
+    "is_pending": true
+  },
+  {
+    "id": "4411A11",
+    "brand": "MQ4",
+    "model": "4411A11",
+    "description": "V555",
+    "subType": "",
+    "certificate_no": "4411A11",
+    "is_pending": true
+  },
+  {
+    "id": "4411A21",
+    "brand": "MQ4",
+    "model": "4411A21",
+    "description": "V635",
+    "subType": "",
+    "certificate_no": "4411A21",
+    "is_pending": true
+  },
+  {
+    "id": "4411D11",
+    "brand": "MQ4",
+    "model": "4411D11",
+    "description": "V360",
+    "subType": "",
+    "certificate_no": "4411D11",
+    "is_pending": true
+  },
+  {
+    "id": "4411F21",
+    "brand": "MQ4",
+    "model": "4411F21",
+    "description": "L7i",
+    "subType": "",
+    "certificate_no": "4411F21",
+    "is_pending": true
+  },
+  {
+    "id": "4411H11",
+    "brand": "MQ4",
+    "model": "4411H11",
+    "description": "A1200",
+    "subType": "",
+    "certificate_no": "4411H11",
+    "is_pending": true
+  },
+  {
+    "id": "4411I11",
+    "brand": "MQ4",
+    "model": "4411I11",
+    "description": "A1600",
+    "subType": "",
+    "certificate_no": "4411I11",
+    "is_pending": true
+  },
+  {
+    "id": "4411A12",
+    "brand": "MQ5",
+    "model": "4411A12",
+    "description": "W510",
+    "subType": "",
+    "certificate_no": "4411A12",
+    "is_pending": true
+  },
+  {
+    "id": "4411A25",
+    "brand": "MQ5",
+    "model": "4411A25",
+    "description": "V8 2GB",
+    "subType": "",
+    "certificate_no": "4411A25",
+    "is_pending": true
+  },
+  {
+    "id": "4411A11",
+    "brand": "MQ6",
+    "model": "4411A11",
+    "description": "EM30",
+    "subType": "",
+    "certificate_no": "4411A11",
+    "is_pending": true
+  },
+  {
+    "id": "4411B11",
+    "brand": "MQ6",
+    "model": "4411B11",
+    "description": "ZN5",
+    "subType": "",
+    "certificate_no": "4411B11",
+    "is_pending": true
+  },
+  {
+    "id": "4411D11",
+    "brand": "MQ6",
+    "model": "4411D11",
+    "description": "AURA R1",
+    "subType": "",
+    "certificate_no": "4411D11",
+    "is_pending": true
+  },
+  {
+    "id": "4411E11",
+    "brand": "MQ6",
+    "model": "4411E11",
+    "description": "EM35",
+    "subType": "",
+    "certificate_no": "4411E11",
+    "is_pending": true
+  },
+  {
+    "id": "334411B13",
+    "brand": "MRQ6",
+    "model": "334411B13",
+    "description": "Z9n",
+    "subType": "",
+    "certificate_no": "334411B13",
+    "is_pending": true
+  },
+  {
+    "id": "3334411B11",
+    "brand": "MRUQ7",
+    "model": "3334411B11",
+    "description": "MB300",
+    "subType": "",
+    "certificate_no": "3334411B11",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "MRX",
+    "model": "AL09",
+    "description": "HUAWEI MatePad Pro",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "AN19",
+    "brand": "MRX",
+    "model": "AN19",
+    "description": "MatePad Pro 5G",
+    "subType": "",
+    "certificate_no": "AN19",
+    "is_pending": true
+  },
+  {
+    "id": "30-M1-RJ-E4-1",
+    "brand": "MS5G15R",
+    "model": "30-M1-RJ-E4-1",
+    "description": "SCALANCE MUM853-1",
+    "subType": "",
+    "certificate_no": "30-M1-RJ-E4-1",
+    "is_pending": true
+  },
+  {
+    "id": "65-M1-M12-E4-1",
+    "brand": "MS5G15R",
+    "model": "65-M1-M12-E4-1",
+    "description": "SCALANCE MUM856-1",
+    "subType": "",
+    "certificate_no": "65-M1-M12-E4-1",
+    "is_pending": true
+  },
+  {
+    "id": "411J11",
+    "brand": "MT3",
+    "model": "411J11",
+    "description": "E680i",
+    "subType": "",
+    "certificate_no": "411J11",
+    "is_pending": true
+  },
+  {
+    "id": "411A11",
+    "brand": "MT4",
+    "model": "411A11",
+    "description": "ROKR E6",
+    "subType": "",
+    "certificate_no": "411A11",
+    "is_pending": true
+  },
+  {
+    "id": "411B11",
+    "brand": "MT4",
+    "model": "411B11",
+    "description": "A810",
+    "subType": "",
+    "certificate_no": "411B11",
+    "is_pending": true
+  },
+  {
+    "id": "3334411B11",
+    "brand": "MURQ7",
+    "model": "3334411B11",
+    "description": "MB501",
+    "subType": "",
+    "certificate_no": "3334411B11",
+    "is_pending": true
+  },
+  {
+    "id": "3411A11",
+    "brand": "MUT4",
+    "model": "3411A11",
+    "description": "VE538",
+    "subType": "",
+    "certificate_no": "3411A11",
+    "is_pending": true
+  },
+  {
+    "id": "4411D11",
+    "brand": "MUT4",
+    "model": "4411D11",
+    "description": "E1000",
+    "subType": "",
+    "certificate_no": "4411D11",
+    "is_pending": true
+  },
+  {
+    "id": "4411E11",
+    "brand": "MUT4",
+    "model": "4411E11",
+    "description": "A1000",
+    "subType": "",
+    "certificate_no": "4411E11",
+    "is_pending": true
+  },
+  {
+    "id": "4411J11",
+    "brand": "MUT4",
+    "model": "4411J11",
+    "description": "V3x",
+    "subType": "",
+    "certificate_no": "4411J11",
+    "is_pending": true
+  },
+  {
+    "id": "3411D11",
+    "brand": "MUT6",
+    "model": "3411D11",
+    "description": "MOTOKRZR K3",
+    "subType": "",
+    "certificate_no": "3411D11",
+    "is_pending": true
+  },
+  {
+    "id": "3411D21",
+    "brand": "MUT6",
+    "model": "3411D21",
+    "description": "K3m",
+    "subType": "",
+    "certificate_no": "3411D21",
+    "is_pending": true
+  },
+  {
+    "id": "334411A11",
+    "brand": "MVQ7",
+    "model": "334411A11",
+    "description": "A853 Milestone",
+    "subType": "",
+    "certificate_no": "334411A11",
+    "is_pending": true
+  },
+  {
+    "id": "334411A11",
+    "brand": "MWQ7",
+    "model": "334411A11",
+    "description": "MB525",
+    "subType": "",
+    "certificate_no": "334411A11",
+    "is_pending": true
+  },
+  {
+    "id": "334411A11",
+    "brand": "MWQ8",
+    "model": "334411A11",
+    "description": "MB511",
+    "subType": "",
+    "certificate_no": "334411A11",
+    "is_pending": true
+  },
+  {
+    "id": "334411B11",
+    "brand": "MWQ8",
+    "model": "334411B11",
+    "description": "MB502",
+    "subType": "",
+    "certificate_no": "334411B11",
+    "is_pending": true
+  },
+  {
+    "id": "1515",
+    "brand": "NCA",
+    "model": "1515",
+    "description": "contains : EM7430",
+    "subType": "",
+    "certificate_no": "1515",
+    "is_pending": true
+  },
+  {
+    "id": "103S",
+    "brand": "NE",
+    "model": "103S",
+    "description": "Dragon",
+    "subType": "",
+    "certificate_no": "103S",
+    "is_pending": true
+  },
+  {
+    "id": "800H",
+    "brand": "NX",
+    "model": "800H",
+    "description": "Type2",
+    "subType": "",
+    "certificate_no": "800H",
+    "is_pending": true
+  },
+  {
+    "id": "E805C",
+    "brand": "OT",
+    "model": "E805C",
+    "description": "KB001",
+    "subType": "",
+    "certificate_no": "E805C",
+    "is_pending": true
+  },
+  {
+    "id": "0010-BV",
+    "brand": "PM",
+    "model": "0010-BV",
+    "description": "LT29i",
+    "subType": "",
+    "certificate_no": "0010-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0060-BV",
+    "brand": "PM",
+    "model": "0060-BV",
+    "description": "LT25i",
+    "subType": "",
+    "certificate_no": "0060-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0090-BV",
+    "brand": "PM",
+    "model": "0090-BV",
+    "description": "ST27i",
+    "subType": "",
+    "certificate_no": "0090-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0100-BV",
+    "brand": "PM",
+    "model": "0100-BV",
+    "description": "ST27a",
+    "subType": "",
+    "certificate_no": "0100-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0110-BV",
+    "brand": "PM",
+    "model": "0110-BV",
+    "description": "MT25i",
+    "subType": "",
+    "certificate_no": "0110-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0120-BV",
+    "brand": "PM",
+    "model": "0120-BV",
+    "description": "ST21a",
+    "subType": "",
+    "certificate_no": "0120-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0121-BV",
+    "brand": "PM",
+    "model": "0121-BV",
+    "description": "ST21a2",
+    "subType": "",
+    "certificate_no": "0121-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0130-BV",
+    "brand": "PM",
+    "model": "0130-BV",
+    "description": "ST21i",
+    "subType": "",
+    "certificate_no": "0130-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0131-BV",
+    "brand": "PM",
+    "model": "0131-BV",
+    "description": "ST21i2",
+    "subType": "",
+    "certificate_no": "0131-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0160-BV",
+    "brand": "PM",
+    "model": "0160-BV",
+    "description": "ST26i",
+    "subType": "",
+    "certificate_no": "0160-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0170-BV",
+    "brand": "PM",
+    "model": "0170-BV",
+    "description": "ST26a",
+    "subType": "",
+    "certificate_no": "0170-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0180-BV",
+    "brand": "PM",
+    "model": "0180-BV",
+    "description": "ST23i",
+    "subType": "",
+    "certificate_no": "0180-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0190-BV",
+    "brand": "PM",
+    "model": "0190-BV",
+    "description": "ST23a",
+    "subType": "",
+    "certificate_no": "0190-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0200-BV",
+    "brand": "PM",
+    "model": "0200-BV",
+    "description": "LT28h",
+    "subType": "",
+    "certificate_no": "0200-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0210-BV",
+    "brand": "PM",
+    "model": "0210-BV",
+    "description": "LT26w",
+    "subType": "",
+    "certificate_no": "0210-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0251-BV",
+    "brand": "PM",
+    "model": "0251-BV",
+    "description": "C1605",
+    "subType": "",
+    "certificate_no": "0251-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0260-BV",
+    "brand": "PM",
+    "model": "0260-BV",
+    "description": "C1504",
+    "subType": "",
+    "certificate_no": "0260-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0261-BV",
+    "brand": "PM",
+    "model": "0261-BV",
+    "description": "C1604",
+    "subType": "",
+    "certificate_no": "0261-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0280-BV",
+    "brand": "PM",
+    "model": "0280-BV",
+    "description": "C6602",
+    "subType": "",
+    "certificate_no": "0280-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0290-BV",
+    "brand": "PM",
+    "model": "0290-BV",
+    "description": "C2105",
+    "subType": "",
+    "certificate_no": "0290-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0300-BV",
+    "brand": "PM",
+    "model": "0300-BV",
+    "description": "C2104",
+    "subType": "",
+    "certificate_no": "0300-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0340-BV",
+    "brand": "PM",
+    "model": "0340-BV",
+    "description": "C6502",
+    "subType": "",
+    "certificate_no": "0340-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0360-BV",
+    "brand": "PM",
+    "model": "0360-BV",
+    "description": "C5302",
+    "subType": "",
+    "certificate_no": "0360-BV",
+    "is_pending": true
+  },
+  {
+    "id": "0510-BV",
+    "brand": "PM",
+    "model": "0510-BV",
+    "description": "C1505",
+    "subType": "",
+    "certificate_no": "0510-BV",
+    "is_pending": true
+  },
+  {
+    "id": "400NW",
+    "brand": "PX",
+    "model": "400NW",
+    "description": "430-470MHz",
+    "subType": "",
+    "certificate_no": "400NW",
+    "is_pending": true
+  },
+  {
+    "id": "8070",
+    "brand": "R",
+    "model": "8070",
+    "description": "380-400 MHz",
+    "subType": "",
+    "certificate_no": "8070",
+    "is_pending": true
+  },
+  {
+    "id": "WD-0678",
+    "brand": "RC",
+    "model": "WD-0678",
+    "description": "27MHz",
+    "subType": "",
+    "certificate_no": "WD-0678",
+    "is_pending": true
+  },
+  {
+    "id": "WD-0805",
+    "brand": "RC",
+    "model": "WD-0805",
+    "description": "27MHz",
+    "subType": "",
+    "certificate_no": "WD-0805",
+    "is_pending": true
+  },
+  {
+    "id": "900-P20",
+    "brand": "RF",
+    "model": "900-P20",
+    "description": "Donor & Remote Unit",
+    "subType": "",
+    "certificate_no": "900-P20",
+    "is_pending": true
+  },
+  {
+    "id": "D500K",
+    "brand": "RL",
+    "model": "D500K",
+    "description": "VHF",
+    "subType": "",
+    "certificate_no": "D500K",
+    "is_pending": true
+  },
+  {
+    "id": "266V",
+    "brand": "RM",
+    "model": "266V",
+    "description": "Signature",
+    "subType": "",
+    "certificate_no": "266V",
+    "is_pending": true
+  },
+  {
+    "id": "267V",
+    "brand": "RM",
+    "model": "267V",
+    "description": "ASCENT Ti",
+    "subType": "",
+    "certificate_no": "267V",
+    "is_pending": true
+  },
+  {
+    "id": "582V",
+    "brand": "RM",
+    "model": "582V",
+    "description": "CONSTELLATION QUEST",
+    "subType": "",
+    "certificate_no": "582V",
+    "is_pending": true
+  },
+  {
+    "id": "589V",
+    "brand": "RM",
+    "model": "589V",
+    "description": "ASCENT X",
+    "subType": "",
+    "certificate_no": "589V",
+    "is_pending": true
+  },
+  {
+    "id": "681V",
+    "brand": "RM",
+    "model": "681V",
+    "description": "CONSTELLATION T",
+    "subType": "",
+    "certificate_no": "681V",
+    "is_pending": true
+  },
+  {
+    "id": "828V",
+    "brand": "RM",
+    "model": "828V",
+    "description": "VERTU Ti",
+    "subType": "",
+    "certificate_no": "828V",
+    "is_pending": true
+  },
+  {
+    "id": "43-08-NF-70",
+    "brand": "RO",
+    "model": "43-08-NF-70",
+    "description": "DRU",
+    "subType": "",
+    "certificate_no": "43-08-NF-70",
+    "is_pending": true
+  },
+  {
+    "id": "SF-Z4-13",
+    "brand": "RS",
+    "model": "SF-Z4-13",
+    "description": "RCZ 4",
+    "subType": "",
+    "certificate_no": "SF-Z4-13",
+    "is_pending": true
+  },
+  {
+    "id": "REP-F-1VII43-A",
+    "brand": "RS220",
+    "model": "REP-F-1VII43-A",
+    "description": "33 dbm",
+    "subType": "",
+    "certificate_no": "REP-F-1VII43-A",
+    "is_pending": true
+  },
+  {
+    "id": "REP-F-1VII43-B",
+    "brand": "RS220",
+    "model": "REP-F-1VII43-B",
+    "description": "33 dbm",
+    "subType": "",
+    "certificate_no": "REP-F-1VII43-B",
+    "is_pending": true
+  },
+  {
+    "id": "AL00",
+    "brand": "RTS",
+    "model": "AL00",
+    "description": "WATCH 5",
+    "subType": "",
+    "certificate_no": "AL00",
+    "is_pending": true
+  },
+  {
+    "id": "6N02-I160",
+    "brand": "RW",
+    "model": "6N02-I160",
+    "description": "V40",
+    "subType": "",
+    "certificate_no": "6N02-I160",
+    "is_pending": true
+  },
+  {
+    "id": "3302D2-15",
+    "brand": "RX",
+    "model": "3302D2-15",
+    "description": "2C1",
+    "subType": "",
+    "certificate_no": "3302D2-15",
+    "is_pending": true
+  },
+  {
+    "id": "TA26",
+    "brand": "SATEL",
+    "model": "TA26",
+    "description": "SATELLAR RU-Q",
+    "subType": "",
+    "certificate_no": "TA26",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "SCM",
+    "model": "AL09",
+    "description": "MediaPad M6 (10.8-inch",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "RWB48",
+    "brand": "SE10K",
+    "model": "RWB48",
+    "description": "PN:SE10K-THB48BFN4",
+    "subType": "",
+    "certificate_no": "RWB48",
+    "is_pending": true
+  },
+  {
+    "id": "Z10A",
+    "brand": "SH",
+    "model": "Z10A",
+    "description": "AQUOS Zero",
+    "subType": "",
+    "certificate_no": "Z10A",
+    "is_pending": true
+  },
+  {
+    "id": "H0TH",
+    "brand": "PAR",
+    "model": "H0TH",
+    "description": "Black Shark 5",
+    "subType": "",
+    "certificate_no": "H0TH",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "SHT",
+    "model": "AL09",
+    "description": "HUAWEI MediaPad M5",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "SLCM",
+    "model": "AL09",
+    "description": "MediaPad M6 (10.8-inch",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "F711B",
+    "brand": "SM",
+    "model": "F711B",
+    "description": "Galaxy Z Flip3 5G",
+    "subType": "",
+    "certificate_no": "F711B",
+    "is_pending": true
+  },
+  {
+    "id": "F721B",
+    "brand": "SM",
+    "model": "F721B",
+    "description": "Galaxy Z Flip4",
+    "subType": "",
+    "certificate_no": "F721B",
+    "is_pending": true
+  },
+  {
+    "id": "F731B",
+    "brand": "SM",
+    "model": "F731B",
+    "description": "Galaxy Z Flip5",
+    "subType": "",
+    "certificate_no": "F731B",
+    "is_pending": true
+  },
+  {
+    "id": "F741B",
+    "brand": "SM",
+    "model": "F741B",
+    "description": "Galaxy Z Flip6",
+    "subType": "",
+    "certificate_no": "F741B",
+    "is_pending": true
+  },
+  {
+    "id": "F761B",
+    "brand": "SM",
+    "model": "F761B",
+    "description": "Galaxy Z Flip7 FE",
+    "subType": "",
+    "certificate_no": "F761B",
+    "is_pending": true
+  },
+  {
+    "id": "F766B",
+    "brand": "SM",
+    "model": "F766B",
+    "description": "Galaxy Z Flip7",
+    "subType": "",
+    "certificate_no": "F766B",
+    "is_pending": true
+  },
+  {
+    "id": "F900F",
+    "brand": "SM",
+    "model": "F900F",
+    "description": "Galaxy Fold",
+    "subType": "",
+    "certificate_no": "F900F",
+    "is_pending": true
+  },
+  {
+    "id": "F916B",
+    "brand": "SM",
+    "model": "F916B",
+    "description": "Galaxy Z Fold2 5G",
+    "subType": "",
+    "certificate_no": "F916B",
+    "is_pending": true
+  },
+  {
+    "id": "G390Y",
+    "brand": "SM",
+    "model": "G390Y",
+    "description": "XCover 4",
+    "subType": "",
+    "certificate_no": "G390Y",
+    "is_pending": true
+  },
+  {
+    "id": "G556B",
+    "brand": "SM",
+    "model": "G556B",
+    "description": "Galaxy Xcover7",
+    "subType": "",
+    "certificate_no": "G556B",
+    "is_pending": true
+  },
+  {
+    "id": "G766B",
+    "brand": "SM",
+    "model": "G766B",
+    "description": "Galaxy XCover 7 Pro",
+    "subType": "",
+    "certificate_no": "G766B",
+    "is_pending": true
+  },
+  {
+    "id": "G955FD",
+    "brand": "SM",
+    "model": "G955FD",
+    "description": "S8+",
+    "subType": "",
+    "certificate_no": "G955FD",
+    "is_pending": true
+  },
+  {
+    "id": "L305F",
+    "brand": "SM",
+    "model": "L305F",
+    "description": "Galaxy Watch7",
+    "subType": "",
+    "certificate_no": "L305F",
+    "is_pending": true
+  },
+  {
+    "id": "L315F",
+    "brand": "SM",
+    "model": "L315F",
+    "description": "Galaxy Watch7",
+    "subType": "",
+    "certificate_no": "L315F",
+    "is_pending": true
+  },
+  {
+    "id": "L325F",
+    "brand": "SM",
+    "model": "L325F",
+    "description": "Galaxy Watch8",
+    "subType": "",
+    "certificate_no": "L325F",
+    "is_pending": true
+  },
+  {
+    "id": "L335F",
+    "brand": "SM",
+    "model": "L335F",
+    "description": "Galaxy Watch8",
+    "subType": "",
+    "certificate_no": "L335F",
+    "is_pending": true
+  },
+  {
+    "id": "L505F",
+    "brand": "SM",
+    "model": "L505F",
+    "description": "Galaxy Watch8 Classic",
+    "subType": "",
+    "certificate_no": "L505F",
+    "is_pending": true
+  },
+  {
+    "id": "L705F",
+    "brand": "SM",
+    "model": "L705F",
+    "description": "Galaxy Watch Ultra",
+    "subType": "",
+    "certificate_no": "L705F",
+    "is_pending": true
+  },
+  {
+    "id": "N960F",
+    "brand": "SM",
+    "model": "N960F",
+    "description": "Galaxy Note 9",
+    "subType": "",
+    "certificate_no": "N960F",
+    "is_pending": true
+  },
+  {
+    "id": "P205",
+    "brand": "SM",
+    "model": "P205",
+    "description": "Galaxy Tab A with S Pen",
+    "subType": "",
+    "certificate_no": "P205",
+    "is_pending": true
+  },
+  {
+    "id": "P615",
+    "brand": "SM",
+    "model": "P615",
+    "description": "Galaxy Tab S6 lite",
+    "subType": "",
+    "certificate_no": "P615",
+    "is_pending": true
+  },
+  {
+    "id": "P619",
+    "brand": "SM",
+    "model": "P619",
+    "description": "Galaxy Tab S6 Lite",
+    "subType": "",
+    "certificate_no": "P619",
+    "is_pending": true
+  },
+  {
+    "id": "P625",
+    "brand": "SM",
+    "model": "P625",
+    "description": "Galaxy Tab S6 Lite",
+    "subType": "",
+    "certificate_no": "P625",
+    "is_pending": true
+  },
+  {
+    "id": "R750",
+    "brand": "SM",
+    "model": "R750",
+    "description": "2019",
+    "subType": "",
+    "certificate_no": "R750",
+    "is_pending": true
+  },
+  {
+    "id": "R750B",
+    "brand": "SM",
+    "model": "R750B",
+    "description": "2019",
+    "subType": "",
+    "certificate_no": "R750B",
+    "is_pending": true
+  },
+  {
+    "id": "R805F",
+    "brand": "SM",
+    "model": "R805F",
+    "description": "Galaxy watch (4G LTE",
+    "subType": "",
+    "certificate_no": "R805F",
+    "is_pending": true
+  },
+  {
+    "id": "R815F",
+    "brand": "SM",
+    "model": "R815F",
+    "description": "Galaxy watch (4G LTE",
+    "subType": "",
+    "certificate_no": "R815F",
+    "is_pending": true
+  },
+  {
+    "id": "R825F",
+    "brand": "SM",
+    "model": "R825F",
+    "description": "Galaxy Watch Active2",
+    "subType": "",
+    "certificate_no": "R825F",
+    "is_pending": true
+  },
+  {
+    "id": "R835F",
+    "brand": "SM",
+    "model": "R835F",
+    "description": "Galaxy Watch Active2",
+    "subType": "",
+    "certificate_no": "R835F",
+    "is_pending": true
+  },
+  {
+    "id": "R845F",
+    "brand": "SM",
+    "model": "R845F",
+    "description": "Galaxy Watch3 45mm",
+    "subType": "",
+    "certificate_no": "R845F",
+    "is_pending": true
+  },
+  {
+    "id": "R855F",
+    "brand": "SM",
+    "model": "R855F",
+    "description": "Galaxy Watch3 41mm",
+    "subType": "",
+    "certificate_no": "R855F",
+    "is_pending": true
+  },
+  {
+    "id": "R865F",
+    "brand": "SM",
+    "model": "R865F",
+    "description": "Galaxy Watch4",
+    "subType": "",
+    "certificate_no": "R865F",
+    "is_pending": true
+  },
+  {
+    "id": "R875F",
+    "brand": "SM",
+    "model": "R875F",
+    "description": "Galaxy Watch4",
+    "subType": "",
+    "certificate_no": "R875F",
+    "is_pending": true
+  },
+  {
+    "id": "R885F",
+    "brand": "SM",
+    "model": "R885F",
+    "description": "Galaxy Watch4 Classic",
+    "subType": "",
+    "certificate_no": "R885F",
+    "is_pending": true
+  },
+  {
+    "id": "R895F",
+    "brand": "SM",
+    "model": "R895F",
+    "description": "Galaxy Watch4 Classic",
+    "subType": "",
+    "certificate_no": "R895F",
+    "is_pending": true
+  },
+  {
+    "id": "R905F",
+    "brand": "SM",
+    "model": "R905F",
+    "description": "Galaxy Watch5",
+    "subType": "",
+    "certificate_no": "R905F",
+    "is_pending": true
+  },
+  {
+    "id": "R915F",
+    "brand": "SM",
+    "model": "R915F",
+    "description": "Galaxy Watch5",
+    "subType": "",
+    "certificate_no": "R915F",
+    "is_pending": true
+  },
+  {
+    "id": "R925F",
+    "brand": "SM",
+    "model": "R925F",
+    "description": "Galaxy Watch5 Pro",
+    "subType": "",
+    "certificate_no": "R925F",
+    "is_pending": true
+  },
+  {
+    "id": "R935F",
+    "brand": "SM",
+    "model": "R935F",
+    "description": "Galaxy Watch 6",
+    "subType": "",
+    "certificate_no": "R935F",
+    "is_pending": true
+  },
+  {
+    "id": "R945F",
+    "brand": "SM",
+    "model": "R945F",
+    "description": "Galaxy Watch 6",
+    "subType": "",
+    "certificate_no": "R945F",
+    "is_pending": true
+  },
+  {
+    "id": "R955F",
+    "brand": "SM",
+    "model": "R955F",
+    "description": "Galaxy Watch6 Classic",
+    "subType": "",
+    "certificate_no": "R955F",
+    "is_pending": true
+  },
+  {
+    "id": "R965F",
+    "brand": "SM",
+    "model": "R965F",
+    "description": "Galaxy Watch6 Classic",
+    "subType": "",
+    "certificate_no": "R965F",
+    "is_pending": true
+  },
+  {
+    "id": "T225",
+    "brand": "SM",
+    "model": "T225",
+    "description": "Galaxy Tab A7 Lite",
+    "subType": "",
+    "certificate_no": "T225",
+    "is_pending": true
+  },
+  {
+    "id": "T295",
+    "brand": "SM",
+    "model": "T295",
+    "description": "Galaxy Tab A",
+    "subType": "",
+    "certificate_no": "T295",
+    "is_pending": true
+  },
+  {
+    "id": "T385",
+    "brand": "SM",
+    "model": "T385",
+    "description": "J3 Pro (2017",
+    "subType": "",
+    "certificate_no": "T385",
+    "is_pending": true
+  },
+  {
+    "id": "T395",
+    "brand": "SM",
+    "model": "T395",
+    "description": "Tab Active 2",
+    "subType": "",
+    "certificate_no": "T395",
+    "is_pending": true
+  },
+  {
+    "id": "T505",
+    "brand": "SM",
+    "model": "T505",
+    "description": "Galaxy Tab A7",
+    "subType": "",
+    "certificate_no": "T505",
+    "is_pending": true
+  },
+  {
+    "id": "T515",
+    "brand": "SM",
+    "model": "T515",
+    "description": "Galaxy Tab A",
+    "subType": "",
+    "certificate_no": "T515",
+    "is_pending": true
+  },
+  {
+    "id": "T545",
+    "brand": "SM",
+    "model": "T545",
+    "description": "Galaxy Tab Active Pro 10.1",
+    "subType": "",
+    "certificate_no": "T545",
+    "is_pending": true
+  },
+  {
+    "id": "T575",
+    "brand": "SM",
+    "model": "T575",
+    "description": "Galaxy Tab Active3",
+    "subType": "",
+    "certificate_no": "T575",
+    "is_pending": true
+  },
+  {
+    "id": "T595",
+    "brand": "SM",
+    "model": "T595",
+    "description": "Galaxy Tab A 1.05",
+    "subType": "",
+    "certificate_no": "T595",
+    "is_pending": true
+  },
+  {
+    "id": "T636B",
+    "brand": "SM",
+    "model": "T636B",
+    "description": "Galaxy Tab Active 4 Pro",
+    "subType": "",
+    "certificate_no": "T636B",
+    "is_pending": true
+  },
+  {
+    "id": "T725",
+    "brand": "SM",
+    "model": "T725",
+    "description": "Galaxy Tab S5e",
+    "subType": "",
+    "certificate_no": "T725",
+    "is_pending": true
+  },
+  {
+    "id": "T735",
+    "brand": "SM",
+    "model": "T735",
+    "description": "Galaxy Tab S7 FE",
+    "subType": "",
+    "certificate_no": "T735",
+    "is_pending": true
+  },
+  {
+    "id": "T736B",
+    "brand": "SM",
+    "model": "T736B",
+    "description": "Galaxy Tab S7 FE 5G",
+    "subType": "",
+    "certificate_no": "T736B",
+    "is_pending": true
+  },
+  {
+    "id": "T825Y",
+    "brand": "SM",
+    "model": "T825Y",
+    "description": "Tab S3",
+    "subType": "",
+    "certificate_no": "T825Y",
+    "is_pending": true
+  },
+  {
+    "id": "T835",
+    "brand": "SM",
+    "model": "T835",
+    "description": "Tab S4",
+    "subType": "",
+    "certificate_no": "T835",
+    "is_pending": true
+  },
+  {
+    "id": "T865",
+    "brand": "SM",
+    "model": "T865",
+    "description": "Galaxy Tab S6 Tablet",
+    "subType": "",
+    "certificate_no": "T865",
+    "is_pending": true
+  },
+  {
+    "id": "T875",
+    "brand": "SM",
+    "model": "T875",
+    "description": "Galaxy Tab S7",
+    "subType": "",
+    "certificate_no": "T875",
+    "is_pending": true
+  },
+  {
+    "id": "T975",
+    "brand": "SM",
+    "model": "T975",
+    "description": "Galaxy Tab S7+",
+    "subType": "",
+    "certificate_no": "T975",
+    "is_pending": true
+  },
+  {
+    "id": "T976B",
+    "brand": "SM",
+    "model": "T976B",
+    "description": "Galaxy Tab S7+5G",
+    "subType": "",
+    "certificate_no": "T976B",
+    "is_pending": true
+  },
+  {
+    "id": "X115",
+    "brand": "SM",
+    "model": "X115",
+    "description": "Galaxy Tab A9",
+    "subType": "",
+    "certificate_no": "X115",
+    "is_pending": true
+  },
+  {
+    "id": "X205",
+    "brand": "SM",
+    "model": "X205",
+    "description": "Galaxy Tab A8",
+    "subType": "",
+    "certificate_no": "X205",
+    "is_pending": true
+  },
+  {
+    "id": "X216B",
+    "brand": "SM",
+    "model": "X216B",
+    "description": "Galaxy Tab A9+ 5G",
+    "subType": "",
+    "certificate_no": "X216B",
+    "is_pending": true
+  },
+  {
+    "id": "X306B",
+    "brand": "SM",
+    "model": "X306B",
+    "description": "Galaxy Tab Active5",
+    "subType": "",
+    "certificate_no": "X306B",
+    "is_pending": true
+  },
+  {
+    "id": "X356B",
+    "brand": "SM",
+    "model": "X356B",
+    "description": "Galaxy Tab Active5 Pro 5G",
+    "subType": "",
+    "certificate_no": "X356B",
+    "is_pending": true
+  },
+  {
+    "id": "X516B",
+    "brand": "SM",
+    "model": "X516B",
+    "description": "Galaxy Tab S9 FE 5G",
+    "subType": "",
+    "certificate_no": "X516B",
+    "is_pending": true
+  },
+  {
+    "id": "X526B",
+    "brand": "SM",
+    "model": "X526B",
+    "description": "Galaxy Tab S10 FE 5G",
+    "subType": "",
+    "certificate_no": "X526B",
+    "is_pending": true
+  },
+  {
+    "id": "X616B",
+    "brand": "SM",
+    "model": "X616B",
+    "description": "Galaxy Tab S9 FE+ 5G",
+    "subType": "",
+    "certificate_no": "X616B",
+    "is_pending": true
+  },
+  {
+    "id": "X626B",
+    "brand": "SM",
+    "model": "X626B",
+    "description": "Galaxy Tab S10 FE+ 5G",
+    "subType": "",
+    "certificate_no": "X626B",
+    "is_pending": true
+  },
+  {
+    "id": "X706B",
+    "brand": "SM",
+    "model": "X706B",
+    "description": "Galaxy Tab S8",
+    "subType": "",
+    "certificate_no": "X706B",
+    "is_pending": true
+  },
+  {
+    "id": "X716B",
+    "brand": "SM",
+    "model": "X716B",
+    "description": "Galaxy Tab S9",
+    "subType": "",
+    "certificate_no": "X716B",
+    "is_pending": true
+  },
+  {
+    "id": "X806B",
+    "brand": "SM",
+    "model": "X806B",
+    "description": "Galaxy Tab S8+",
+    "subType": "",
+    "certificate_no": "X806B",
+    "is_pending": true
+  },
+  {
+    "id": "X816B",
+    "brand": "SM",
+    "model": "X816B",
+    "description": "Galaxy Tab S9+",
+    "subType": "",
+    "certificate_no": "X816B",
+    "is_pending": true
+  },
+  {
+    "id": "X826B",
+    "brand": "SM",
+    "model": "X826B",
+    "description": "Galaxy Tab S10+ 5G",
+    "subType": "",
+    "certificate_no": "X826B",
+    "is_pending": true
+  },
+  {
+    "id": "X906B",
+    "brand": "SM",
+    "model": "X906B",
+    "description": "Galaxy Tab S8 ultra",
+    "subType": "",
+    "certificate_no": "X906B",
+    "is_pending": true
+  },
+  {
+    "id": "X916B",
+    "brand": "SM",
+    "model": "X916B",
+    "description": "Galaxy Tab S9 Ultra",
+    "subType": "",
+    "certificate_no": "X916B",
+    "is_pending": true
+  },
+  {
+    "id": "X926B",
+    "brand": "SM",
+    "model": "X926B",
+    "description": "Galaxy Tab S10 Ultra 5G",
+    "subType": "",
+    "certificate_no": "X926B",
+    "is_pending": true
+  },
+  {
+    "id": "826M",
+    "brand": "SMN",
+    "model": "826M",
+    "description": "925",
+    "subType": "",
+    "certificate_no": "826M",
+    "is_pending": true
+  },
+  {
+    "id": "890S",
+    "brand": "SMN",
+    "model": "890S",
+    "description": "925",
+    "subType": "",
+    "certificate_no": "890S",
+    "is_pending": true
+  },
+  {
+    "id": "AL00",
+    "brand": "SOC",
+    "model": "AL00",
+    "description": "WATCH 5",
+    "subType": "",
+    "certificate_no": "AL00",
+    "is_pending": true
+  },
+  {
+    "id": "1004",
+    "brand": "TA",
+    "model": "1004",
+    "description": "Nokia 2",
+    "subType": "",
+    "certificate_no": "1004",
+    "is_pending": true
+  },
+  {
+    "id": "1005",
+    "brand": "TA",
+    "model": "1005",
+    "description": "Nokia 8 Sirocco",
+    "subType": "",
+    "certificate_no": "1005",
+    "is_pending": true
+  },
+  {
+    "id": "1029",
+    "brand": "TA",
+    "model": "1029",
+    "description": "Nokia 2",
+    "subType": "",
+    "certificate_no": "1029",
+    "is_pending": true
+  },
+  {
+    "id": "A20-00",
+    "brand": "TBBH6H6",
+    "model": "A20-00",
+    "description": "TB7100",
+    "subType": "",
+    "certificate_no": "A20-00",
+    "is_pending": true
+  },
+  {
+    "id": "205N",
+    "brand": "TE",
+    "model": "205N",
+    "description": "450-470 MHz\nTE-205R (450-470 MHz\nTE-205T (450-470 MHz\nTE-210A (450-470 MHz",
+    "subType": "",
+    "certificate_no": "205N",
+    "is_pending": true
+  },
+  {
+    "id": "210B",
+    "brand": "TE",
+    "model": "210B",
+    "description": "450-470 MHz",
+    "subType": "",
+    "certificate_no": "210B",
+    "is_pending": true
+  },
+  {
+    "id": "210BN",
+    "brand": "TE",
+    "model": "210BN",
+    "description": "450-470 MHz\nTE-304B-E12\nTE385\nTE580\nTE620G (Thailand Version",
+    "subType": "",
+    "certificate_no": "210BN",
+    "is_pending": true
+  },
+  {
+    "id": "2170",
+    "brand": "TK",
+    "model": "2170",
+    "description": "Type1",
+    "subType": "",
+    "certificate_no": "2170",
+    "is_pending": true
+  },
+  {
+    "id": "2212-1",
+    "brand": "TK",
+    "model": "2212-1",
+    "description": "Type M",
+    "subType": "",
+    "certificate_no": "2212-1",
+    "is_pending": true
+  },
+  {
+    "id": "270G-T",
+    "brand": "TK",
+    "model": "270G-T",
+    "description": "TYPE K",
+    "subType": "",
+    "certificate_no": "270G-T",
+    "is_pending": true
+  },
+  {
+    "id": "3212-1",
+    "brand": "TK",
+    "model": "3212-1",
+    "description": "Type M",
+    "subType": "",
+    "certificate_no": "3212-1",
+    "is_pending": true
+  },
+  {
+    "id": "370G-T",
+    "brand": "TK",
+    "model": "370G-T",
+    "description": "Type M",
+    "subType": "",
+    "certificate_no": "370G-T",
+    "is_pending": true
+  },
+  {
+    "id": "7102",
+    "brand": "TK",
+    "model": "7102",
+    "description": "Type 1",
+    "subType": "",
+    "certificate_no": "7102",
+    "is_pending": true
+  },
+  {
+    "id": "760HG-T",
+    "brand": "TK",
+    "model": "760HG-T",
+    "description": "Version M",
+    "subType": "",
+    "certificate_no": "760HG-T",
+    "is_pending": true
+  },
+  {
+    "id": "760LT-T",
+    "brand": "TK",
+    "model": "760LT-T",
+    "description": "TYPE M",
+    "subType": "",
+    "certificate_no": "760LT-T",
+    "is_pending": true
+  },
+  {
+    "id": "768-T",
+    "brand": "TK",
+    "model": "768-T",
+    "description": "TYPE K3",
+    "subType": "",
+    "certificate_no": "768-T",
+    "is_pending": true
+  },
+  {
+    "id": "780H-T",
+    "brand": "TK",
+    "model": "780H-T",
+    "description": "Version HK",
+    "subType": "",
+    "certificate_no": "780H-T",
+    "is_pending": true
+  },
+  {
+    "id": "8102",
+    "brand": "TK",
+    "model": "8102",
+    "description": "TYPE 1",
+    "subType": "",
+    "certificate_no": "8102",
+    "is_pending": true
+  },
+  {
+    "id": "8108",
+    "brand": "TK",
+    "model": "8108",
+    "description": "TYPE 1",
+    "subType": "",
+    "certificate_no": "8108",
+    "is_pending": true
+  },
+  {
+    "id": "8108H",
+    "brand": "TK",
+    "model": "8108H",
+    "description": "TYPE1",
+    "subType": "",
+    "certificate_no": "8108H",
+    "is_pending": true
+  },
+  {
+    "id": "8160-T",
+    "brand": "TK",
+    "model": "8160-T",
+    "description": "Type E",
+    "subType": "",
+    "certificate_no": "8160-T",
+    "is_pending": true
+  },
+  {
+    "id": "8180",
+    "brand": "TK",
+    "model": "8180",
+    "description": "Type K",
+    "subType": "",
+    "certificate_no": "8180",
+    "is_pending": true
+  },
+  {
+    "id": "8180H",
+    "brand": "TK",
+    "model": "8180H",
+    "description": "Type K2",
+    "subType": "",
+    "certificate_no": "8180H",
+    "is_pending": true
+  },
+  {
+    "id": "860HG-T",
+    "brand": "TK",
+    "model": "860HG-T",
+    "description": "Version M",
+    "subType": "",
+    "certificate_no": "860HG-T",
+    "is_pending": true
+  },
+  {
+    "id": "862G",
+    "brand": "TK",
+    "model": "862G",
+    "description": "Type E",
+    "subType": "",
+    "certificate_no": "862G",
+    "is_pending": true
+  },
+  {
+    "id": "880-T",
+    "brand": "TK",
+    "model": "880-T",
+    "description": "TYPE K",
+    "subType": "",
+    "certificate_no": "880-T",
+    "is_pending": true
+  },
+  {
+    "id": "0030-BV",
+    "brand": "TM",
+    "model": "0030-BV",
+    "description": "SGP321",
+    "subType": "",
+    "certificate_no": "0030-BV",
+    "is_pending": true
+  },
+  {
+    "id": "271A-T",
+    "brand": "TM",
+    "model": "271A-T",
+    "description": "Type M2",
+    "subType": "",
+    "certificate_no": "271A-T",
+    "is_pending": true
+  },
+  {
+    "id": "281A-T",
+    "brand": "TM",
+    "model": "281A-T",
+    "description": "Type M2",
+    "subType": "",
+    "certificate_no": "281A-T",
+    "is_pending": true
+  },
+  {
+    "id": "600U",
+    "brand": "TM",
+    "model": "600U",
+    "description": "400-470 MHz",
+    "subType": "",
+    "certificate_no": "600U",
+    "is_pending": true
+  },
+  {
+    "id": "610U",
+    "brand": "TM",
+    "model": "610U",
+    "description": "400-470 MHz",
+    "subType": "",
+    "certificate_no": "610U",
+    "is_pending": true
+  },
+  {
+    "id": "7PLUS",
+    "brand": "TM",
+    "model": "7PLUS",
+    "description": "EU Version",
+    "subType": "",
+    "certificate_no": "7PLUS",
+    "is_pending": true
+  },
+  {
+    "id": "B100",
+    "brand": "TMAB12",
+    "model": "B100",
+    "description": "TM8110-B1A00-10",
+    "subType": "",
+    "certificate_no": "B100",
+    "is_pending": true
+  },
+  {
+    "id": "B101",
+    "brand": "TMAB14",
+    "model": "B101",
+    "description": "TM8105H-B1A16-10",
+    "subType": "",
+    "certificate_no": "B101",
+    "is_pending": true
+  },
+  {
+    "id": "H501",
+    "brand": "TMAB14",
+    "model": "H501",
+    "description": "TM8115H-H5A16-10",
+    "subType": "",
+    "certificate_no": "H501",
+    "is_pending": true
+  },
+  {
+    "id": "H701",
+    "brand": "TMAB14",
+    "model": "H701",
+    "description": "TM8115H-H7A16-10",
+    "subType": "",
+    "certificate_no": "H701",
+    "is_pending": true
+  },
+  {
+    "id": "B100",
+    "brand": "TMAB22",
+    "model": "B100",
+    "description": "TM8250-B1A00-10",
+    "subType": "",
+    "certificate_no": "B100",
+    "is_pending": true
+  },
+  {
+    "id": "B100A",
+    "brand": "TMAB22",
+    "model": "B100A",
+    "description": "TM8255-B1A07-10",
+    "subType": "",
+    "certificate_no": "B100A",
+    "is_pending": true
+  },
+  {
+    "id": "H500",
+    "brand": "TMAB22",
+    "model": "H500",
+    "description": "TM8250-H5A00-10",
+    "subType": "",
+    "certificate_no": "H500",
+    "is_pending": true
+  },
+  {
+    "id": "H500A",
+    "brand": "TMAB22",
+    "model": "H500A",
+    "description": "TM8255-H5A07-10",
+    "subType": "",
+    "certificate_no": "H500A",
+    "is_pending": true
+  },
+  {
+    "id": "H600",
+    "brand": "TMAB22",
+    "model": "H600",
+    "description": "TM8250-H6A00-10",
+    "subType": "",
+    "certificate_no": "H600",
+    "is_pending": true
+  },
+  {
+    "id": "H600A",
+    "brand": "TMAB22",
+    "model": "H600A",
+    "description": "TM8235-H6A00-10",
+    "subType": "",
+    "certificate_no": "H600A",
+    "is_pending": true
+  },
+  {
+    "id": "B100B",
+    "brand": "TMAB32",
+    "model": "B100B",
+    "description": "TM9155-B1A33",
+    "subType": "",
+    "certificate_no": "B100B",
+    "is_pending": true
+  },
+  {
+    "id": "B100B",
+    "brand": "TMAB34",
+    "model": "B100B",
+    "description": "TM9155H-B1A33",
+    "subType": "",
+    "certificate_no": "B100B",
+    "is_pending": true
+  },
+  {
+    "id": "9100",
+    "brand": "TMB",
+    "model": "9100",
+    "description": "GSM MCPA BOOSTER",
+    "subType": "",
+    "certificate_no": "9100",
+    "is_pending": true
+  },
+  {
+    "id": "H2420-B2",
+    "brand": "TOP",
+    "model": "H2420-B2",
+    "description": "Orca 5030",
+    "subType": "",
+    "certificate_no": "H2420-B2",
+    "is_pending": true
+  },
+  {
+    "id": "H2620-B2",
+    "brand": "TOP",
+    "model": "H2620-B2",
+    "description": "Orca5040",
+    "subType": "",
+    "certificate_no": "H2620-B2",
+    "is_pending": true
+  },
+  {
+    "id": "I2120",
+    "brand": "TOP",
+    "model": "I2120",
+    "description": "ORCA ELAN",
+    "subType": "",
+    "certificate_no": "I2120",
+    "is_pending": true
+  },
+  {
+    "id": "I2220",
+    "brand": "TOP",
+    "model": "I2220",
+    "description": "ORCA EXCEL",
+    "subType": "",
+    "certificate_no": "I2220",
+    "is_pending": true
+  },
+  {
+    "id": "B100B",
+    "brand": "TPAB11",
+    "model": "B100B",
+    "description": "TP9155-B1A00",
+    "subType": "",
+    "certificate_no": "B100B",
+    "is_pending": true
+  },
+  {
+    "id": "7750C",
+    "brand": "TR",
+    "model": "7750C",
+    "description": "Marine",
+    "subType": "",
+    "certificate_no": "7750C",
+    "is_pending": true
+  },
+  {
+    "id": "915M",
+    "brand": "TS302",
+    "model": "915M",
+    "description": "AS923",
+    "subType": "",
+    "certificate_no": "915M",
+    "is_pending": true
+  },
+  {
+    "id": "3040A",
+    "brand": "TT",
+    "model": "3040A",
+    "description": "TracPhone FB500",
+    "subType": "",
+    "certificate_no": "3040A",
+    "is_pending": true
+  },
+  {
+    "id": "3042A",
+    "brand": "TT",
+    "model": "3042A",
+    "description": "TracPhone FB250",
+    "subType": "",
+    "certificate_no": "3042A",
+    "is_pending": true
+  },
+  {
+    "id": "3084A",
+    "brand": "TT",
+    "model": "3084A",
+    "description": "Sailor Fleet77",
+    "subType": "",
+    "certificate_no": "3084A",
+    "is_pending": true
+  },
+  {
+    "id": "3742A",
+    "brand": "TT",
+    "model": "3742A",
+    "description": "SAILOR 250 Fleet Broadband System",
+    "subType": "",
+    "certificate_no": "3742A",
+    "is_pending": true
+  },
+  {
+    "id": "3744A",
+    "brand": "TT",
+    "model": "3744A",
+    "description": "SAILOR 150 Fleet Broadband System",
+    "subType": "",
+    "certificate_no": "3744A",
+    "is_pending": true
+  },
+  {
+    "id": "6310A",
+    "brand": "TT",
+    "model": "6310A",
+    "description": "6300 MF/HF 150W",
+    "subType": "",
+    "certificate_no": "6310A",
+    "is_pending": true
+  },
+  {
+    "id": "6363A",
+    "brand": "TT",
+    "model": "6363A",
+    "description": "6363 MF/HF 250W",
+    "subType": "",
+    "certificate_no": "6363A",
+    "is_pending": true
+  },
+  {
+    "id": "6364A",
+    "brand": "TT",
+    "model": "6364A",
+    "description": "6350 MF/HF 500W",
+    "subType": "",
+    "certificate_no": "6364A",
+    "is_pending": true
+  },
+  {
+    "id": "2830",
+    "brand": "TTU",
+    "model": "2830",
+    "description": "PN : TTU28H400",
+    "subType": "",
+    "certificate_no": "2830",
+    "is_pending": true
+  },
+  {
+    "id": "L04EU-915M",
+    "brand": "UG67",
+    "model": "L04EU-915M",
+    "description": "AS923",
+    "subType": "",
+    "certificate_no": "L04EU-915M",
+    "is_pending": true
+  },
+  {
+    "id": "250-NBTC",
+    "brand": "UP2",
+    "model": "250-NBTC",
+    "description": "M/L",
+    "subType": "",
+    "certificate_no": "250-NBTC",
+    "is_pending": true
+  },
+  {
+    "id": "1000IIA",
+    "brand": "UT",
+    "model": "1000IIA",
+    "description": "30mW",
+    "subType": "",
+    "certificate_no": "1000IIA",
+    "is_pending": true
+  },
+  {
+    "id": "1000IIA",
+    "brand": "UX",
+    "model": "1000IIA",
+    "description": "30mW",
+    "subType": "",
+    "certificate_no": "1000IIA",
+    "is_pending": true
+  },
+  {
+    "id": "222D",
+    "brand": "UR",
+    "model": "222D",
+    "description": "Receiver",
+    "subType": "",
+    "certificate_no": "222D",
+    "is_pending": true
+  },
+  {
+    "id": "222S",
+    "brand": "UR",
+    "model": "222S",
+    "description": "Receiver",
+    "subType": "",
+    "certificate_no": "222S",
+    "is_pending": true
+  },
+  {
+    "id": "AL09",
+    "brand": "VRD",
+    "model": "AL09",
+    "description": "HUAWEI MediaPad M6 (8-inch",
+    "subType": "",
+    "certificate_no": "AL09",
+    "is_pending": true
+  },
+  {
+    "id": "160U",
+    "brand": "VX",
+    "model": "160U",
+    "description": "AS1",
+    "subType": "",
+    "certificate_no": "160U",
+    "is_pending": true
+  },
+  {
+    "id": "180U",
+    "brand": "VX",
+    "model": "180U",
+    "description": "AS1",
+    "subType": "",
+    "certificate_no": "180U",
+    "is_pending": true
+  },
+  {
+    "id": "2000U",
+    "brand": "VX",
+    "model": "2000U",
+    "description": "TYPE A",
+    "subType": "",
+    "certificate_no": "2000U",
+    "is_pending": true
+  },
+  {
+    "id": "2000V",
+    "brand": "VX",
+    "model": "2000V",
+    "description": "TYPE C",
+    "subType": "",
+    "certificate_no": "2000V",
+    "is_pending": true
+  },
+  {
+    "id": "2000VL",
+    "brand": "VX",
+    "model": "2000VL",
+    "description": "TYPE C",
+    "subType": "",
+    "certificate_no": "2000VL",
+    "is_pending": true
+  },
+  {
+    "id": "3000U",
+    "brand": "VX",
+    "model": "3000U",
+    "description": "TYPE A",
+    "subType": "",
+    "certificate_no": "3000U",
+    "is_pending": true
+  },
+  {
+    "id": "3000V",
+    "brand": "VX",
+    "model": "3000V",
+    "description": "TYPE A",
+    "subType": "",
+    "certificate_no": "3000V",
+    "is_pending": true
+  },
+  {
+    "id": "400U",
+    "brand": "VX",
+    "model": "400U",
+    "description": "TYPE CS",
+    "subType": "",
+    "certificate_no": "400U",
+    "is_pending": true
+  },
+  {
+    "id": "400V",
+    "brand": "VX",
+    "model": "400V",
+    "description": "TYPE A",
+    "subType": "",
+    "certificate_no": "400V",
+    "is_pending": true
+  },
+  {
+    "id": "800U",
+    "brand": "VX",
+    "model": "800U",
+    "description": "AS1",
+    "subType": "",
+    "certificate_no": "800U",
+    "is_pending": true
+  },
+  {
+    "id": "K130",
+    "brand": "W",
+    "model": "K130",
+    "description": "Sunny4",
+    "subType": "",
+    "certificate_no": "K130",
+    "is_pending": true
+  },
+  {
+    "id": "K211",
+    "brand": "W",
+    "model": "K211",
+    "description": "Sunny5 Lite",
+    "subType": "",
+    "certificate_no": "K211",
+    "is_pending": true
+  },
+  {
+    "id": "K360",
+    "brand": "W",
+    "model": "K360",
+    "description": "Sunny4 Plus",
+    "subType": "",
+    "certificate_no": "K360",
+    "is_pending": true
+  },
+  {
+    "id": "K380",
+    "brand": "W",
+    "model": "K380",
+    "description": "SUNNY5",
+    "subType": "",
+    "certificate_no": "K380",
+    "is_pending": true
+  },
+  {
+    "id": "K420",
+    "brand": "W",
+    "model": "K420",
+    "description": "Jerry4",
+    "subType": "",
+    "certificate_no": "K420",
+    "is_pending": true
+  },
+  {
+    "id": "K510",
+    "brand": "W",
+    "model": "K510",
+    "description": "Y60",
+    "subType": "",
+    "certificate_no": "K510",
+    "is_pending": true
+  },
+  {
+    "id": "K560",
+    "brand": "W",
+    "model": "K560",
+    "description": "Y61",
+    "subType": "",
+    "certificate_no": "K560",
+    "is_pending": true
+  },
+  {
+    "id": "K610",
+    "brand": "W",
+    "model": "K610",
+    "description": "Y62",
+    "subType": "",
+    "certificate_no": "K610",
+    "is_pending": true
+  },
+  {
+    "id": "K630",
+    "brand": "W",
+    "model": "K630",
+    "description": "Y82",
+    "subType": "",
+    "certificate_no": "K630",
+    "is_pending": true
+  },
+  {
+    "id": "P311",
+    "brand": "W",
+    "model": "P311",
+    "description": "View3",
+    "subType": "",
+    "certificate_no": "P311",
+    "is_pending": true
+  },
+  {
+    "id": "P611",
+    "brand": "W",
+    "model": "P611",
+    "description": "View3 Pro",
+    "subType": "",
+    "certificate_no": "P611",
+    "is_pending": true
+  },
+  {
+    "id": "V720",
+    "brand": "W",
+    "model": "V720",
+    "description": "Y80",
+    "subType": "",
+    "certificate_no": "V720",
+    "is_pending": true
+  },
+  {
+    "id": "V730",
+    "brand": "W",
+    "model": "V730",
+    "description": "View4 Lite",
+    "subType": "",
+    "certificate_no": "V730",
+    "is_pending": true
+  },
+  {
+    "id": "V745",
+    "brand": "W",
+    "model": "V745",
+    "description": "Power U10",
+    "subType": "",
+    "certificate_no": "V745",
+    "is_pending": true
+  },
+  {
+    "id": "V750",
+    "brand": "W",
+    "model": "V750",
+    "description": "Power U20",
+    "subType": "",
+    "certificate_no": "V750",
+    "is_pending": true
+  },
+  {
+    "id": "V755",
+    "brand": "W",
+    "model": "V755",
+    "description": "Power U30",
+    "subType": "",
+    "certificate_no": "V755",
+    "is_pending": true
+  },
+  {
+    "id": "V800",
+    "brand": "W",
+    "model": "V800",
+    "description": "View3 Lite",
+    "subType": "",
+    "certificate_no": "V800",
+    "is_pending": true
+  },
+  {
+    "id": "V830",
+    "brand": "W",
+    "model": "V830",
+    "description": "View4",
+    "subType": "",
+    "certificate_no": "V830",
+    "is_pending": true
+  },
+  {
+    "id": "V851",
+    "brand": "W",
+    "model": "V851",
+    "description": "View5",
+    "subType": "",
+    "certificate_no": "V851",
+    "is_pending": true
+  },
+  {
+    "id": "11-HIGH-R1",
+    "brand": "WAVE",
+    "model": "11-HIGH-R1",
+    "description": "ROW",
+    "subType": "",
+    "certificate_no": "11-HIGH-R1",
+    "is_pending": true
+  },
+  {
+    "id": "11-HIGH-R2",
+    "brand": "WAVE",
+    "model": "11-HIGH-R2",
+    "description": "ROW",
+    "subType": "",
+    "certificate_no": "11-HIGH-R2",
+    "is_pending": true
+  },
+  {
+    "id": "GPRS",
+    "brand": "WSAS2BU",
+    "model": "GPRS",
+    "description": "AS2",
+    "subType": "",
+    "certificate_no": "GPRS",
+    "is_pending": true
+  },
+  {
+    "id": "PT06L-LE",
+    "brand": "XHX",
+    "model": "PT06L-LE",
+    "description": "131277",
+    "subType": "",
+    "certificate_no": "PT06L-LE",
+    "is_pending": true
+  },
+  {
+    "id": "AT52",
+    "brand": "XQ",
+    "model": "AT52",
+    "description": "Xperia 1 II",
+    "subType": "",
+    "certificate_no": "AT52",
+    "is_pending": true
+  },
+  {
+    "id": "AU52",
+    "brand": "XQ",
+    "model": "AU52",
+    "description": "Xperia 10 II",
+    "subType": "",
+    "certificate_no": "AU52",
+    "is_pending": true
+  },
+  {
+    "id": "BC72",
+    "brand": "XQ",
+    "model": "BC72",
+    "description": "Xperia 1 III",
+    "subType": "",
+    "certificate_no": "BC72",
+    "is_pending": true
+  },
+  {
+    "id": "BT52",
+    "brand": "XQ",
+    "model": "BT52",
+    "description": "Xperia 10 III",
+    "subType": "",
+    "certificate_no": "BT52",
+    "is_pending": true
+  },
+  {
+    "id": "TECH",
+    "brand": "TELECOM",
+    "model": "TECH",
+    "description": "SHENZHEN",
+    "subType": "",
+    "certificate_no": "TECH",
+    "is_pending": true
   }
 ]
