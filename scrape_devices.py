@@ -6,30 +6,37 @@ def scrape_new_cellular_devices():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
-        page.goto('https://mocheck.nbtc.go.th/search-equipments', timeout=60000)  # Longer initial load timeout
+        # Set user-agent to mimic real browser
+        page.set_extra_http_headers({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+        })
+        page.goto('https://mocheck.nbtc.go.th/search-equipments', timeout=60000)
         
-        # Select cellular type (adjust value/label if needed - '1' is common for cellular)
-        page.select_option('select[name="equipType"]', value='1')  # Or label='อุปกรณ์ผู้ใช้ในบริการเคลื่อนที่เซลลูลาร์'
+        # Wait for the form to load
+        page.wait_for_selector('select.form-control', timeout=60000)
         
-        # Clear/leave date fields blank (assume names 'startDate' and 'endDate')
-        page.fill('input[name="startDate"]', '')
-        page.fill('input[name="endDate"]', '')
+        # Select cellular type using label (safer, as value might change)
+        page.select_option('select.form-control', label='อุปกรณ์ผู้ใช้ในบริการเคลื่อนที่เซลลูลาร์')
         
-        # Submit form (button with text "ค้นหา")
-        page.click('button:has-text("ค้นหา")')
+        # Assume dates are blank by default; if needed, clear them (adjust IDs if known)
+        # page.fill('input#startApproveDate', '')
+        # page.fill('input#endApproveDate', '')
         
-        page.wait_for_selector('table#dataTable', timeout=60000)  # Wait for results table (likely ID 'dataTable' from DataTables)
+        # Submit form
+        page.click('button.btn-primary:has-text("ค้นหา")')
+        
+        # Wait for results
+        page.wait_for_selector('table.table-striped', timeout=60000)
         
         while True:
-            table = page.locator('table.table-striped')  # Bootstrap/DataTables class
-            rows = table.locator('tbody tr')  # Target tbody for data rows
+            table = page.locator('table.table-striped')
+            rows = table.locator('tbody tr')
             
             for i in range(rows.count()):
                 row = rows.nth(i)
                 cols = row.locator('td')
                 if cols.count() < 6: continue
                 
-                # Columns (adjust indices: 0=Approval No, 1=Brand, 2=Model, 3=Type, 4=Importer, 5=Date)
                 approval = cols.nth(0).inner_text().strip()
                 brand = cols.nth(1).inner_text().strip()
                 model = cols.nth(2).inner_text().strip()
@@ -47,7 +54,7 @@ def scrape_new_cellular_devices():
                         'approval_date': date
                     })
             
-            # Pagination (next link with text "ถัดไป", often in ul.pagination)
+            # Pagination
             next_button = page.locator('a:has-text("ถัดไป")')
             if next_button.count() > 0 and next_button.is_visible():
                 next_button.click()
