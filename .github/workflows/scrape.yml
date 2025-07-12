@@ -1,63 +1,47 @@
-name: NBTC Device Monitor
+name: Scrape New Cellular Devices
 
 on:
   schedule:
-    - cron: '30 22 * * *'  # 4:00 AM IST
-    - cron: '30 23 * * *'  # 5:00 AM IST
+    - cron: '30 23 * * *'  # 5 AM IST
+    - cron: '30 0 * * *'   # 6 AM IST
   workflow_dispatch:
-    inputs:
-      force_run:
-        description: 'Force run monitor'
-        required: false
-        default: 'false'
-        type: boolean
-
-permissions:
-  contents: write
 
 jobs:
-  monitor-devices:
+  scrape:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          
+          python-version: '3.12'
+
       - name: Install dependencies
         run: |
-          pip install requests playwright beautifulsoup4
-          playwright install chromium
-          
-      - name: Run NBTC monitor
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python nbtc_monitor.py
-        
-      - name: Commit and push results
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Run scraper script
+        run: python scrape_devices.py > output.json
+
+      - name: Commit results if changed
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          if [ -f "seen_devices.json" ]; then
-            git add seen_devices.json
-            echo "✅ Added seen_devices.json"
-          fi
-          
-          if [ -f "new_devices.json" ]; then
-            git add new_devices.json
-            echo "✅ Added new_devices.json"
-          fi
-          
-          if git diff --staged --quiet; then
-            echo "ℹ️ No changes to commit"
-          else
-            git commit -m "🤖 Update device data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-            git pull --rebase
-            git push || echo "⚠️ Git push failed"
-            echo "✅ Changes committed and pushed"
-          fi
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add output.json
+          git commit -m "Update scraped devices $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
+          git push
+        continue-on-error: true
+
+      - name: Send Telegram notification
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            📱 NBTC Scraper Run Complete!
+            Found new devices: Check the output file or logs for details.
+            Run link: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            (If no new devices, output might be empty.)
